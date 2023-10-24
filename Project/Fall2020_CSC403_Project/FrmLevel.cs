@@ -15,7 +15,7 @@ namespace Fall2020_CSC403_Project
         private Enemy enemyCheeto;
         private Character[] walls;
 
-        // Holds the keys currently being pressed down.
+        // Tracks the keys currently being pressed down.
         private List<Keys> keysPressed = new List<Keys>();
 
         private DateTime timeBegin;
