@@ -1,5 +1,6 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,6 +14,9 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
+
+        // Holds the keys currently being pressed down.
+        private List<Keys> keysPressed = new List<Keys>();
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
@@ -40,8 +44,6 @@ namespace Fall2020_CSC403_Project
             enemyPoisonPacket.Color = Color.Green;
             enemyCheeto.Color = Color.FromArgb(255, 245, 161);
 
-        // Set enemy levels here. give an enemy a random level based on player level. Add an enemy level method to enemy.cs? this would not be able to set tho
-
             walls = new Character[NUM_WALLS];
             for (int w = 0; w < NUM_WALLS; w++)
             {
@@ -64,8 +66,10 @@ namespace Fall2020_CSC403_Project
             return new Collider(rect);
         }
 
+        // If key is released, removes it from keysPressed
         private void FrmLevel_KeyUp(object sender, KeyEventArgs e)
         {
+            keysPressed.Remove(e.KeyCode);
             player.ResetMoveSpeed();
         }
 
@@ -137,42 +141,49 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        private void SavePlayerState() // SaveGame may be too vague? Not stating exactly what it's doing
-        {
-            
-            // create save.json
-            // write a string to save.json
-            // before the game is initialized (put this up top), load a saved game if there is one.
-        }
-
         private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            if (!keysPressed.Contains(e.KeyCode))
             {
-                case Keys.Left:
+                keysPressed.Add(e.KeyCode);
+            }
+
+            // Handles diagonal movements
+            if ((keysPressed.Contains(Keys.Up) && keysPressed.Contains(Keys.Right)) || keysPressed.Contains(Keys.W) && keysPressed.Contains(Keys.D))
+            {
+                player.GoUpRight();
+            }
+            else if ((keysPressed.Contains(Keys.Up) && keysPressed.Contains(Keys.Left)) || keysPressed.Contains(Keys.W) && keysPressed.Contains(Keys.A))
+            {
+                player.GoUpLeft();
+            }
+            else if ((keysPressed.Contains(Keys.Down) && keysPressed.Contains(Keys.Right)) || keysPressed.Contains(Keys.S) && keysPressed.Contains(Keys.D))
+            {
+                player.GoDownRight();
+            }
+            else if ((keysPressed.Contains(Keys.Down) && keysPressed.Contains(Keys.Left)) || keysPressed.Contains(Keys.S) && keysPressed.Contains(Keys.A))
+            {
+                player.GoDownLeft();
+            }
+            // Handle non-diagonal movements
+            else
+            {
+                if (keysPressed.Contains(Keys.Left) || keysPressed.Contains(Keys.A))
+                {
                     player.GoLeft();
-                    break;
-
-                case Keys.Right:
+                }
+                if (keysPressed.Contains(Keys.Right) || keysPressed.Contains(Keys.D))
+                {
                     player.GoRight();
-                    break;
-
-                case Keys.Up:
+                }
+                if (keysPressed.Contains(Keys.Up) || keysPressed.Contains(Keys.W))
+                {
                     player.GoUp();
-                    break;
-
-                case Keys.Down:
+                }
+                if (keysPressed.Contains(Keys.Down) || keysPressed.Contains(Keys.S))
+                {
                     player.GoDown();
-                    break;
-
-                // Bind save to F5
-                case Keys.F5:
-                    SavePlayerState();
-                    break;
-
-                default:
-                    player.ResetMoveSpeed();
-                    break;
+                }
             }
         }
 

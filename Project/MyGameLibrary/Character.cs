@@ -49,4 +49,34 @@
             MoveSpeed = new Vector2(0, 0);
         }
     }
+    public void GoRight() {
+      MoveSpeed = new Vector2(+GO_INC, 0);
+    }
+    public void GoUp() {
+      MoveSpeed = new Vector2(0, -GO_INC);
+    }
+    public void GoDown() {
+      MoveSpeed = new Vector2(0, +GO_INC);
+    }
+
+    public void GoUpLeft() {
+      MoveSpeed = new Vector2(-GO_INC, -GO_INC);
+    }
+
+    public void GoDownLeft() {
+      MoveSpeed = new Vector2(-GO_INC, +GO_INC);
+    }
+
+    public void GoUpRight() {
+      MoveSpeed = new Vector2(+GO_INC, -GO_INC);
+    }
+
+    public void GoDownRight() {
+      MoveSpeed = new Vector2(+GO_INC, +GO_INC);
+    }
+
+   public void ResetMoveSpeed() {
+      MoveSpeed = new Vector2(0, 0);
+    }
+  }
 }
