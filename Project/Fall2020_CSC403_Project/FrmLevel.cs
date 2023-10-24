@@ -14,6 +14,8 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
+        private FormPauseMenu FormPauseMenu;
+        private FormInventory FormInventory;
 
         // Holds the keys currently being pressed down.
         private List<Keys> keysPressed = new List<Keys>();
@@ -184,6 +186,18 @@ namespace Fall2020_CSC403_Project
                 {
                     player.GoDown();
                 }
+            }
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    FormPauseMenu = new FormPauseMenu();
+                    FormPauseMenu.Show();
+                    break;
+                case Keys.I:
+                    FormInventory = new FormInventory();
+                    FormInventory.Show();
+                    break;
+
             }
         }
 

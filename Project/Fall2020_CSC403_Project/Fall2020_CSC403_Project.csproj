@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventory.Designer.cs">
+      <DependentUpon>FormInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoseScreen.Designer.cs">
+      <DependentUpon>FormLoseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPauseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPauseMenu.Designer.cs">
+      <DependentUpon>FormPauseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWinScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWinScreen.Designer.cs">
+      <DependentUpon>FormWinScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInventory.resx">
+      <DependentUpon>FormInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoseScreen.resx">
+      <DependentUpon>FormLoseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPauseMenu.resx">
+      <DependentUpon>FormPauseMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </EmbeddedResource>

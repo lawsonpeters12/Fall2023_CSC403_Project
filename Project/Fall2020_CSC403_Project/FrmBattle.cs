@@ -12,7 +12,7 @@ namespace Fall2020_CSC403_Project
         public static FrmBattle instance = null;
         private Enemy enemy;
         private Player player;
-
+        public static FormLoseScreen lose_screen;
         private FrmBattle()
         {
             InitializeComponent();
@@ -105,7 +105,8 @@ namespace Fall2020_CSC403_Project
             }
             else if (player.Health <= 0)
             {
-                instance = null;
+                lose_screen = new FormLoseScreen();
+                lose_screen.Show();
                 Close();
             }
         }
