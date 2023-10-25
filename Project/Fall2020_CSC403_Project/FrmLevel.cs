@@ -56,8 +56,9 @@ namespace Fall2020_CSC403_Project
 
             Game.player = player;
             timeBegin = DateTime.Now;
-        }
 
+            WindowState = FormWindowState.Maximized;
+        }
 
         private Vector2 CreatePosition(PictureBox pic)
         {
