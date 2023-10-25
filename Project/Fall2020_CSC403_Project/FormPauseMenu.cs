@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fall2020_CSC403_Project.code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,14 @@ namespace Fall2020_CSC403_Project
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

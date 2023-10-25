@@ -96,19 +96,66 @@ namespace Fall2020_CSC403_Project
             // check collision with enemies
             if (HitAChar(player, enemyPoisonPacket))
             {
-                Fight(enemyPoisonPacket);
+                if (enemyPoisonPacket.Health <= 0)
+                {
+                    BodyCleanUp(enemyPoisonPacket);
+                }
+                else
+                {
+                    Fight(enemyPoisonPacket);
+                }
             }
             else if (HitAChar(player, enemyCheeto))
             {
-                Fight(enemyCheeto);
+                if (enemyCheeto.Health  <= 0)
+                {
+                    BodyCleanUp(enemyCheeto);
+                }
+                else
+                {
+                    Fight(enemyCheeto);
+                }
             }
-            if (HitAChar(player, bossKoolaid))
+            else if (HitAChar(player, bossKoolaid))
             {
-                Fight(bossKoolaid);
+                if (bossKoolaid.Health <= 0)
+                {
+                    BodyCleanUp(bossKoolaid);
+                }
+                else
+                {
+                    Fight(bossKoolaid);
+                }
             }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+        }
+
+        public void BodyCleanUp(Enemy enemy)
+        {
+
+            if (enemy.Health <= 0)
+            {
+                if (enemy == bossKoolaid)
+                {
+                    picBossKoolAid.Dispose();
+                    bossKoolaid.Collider.MovePosition(0, 0);
+                    this.Invalidate();
+                }
+                else if (enemy == enemyCheeto)
+                {
+                    picEnemyCheeto.Dispose();
+                    enemyCheeto.Collider.MovePosition(0, 0);
+                    this.Invalidate();
+                }
+                else
+                {
+                    picEnemyPoisonPacket.Dispose();
+                    enemyPoisonPacket.Collider.MovePosition(0, 0);
+                    this.Invalidate();
+                }
+            }
         }
 
         private bool HitAWall(Character c)
@@ -136,6 +183,7 @@ namespace Fall2020_CSC403_Project
             player.MoveBack();
             frmBattle = FrmBattle.GetInstance(enemy);
             frmBattle.Show();
+            keysPressed.Clear();
 
             if (enemy == bossKoolaid)
             {
