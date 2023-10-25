@@ -7,21 +7,21 @@ namespace Fall2020_CSC403_Project.code
     public class BattleCharacter : Character
     {
         public int Experience { get; private set; }
-        public int Level { get; private set; }
+        public int Level { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; private set; }
-        public int strength { get; set; }
+        public int strength { get; private set; }
 
         public float ExperienceNeeded;
 
 
         public event Action<int> AttackEvent;
 
-        public BattleCharacter(Vector2 initPos, Collider collider) : base(initPos, collider)
+        public BattleCharacter(Vector2 initPos, Collider collider, int level) : base(initPos, collider)
         {
-            Level = 1;
-            ExperienceNeeded = Level * 100; // document
-            MaxHealth = 20;
+            this.Level = level;
+            ExperienceNeeded = Level * 100;
+            MaxHealth = 16 + (4 * Level);
             strength = Level * 2;
             Health = MaxHealth;
         }
@@ -29,18 +29,18 @@ namespace Fall2020_CSC403_Project.code
 
         public void OnAttack(int amount)
         {
-            AttackEvent((int)(amount * strength));
+            AttackEvent((int)(amount));
         }
 
         public void AlterHealth(int amount)
         {
             Health += amount;
         }
-        public void UpdateExperience(int experienceGain) // document
+        public void UpdateExperience(int experienceGain)
         {
             Experience += experienceGain;
         }
-        public void UpdateLevel() // document
+        public void UpdateLevel()
         {
             if (Experience >= ExperienceNeeded)
             {

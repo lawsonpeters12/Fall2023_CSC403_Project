@@ -66,7 +66,6 @@ namespace Fall2020_CSC403_Project
         private void UpdateExperienceBars()
         {
             float playerExpBar = player.Experience / player.ExperienceNeeded;
-            // the way this is rendered prevents the text from showing if there is no bar. change this somehow
             const int MAX_EXPBAR_WIDTH = 226;
             lblPlayerExperience.Width = (int)(MAX_EXPBAR_WIDTH * playerExpBar);
             lblPlayerExperienceNumber.Text = $"{player.Experience} / {player.ExperienceNeeded}";
@@ -99,9 +98,10 @@ namespace Fall2020_CSC403_Project
             if (enemy.Health <= 0)
             {
                 int experienceGain = enemy.MaxHealth * 5;
+                enemy.isDeafeated = true;
                 player.UpdateExperience(experienceGain);
                 player.UpdateLevel();
-                player.Health = player.MaxHealth; // sets player's health to max, FOR TESTING 
+                player.Health = player.MaxHealth; // regenerates player health after winning a battle
                 instance = null;
                 Close();
             }

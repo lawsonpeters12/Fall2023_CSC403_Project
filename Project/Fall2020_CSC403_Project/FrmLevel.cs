@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
@@ -33,15 +35,13 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 13;
 
-            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-            enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-
+            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING), 3);
+            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 3, false);
+            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING), 1, false);
+            enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2, false);
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
-
 
             bossKoolaid.Color = Color.Red;
             enemyPoisonPacket.Color = Color.Green;
@@ -204,6 +204,7 @@ namespace Fall2020_CSC403_Project
             if (enemy.Health <= 0)
             {
                 BodyCleanUp(enemy);
+                SavePlayerState();
                 timer.Stop();
             }
         }
@@ -266,6 +267,48 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        private void SavePlayerState()
+        {
+            string saveLocation = @"..\..\Save.txt";
+            
+            try
+            {
+                if (File.Exists(saveLocation))
+                {
+                    File.Delete(saveLocation);
+                }
+
+                // Save file creation
+                using (StreamWriter sw = File.CreateText(saveLocation))
+                {
+                    //save player states
+                    sw.WriteLine($"MaxHealth: {player.MaxHealth}");
+                    sw.WriteLine($"Health: {player.Health}");
+                    sw.WriteLine($"Location: {player.Position}");
+                    sw.WriteLine($"Level: {player.Level}");
+                    sw.WriteLine($"Experience: {player.Experience}");
+                    sw.WriteLine($"Strength: {player.strength}");
+                    
+                    //save enemy states
+                    sw.WriteLine($"Poison Packet defeated: {enemyPoisonPacket.isDeafeated}");
+                    sw.WriteLine($"Cheeto defeated: {enemyCheeto.isDeafeated}");
+                    sw.WriteLine($"Boss defeated: {bossKoolaid.isDeafeated}");
+                }
+
+                using (StreamReader sr = File.OpenText(saveLocation))
+                {
+                    string s = "";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine((Ex.ToString()));
+            }
+        }
         private void lblInGameTime_Click(object sender, EventArgs e)
         {
 

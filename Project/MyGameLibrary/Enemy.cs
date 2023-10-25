@@ -16,14 +16,17 @@ namespace Fall2020_CSC403_Project.code
         /// this is the background color for the fight form for this enemy
         /// </summary>
         public Color Color { get; set; }
+        
+        public bool isDeafeated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="initPos">this is the initial position of the enemy</param>
         /// <param name="collider">this is the collider for the enemy</param>
-        public Enemy(Vector2 initPos, Collider collider) : base(initPos, collider)
+        public Enemy(Vector2 initPos, Collider collider, int level, bool isDefeated) : base(initPos, collider, level)
         {
+            this.isDeafeated = isDefeated;
         }
     }
 }
