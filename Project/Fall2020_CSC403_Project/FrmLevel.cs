@@ -18,6 +18,7 @@ namespace Fall2020_CSC403_Project
         private Character[] walls;
         private FormPauseMenu FormPauseMenu;
         private FormInventory FormInventory;
+        private FormWinScreen FormWinScreen;
 
         // Tracks the keys currently being pressed down.
         private List<Keys> keysPressed = new List<Keys>();
@@ -123,6 +124,7 @@ namespace Fall2020_CSC403_Project
             {
                 if (bossKoolaid.Health <= 0)
                 {
+      
                     BodyCleanUp(bossKoolaid);
                 }
                 else
@@ -145,6 +147,8 @@ namespace Fall2020_CSC403_Project
                     picBossKoolAid.Dispose();
                     bossKoolaid.Collider.MovePosition(0, 0);
                     this.Invalidate();
+                    FormWinScreen = new FormWinScreen();
+                    FormWinScreen.Show();
                 }
                 else if (enemy == enemyCheeto)
                 {
