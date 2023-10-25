@@ -31,6 +31,7 @@ namespace Fall2020_CSC403_Project
             enemy.AttackEvent += PlayerDamage;
             player.AttackEvent += EnemyDamage;
 
+            
             // show health
             UpdateHealthBars();
 
@@ -57,6 +58,7 @@ namespace Fall2020_CSC403_Project
                 instance = new FrmBattle();
                 instance.enemy = enemy;
                 instance.Setup();
+
             }
             return instance;
         }
@@ -99,7 +101,7 @@ namespace Fall2020_CSC403_Project
                 int experienceGain = enemy.MaxHealth * 5;
                 player.UpdateExperience(experienceGain);
                 player.UpdateLevel();
-                player.Health = player.MaxHealth; // sets player's health to max, FOR TESTING PURPOSES
+                player.Health = player.MaxHealth; // sets player's health to max, FOR TESTING 
                 instance = null;
                 Close();
             }

@@ -42,6 +42,7 @@ namespace Fall2020_CSC403_Project
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
 
+
             bossKoolaid.Color = Color.Red;
             enemyPoisonPacket.Color = Color.Green;
             enemyCheeto.Color = Color.FromArgb(255, 245, 161);
@@ -56,6 +57,7 @@ namespace Fall2020_CSC403_Project
             Game.player = player;
             timeBegin = DateTime.Now;
         }
+
 
         private Vector2 CreatePosition(PictureBox pic)
         {
@@ -188,6 +190,21 @@ namespace Fall2020_CSC403_Project
             if (enemy == bossKoolaid)
             {
                 frmBattle.SetupForBossBattle();
+            }
+
+            // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it cleans up the body
+            Timer healthCheckTimer = new Timer();
+            healthCheckTimer.Interval = 200;
+            healthCheckTimer.Tick += (sender, e) => CheckEnemyHealth(enemy, healthCheckTimer);
+            healthCheckTimer.Start();
+        }
+
+        private void CheckEnemyHealth(Enemy enemy, Timer timer)
+        {
+            if (enemy.Health <= 0)
+            {
+                BodyCleanUp(enemy);
+                timer.Stop();
             }
         }
 
