@@ -17,18 +17,25 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
         }
-
+        // Exit button
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        // Save button
         private void button2_Click(object sender, EventArgs e)
         {
 
         }
+        // Load Save button
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+        // Restart button
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

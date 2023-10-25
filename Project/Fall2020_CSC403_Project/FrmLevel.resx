@@ -127,7 +127,7 @@
   <data name="picBossKoolAid.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAhIAAAMYCAYAAACe0Q5tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        YQAAD2EBqD+naQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAP+KSURBVHhe
+        YAAAD2ABenhFjQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAP+KSURBVHhe
         7L2HmxxpdTU+0zlPT86SRjOjURzlnHPOOecsjSbn6Z6ck3LWLmsMBhuMMWDj8NmAwRgwmAwm2MCC/f3+
         ifO759a0VizNkne1fO8+z9mqebu66q2qfnTPe8O5CQAM/h/Bj//nJ8544wYGBgYGBr8t4g4avLvw+v/+
         jz3e+Gf/7fMT7z16uLu2qa6iuqGm6vGrT/Dlr38l+6f/389s8Y43MDAwMDD4TRF30ODdi+//93/5n77n
@@ -8320,4 +8320,7 @@
         9P8r1NXqPvR7FQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
