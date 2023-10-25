@@ -16,5 +16,11 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
         }
+
+        private void exit_button_click(object sender, EventArgs e)
+        {
+            Close();
+            Application.Exit();
+        }
     }
 }

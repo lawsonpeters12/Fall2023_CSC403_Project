@@ -93,6 +93,9 @@
     <EmbeddedResource Include="FormPauseMenu.resx">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormWinScreen.resx">
+      <DependentUpon>FormWinScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,7 +158,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\inventory_bg.jpg" />
+    <None Include="data\bgd_sb.jpg" />
     <Content Include="data\HeartImage.png" />
+    <None Include="data\lose_screen_final.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,7 +41,7 @@
             this.flowLayoutPanel2.Controls.Add(this.button2);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(288, 155);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 267);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 214);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // button1
@@ -67,10 +67,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lose_screen_final;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Name = "FormLoseScreen";
-            this.Text = "FormLoseScreen";
+            this.Text = "You Lose";
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
