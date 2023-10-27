@@ -128,37 +128,15 @@ namespace Fall2020_CSC403_Project
             // check collision with enemies
             if (HitAChar(player, enemyPoisonPacket))
             {
-                if (enemyPoisonPacket.Health <= 0)
-                {
-                    BodyCleanUp(enemyPoisonPacket);
-                }
-                else
-                {
-                    Fight(enemyPoisonPacket);
-                }
+                Fight(enemyPoisonPacket);
             }
             else if (HitAChar(player, enemyCheeto))
             {
-                if (enemyCheeto.Health  <= 0)
-                {
-                    BodyCleanUp(enemyCheeto);
-                }
-                else
-                {
-                    Fight(enemyCheeto);
-                }
+                Fight(enemyCheeto);
             }
             else if (HitAChar(player, bossKoolaid))
             {
-                if (bossKoolaid.Health <= 0)
-                {
-      
-                    BodyCleanUp(bossKoolaid);
-                }
-                else
-                {
-                    Fight(bossKoolaid);
-                }
+                Fight(bossKoolaid);
             }
 
             // update player's picture box
@@ -219,11 +197,6 @@ namespace Fall2020_CSC403_Project
             frmBattle = FrmBattle.GetInstance(enemy, Character);
             frmBattle.Show();
             keysPressed.Clear();
-
-            if (enemy == bossKoolaid)
-            {
-                frmBattle.SetupForBossBattle();
-            }
 
             // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it cleans up the body
             Timer healthCheckTimer = new Timer();

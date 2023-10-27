@@ -62,18 +62,6 @@ namespace Fall2020_CSC403_Project
             UpdateExperienceBars();
         }
 
-        public void SetupForBossBattle()
-        {
-            picBossBattle.Location = Point.Empty;
-            picBossBattle.Size = ClientSize;
-            picBossBattle.Visible = true;
-
-            SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
-            simpleSound.Play();
-
-            tmrFinalBattle.Enabled = true;
-        }
-
         public static FrmBattle GetInstance(Enemy enemy, String ChosenCharacter)
         {
             if (instance == null)
