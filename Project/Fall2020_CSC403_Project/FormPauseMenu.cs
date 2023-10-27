@@ -24,21 +24,17 @@ namespace Fall2020_CSC403_Project
             Application.Exit();
         }
 
-        // Save button
+        // Resume button
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        // Load Save button
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
         // Restart button
-        private void button4_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
+       
     }
 }

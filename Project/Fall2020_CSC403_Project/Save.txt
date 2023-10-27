@@ -1,9 +1,9 @@
-MaxHealth: 28
-Health: 28
+MaxHealth: 32
+Health: 32
 Location: Fall2020_CSC403_Project.code.Vector2
-Level: 3
-Experience: 220
-Strength: 6
+Level: 4
+Experience: 0
+Strength: 8
 Poison Packet defeated: True
 Cheeto defeated: True
-Boss defeated: False
+Boss defeated: True
