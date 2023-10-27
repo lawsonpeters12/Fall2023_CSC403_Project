@@ -13,10 +13,12 @@ namespace Fall2020_CSC403_Project
         private Enemy enemy;
         private Player player;
         public static FormLoseScreen lose_screen;
-        private FrmBattle()
+        private String Character;
+        private FrmBattle(String ChosenCharacter)
         {
             InitializeComponent();
             player = Game.player;
+            Character = ChosenCharacter;
         }
 
         public void Setup()
@@ -26,6 +28,27 @@ namespace Fall2020_CSC403_Project
             picEnemy.Refresh();
             BackColor = enemy.Color;
             picBossBattle.Visible = false;
+
+            if (Character == "Peter")
+            {
+                picPlayer.Image = Properties.Resources.petah_battle;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
+            else if (Character == "The Sponge")
+            {
+                picPlayer.Image = Properties.Resources.thesponge;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
+            else if (Character == "Wormy")
+            {
+                picPlayer.Image = Properties.Resources.wormy;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
+
+
 
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
@@ -51,11 +74,11 @@ namespace Fall2020_CSC403_Project
             tmrFinalBattle.Enabled = true;
         }
 
-        public static FrmBattle GetInstance(Enemy enemy)
+        public static FrmBattle GetInstance(Enemy enemy, String ChosenCharacter)
         {
             if (instance == null)
             {
-                instance = new FrmBattle();
+                instance = new FrmBattle(ChosenCharacter);
                 instance.enemy = enemy;
                 instance.Setup();
 

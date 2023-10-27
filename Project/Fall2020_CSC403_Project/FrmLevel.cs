@@ -19,6 +19,9 @@ namespace Fall2020_CSC403_Project
         private FormPauseMenu FormPauseMenu;
         private FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
+        private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
+        private String Character;
+
 
         // Tracks the keys currently being pressed down.
         private List<Keys> keysPressed = new List<Keys>();
@@ -26,9 +29,10 @@ namespace Fall2020_CSC403_Project
         private DateTime timeBegin;
         private FrmBattle frmBattle;
 
-        public FrmLevel()
+        public FrmLevel(String ChosenCharacter)
         {
             InitializeComponent();
+            Character = ChosenCharacter;
         }
 
         private void FrmLevel_Load(object sender, EventArgs e)
@@ -43,6 +47,26 @@ namespace Fall2020_CSC403_Project
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            if (Character == "Peter")
+            {
+                picPlayer.Image = Properties.Resources.petah_nobg;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
+            else if (Character == "The Sponge")
+            {
+                picPlayer.Image = Properties.Resources.thesponge_nobg;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
+            else if (Character == "Wormy")
+            {
+                picPlayer.Image = Properties.Resources.wormy_nobg;
+                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Invalidate();
+            }
 
             bossKoolaid.Color = Color.Red;
             enemyPoisonPacket.Color = Color.Green;
@@ -59,7 +83,11 @@ namespace Fall2020_CSC403_Project
             timeBegin = DateTime.Now;
 
             WindowState = FormWindowState.Maximized;
+            FormBorderStyle = FormBorderStyle.None;
+            this.DoubleBuffered = true;
+
         }
+
 
         private Vector2 CreatePosition(PictureBox pic)
         {
@@ -188,7 +216,7 @@ namespace Fall2020_CSC403_Project
         {
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
+            frmBattle = FrmBattle.GetInstance(enemy, Character);
             frmBattle.Show();
             keysPressed.Clear();
 
@@ -315,6 +343,11 @@ namespace Fall2020_CSC403_Project
             }
         }
         private void lblInGameTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picPlayer_Click(object sender, EventArgs e)
         {
 
         }

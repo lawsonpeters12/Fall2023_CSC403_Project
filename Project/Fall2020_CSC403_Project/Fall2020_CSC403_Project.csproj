@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCharacterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCharacterSelect.Designer.cs">
+      <DependentUpon>FormCharacterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCharacterSelect.resx">
+      <DependentUpon>FormCharacterSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInventory.resx">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
@@ -158,10 +166,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\inventory_bg.jpg" />
-    <None Include="data\bgd_sb.jpg" />
     <Content Include="data\HeartImage.png" />
-    <None Include="data\lose_screen_final.png" />
+    <None Include="Resources\Character_Select.png" />
+    <None Include="Resources\thesponge_nobg.png" />
+    <None Include="Resources\wormy_nobg.png" />
+    <None Include="Resources\thesponge.png" />
+    <None Include="Resources\wormy.png" />
+    <None Include="Resources\Character_Select_Screen.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\petah_nobg.png" />
+    <None Include="Resources\petah-removebg-preview.png" />
+    <None Include="Resources\petah.png" />
+    <None Include="Resources\sponge.png" />
+    <None Include="Resources\wormy %281%29.jpg" />
+    <None Include="data\Sponge.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
