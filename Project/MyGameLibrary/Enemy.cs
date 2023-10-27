@@ -17,7 +17,7 @@ namespace Fall2020_CSC403_Project.code
         /// </summary>
         public Color Color { get; set; }
         
-        public bool isDeafeated { get; set; }
+        public bool isDefeated { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace Fall2020_CSC403_Project.code
         /// <param name="collider">this is the collider for the enemy</param>
         public Enemy(Vector2 initPos, Collider collider, int level, bool isDefeated) : base(initPos, collider, level)
         {
-            this.isDeafeated = isDefeated;
+            this.isDefeated = isDefeated;
         }
     }
 }

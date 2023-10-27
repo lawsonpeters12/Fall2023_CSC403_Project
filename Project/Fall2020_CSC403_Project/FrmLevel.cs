@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
+    
     public partial class FrmLevel : Form
     {
         private Player player;
@@ -28,22 +31,67 @@ namespace Fall2020_CSC403_Project
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
-
         public FrmLevel(String ChosenCharacter)
         {
             InitializeComponent();
             Character = ChosenCharacter;
         }
-
-        private void FrmLevel_Load(object sender, EventArgs e)
+        private string saveLocation = @"..\..\Save.txt";
+        private bool loadGame;
+        
+        public void FrmLevel_Load(object sender, EventArgs e)
         {
             const int PADDING = 7;
             const int NUM_WALLS = 13;
+            
+            // default load data
+            var playerHealth = 20;
+            Vector2 loadLocation = CreatePosition(picPlayer);
+            var playerLevel = 1;
+            var playerExperience = 0;
+            var poisonIsDefeated = false;
+            var cheetoIsDefeated = false;
+            var bossIsDefeated = false;
+            
+            // Loads save file
+            if (loadGame)
+            {
+                // save found
+                if (File.Exists(saveLocation))
+                {
+                    // replaces defaults with saved values
+                    string[] saveInformation = GetSaveInfo();
+                    playerHealth = int.Parse(saveInformation[0]);
+                    var xPos = float.Parse(saveInformation[1]);
+                    var yPos = float.Parse(saveInformation[2]);
+                    loadLocation = new Vector2(xPos, yPos);
+                    playerLevel = int.Parse(saveInformation[3]);
+                    playerExperience = int.Parse(saveInformation[4]);
+                    poisonIsDefeated = bool.Parse(saveInformation[5]);
+                    cheetoIsDefeated = bool.Parse(saveInformation[6]);
+                    bossIsDefeated = bool.Parse(saveInformation[7]);
 
-            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING), 3);
-            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 3, false);
-            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING), 1, false);
-            enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2, false);
+                    loadGame = false;
+                }
+                // no save found, leave game in current state
+                else
+                {
+                    return;
+                }
+            }
+            
+            // initialization of defaults or saved data 
+            player = new Player(loadLocation, CreateCollider(picPlayer, PADDING), playerLevel);
+            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 3,
+                bossIsDefeated);
+            enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
+                CreateCollider(picEnemyPoisonPacket, PADDING), 1, poisonIsDefeated);
+            enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
+                cheetoIsDefeated);
+            
+            player.Health = playerHealth;
+            player.Experience = playerExperience;
+
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
@@ -152,7 +200,6 @@ namespace Fall2020_CSC403_Project
             {
                 if (bossKoolaid.Health <= 0)
                 {
-      
                     BodyCleanUp(bossKoolaid);
                 }
                 else
@@ -167,7 +214,6 @@ namespace Fall2020_CSC403_Project
 
         public void BodyCleanUp(Enemy enemy)
         {
-
             if (enemy.Health <= 0)
             {
                 if (enemy == bossKoolaid)
@@ -237,7 +283,6 @@ namespace Fall2020_CSC403_Project
             if (enemy.Health <= 0)
             {
                 BodyCleanUp(enemy);
-                SavePlayerState();
                 timer.Stop();
             }
         }
@@ -296,52 +341,56 @@ namespace Fall2020_CSC403_Project
                     FormInventory = new FormInventory();
                     FormInventory.Show();
                     break;
-
+                case Keys.L:
+                    LoadGameState(sender, e);
+                    break;
+                case Keys.K:
+                    SaveGameState();
+                    break;
             }
         }
 
-        private void SavePlayerState()
+        private void SaveGameState()
         {
-            string saveLocation = @"..\..\Save.txt";
-            
-            try
+            if (File.Exists(saveLocation))
             {
-                if (File.Exists(saveLocation))
-                {
-                    File.Delete(saveLocation);
-                }
-
-                // Save file creation
-                using (StreamWriter sw = File.CreateText(saveLocation))
-                {
-                    //save player states
-                    sw.WriteLine($"MaxHealth: {player.MaxHealth}");
-                    sw.WriteLine($"Health: {player.Health}");
-                    sw.WriteLine($"Location: {player.Position}");
-                    sw.WriteLine($"Level: {player.Level}");
-                    sw.WriteLine($"Experience: {player.Experience}");
-                    sw.WriteLine($"Strength: {player.strength}");
-                    
-                    //save enemy states
-                    sw.WriteLine($"Poison Packet defeated: {enemyPoisonPacket.isDeafeated}");
-                    sw.WriteLine($"Cheeto defeated: {enemyCheeto.isDeafeated}");
-                    sw.WriteLine($"Boss defeated: {bossKoolaid.isDeafeated}");
-                }
-
-                using (StreamReader sr = File.OpenText(saveLocation))
-                {
-                    string s = "";
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        Console.WriteLine(s);
-                    }
-                }
+                File.Delete(saveLocation);
             }
-            catch (Exception Ex)
+
+            // Save file creation
+            using (StreamWriter sw = File.CreateText(saveLocation))
             {
-                Console.WriteLine((Ex.ToString()));
+                //save player state
+                sw.WriteLine(player.Health);
+                sw.WriteLine(player.Position.x);
+                sw.WriteLine(player.Position.y);
+                sw.WriteLine(player.Level);
+                sw.WriteLine(player.Experience);
+
+                //save enemy states
+                sw.WriteLine(enemyPoisonPacket.isDefeated);
+                sw.WriteLine(enemyCheeto.isDefeated);
+                sw.WriteLine(bossKoolaid.isDefeated);
             }
+
         }
+
+        private string[] GetSaveInfo()
+        {
+            if (File.Exists(saveLocation))
+            {
+                var saveInformation = File.ReadAllLines(saveLocation);
+                return saveInformation;
+            }
+            return null;
+        }
+        
+        private void LoadGameState(object sender, EventArgs e)
+        {
+            loadGame = true;
+            FrmLevel_Load(sender, e);
+        }
+        
         private void lblInGameTime_Click(object sender, EventArgs e)
         {
 

@@ -6,7 +6,7 @@ namespace Fall2020_CSC403_Project.code
 {
     public class BattleCharacter : Character
     {
-        public int Experience { get; private set; }
+        public int Experience { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; private set; }
@@ -36,7 +36,8 @@ namespace Fall2020_CSC403_Project.code
         {
             Health += amount;
         }
-        public void UpdateExperience(int experienceGain)
+        
+        public void AddExperience(int experienceGain)
         {
             Experience += experienceGain;
         }
