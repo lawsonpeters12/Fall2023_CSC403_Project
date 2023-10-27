@@ -109,10 +109,10 @@ namespace Fall2020_CSC403_Project
             if (enemy.Health <= 0)
             {
                 int experienceGain = enemy.MaxHealth * 5;
-                enemy.isDeafeated = true;
-                player.UpdateExperience(experienceGain);
+                enemy.isDefeated = true;
+                player.AddExperience(experienceGain);
                 player.UpdateLevel();
-                player.Health = player.MaxHealth; // regenerates player health after winning a battle
+                player.Health = player.MaxHealth;
                 instance = null;
                 Close();
             }

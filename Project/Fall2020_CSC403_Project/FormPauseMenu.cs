@@ -29,7 +29,7 @@ namespace Fall2020_CSC403_Project
         {
             Close();
         }
-
+        
         // Restart button
         private void button3_Click(object sender, EventArgs e)
         {
