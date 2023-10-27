@@ -50,7 +50,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(197, 111);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Load From Last Save";
+            this.button1.Text = "!= Load From Last Save";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -71,8 +71,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Location = new System.Drawing.Point(100, 100);
             this.Name = "FormWinScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "You Win!";
+            this.Load += new System.EventHandler(this.FormWinScreen_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

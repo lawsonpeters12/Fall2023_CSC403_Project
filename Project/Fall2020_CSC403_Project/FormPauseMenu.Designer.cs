@@ -67,7 +67,6 @@
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-
             // 
             // button3
             // 
@@ -77,7 +76,6 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Load Save";
             this.button3.UseVisualStyleBackColor = true;
-            //this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -88,7 +86,6 @@
             this.button4.Text = "Restart";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-
             // 
             // FormPauseMenu
             // 
@@ -97,6 +94,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FormPauseMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPauseMenu";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

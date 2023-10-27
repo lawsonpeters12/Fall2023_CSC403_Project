@@ -72,6 +72,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Name = "FormLoseScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "You Lose";
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);

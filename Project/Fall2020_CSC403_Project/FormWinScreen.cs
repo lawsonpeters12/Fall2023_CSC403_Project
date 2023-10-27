@@ -22,5 +22,10 @@ namespace Fall2020_CSC403_Project
             Close();
             Application.Exit();
         }
+
+        private void FormWinScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
