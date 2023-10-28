@@ -1,6 +1,7 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace Fall2020_CSC403_Project
         private FormWinScreen FormWinScreen;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
         private String Character;
+        private Image picPeter = Properties.Resources.petah_nobg;
+        private Image picSponge = Properties.Resources.thesponge_nobg;
+        private Image picWormy = Properties.Resources.wormy_nobg;
 
 
         // Tracks the keys currently being pressed down.
@@ -61,15 +65,16 @@ namespace Fall2020_CSC403_Project
                 {
                     // replaces defaults with saved values
                     string[] saveInformation = GetSaveInfo();
-                    playerHealth = int.Parse(saveInformation[0]);
-                    var xPos = float.Parse(saveInformation[1]);
-                    var yPos = float.Parse(saveInformation[2]);
+                    Character = saveInformation[0];
+                    playerHealth = int.Parse(saveInformation[1]);
+                    var xPos = float.Parse(saveInformation[2]);
+                    var yPos = float.Parse(saveInformation[3]);
                     loadLocation = new Vector2(xPos, yPos);
-                    playerLevel = int.Parse(saveInformation[3]);
-                    playerExperience = int.Parse(saveInformation[4]);
-                    poisonIsDefeated = bool.Parse(saveInformation[5]);
-                    cheetoIsDefeated = bool.Parse(saveInformation[6]);
-                    bossIsDefeated = bool.Parse(saveInformation[7]);
+                    playerLevel = int.Parse(saveInformation[4]);
+                    playerExperience = int.Parse(saveInformation[5]);
+                    poisonIsDefeated = bool.Parse(saveInformation[6]);
+                    cheetoIsDefeated = bool.Parse(saveInformation[7]);
+                    bossIsDefeated = bool.Parse(saveInformation[8]);
 
                     loadGame = false;
                 }
@@ -99,19 +104,19 @@ namespace Fall2020_CSC403_Project
 
             if (Character == "Peter")
             {
-                picPlayer.Image = Properties.Resources.petah_nobg;
+                picPlayer.Image = picPeter;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
             else if (Character == "The Sponge")
             {
-                picPlayer.Image = Properties.Resources.thesponge_nobg;
+                picPlayer.Image = picSponge;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
             else if (Character == "Wormy")
             {
-                picPlayer.Image = Properties.Resources.wormy_nobg;
+                picPlayer.Image = picWormy;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
@@ -133,6 +138,19 @@ namespace Fall2020_CSC403_Project
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
+
+            if (poisonIsDefeated)
+            {
+                BodyCleanUp(enemyPoisonPacket);
+            }
+            if (cheetoIsDefeated)
+            {
+                BodyCleanUp(enemyCheeto);
+            }
+            if (bossIsDefeated)
+            {
+                BodyCleanUp(bossKoolaid);
+            }
 
         }
 
@@ -193,28 +211,25 @@ namespace Fall2020_CSC403_Project
 
         public void BodyCleanUp(Enemy enemy)
         {
-            if (enemy.Health <= 0)
+            if (enemy == bossKoolaid)
             {
-                if (enemy == bossKoolaid)
-                {
-                    picBossKoolAid.Dispose();
-                    bossKoolaid.Collider.MovePosition(0, 0);
-                    this.Invalidate();
-                    FormWinScreen = new FormWinScreen();
-                    FormWinScreen.Show();
-                }
-                else if (enemy == enemyCheeto)
-                {
-                    picEnemyCheeto.Dispose();
-                    enemyCheeto.Collider.MovePosition(0, 0);
-                    this.Invalidate();
-                }
-                else
-                {
-                    picEnemyPoisonPacket.Dispose();
-                    enemyPoisonPacket.Collider.MovePosition(0, 0);
-                    this.Invalidate();
-                }
+                picBossKoolAid.Dispose();
+                bossKoolaid.Collider.MovePosition(0, 0);
+                this.Invalidate();
+                FormWinScreen = new FormWinScreen();
+                FormWinScreen.Show();
+            }
+            else if (enemy == enemyCheeto)
+            {
+                picEnemyCheeto.Dispose();
+                enemyCheeto.Collider.MovePosition(0, 0);
+                this.Invalidate();
+            }
+            else
+            {
+                picEnemyPoisonPacket.Dispose();
+                enemyPoisonPacket.Collider.MovePosition(0, 0);
+                this.Invalidate();
             }
         }
 
@@ -308,23 +323,17 @@ namespace Fall2020_CSC403_Project
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    FormPauseMenu = new FormPauseMenu();
+                    FormPauseMenu = new FormPauseMenu(this);
                     FormPauseMenu.Show();
                     break;
                 case Keys.I:
                     FormInventory = new FormInventory();
                     FormInventory.Show();
                     break;
-                case Keys.L:
-                    LoadGameState(sender, e);
-                    break;
-                case Keys.K:
-                    SaveGameState();
-                    break;
             }
         }
 
-        private void SaveGameState()
+        public void SaveGameState()
         {
             if (File.Exists(saveLocation))
             {
@@ -335,6 +344,7 @@ namespace Fall2020_CSC403_Project
             using (StreamWriter sw = File.CreateText(saveLocation))
             {
                 //save player state
+                sw.WriteLine(Character);
                 sw.WriteLine(player.Health);
                 sw.WriteLine(player.Position.x);
                 sw.WriteLine(player.Position.y);
@@ -359,7 +369,7 @@ namespace Fall2020_CSC403_Project
             return null;
         }
         
-        private void LoadGameState(object sender, EventArgs e)
+        public void LoadGameState(object sender, EventArgs e)
         {
             loadGame = true;
             FrmLevel_Load(sender, e);
