@@ -8,14 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyGameLibrary/BattleCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/BattleCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Save.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,9 @@
       <workItem from="1698251891173" duration="4383000" />
       <workItem from="1698267619188" duration="925000" />
       <workItem from="1698268596431" duration="1490000" />
-      <workItem from="1698341700325" duration="12176000" />
+      <workItem from="1698341700325" duration="12517000" />
+      <workItem from="1698589752863" duration="936000" />
+      <workItem from="1698612047383" duration="2202000" />
     </task>
     <servers />
   </component>

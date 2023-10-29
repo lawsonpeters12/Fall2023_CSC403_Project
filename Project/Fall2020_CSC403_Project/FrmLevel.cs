@@ -51,7 +51,7 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 13;
             
-            // default load data
+            // default game data
             var playerHealth = 20;
             Vector2 loadLocation = CreatePosition(picPlayer);
             var playerLevel = 1;
@@ -63,7 +63,7 @@ namespace Fall2020_CSC403_Project
             // Loads save file
             if (loadGame)
             {
-                // save found
+                // save file found
                 if (File.Exists(saveLocation))
                 {
                     // replaces defaults with saved values
@@ -90,7 +90,7 @@ namespace Fall2020_CSC403_Project
             
             // initialization of defaults or saved data 
             player = new Player(loadLocation, CreateCollider(picPlayer, PADDING), playerLevel);
-            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 3,
+            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 2,
                 bossIsDefeated);
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
                 CreateCollider(picEnemyPoisonPacket, PADDING), 1, poisonIsDefeated);
@@ -246,7 +246,7 @@ namespace Fall2020_CSC403_Project
                 this.Invalidate();
 
                 // If boss is defeated, win screen is pulled up.
-                FormWinScreen = new FormWinScreen();
+                FormWinScreen = new FormWinScreen(this);
                 FormWinScreen.Show();
                 FormWinScreen.FormBorderStyle = FormBorderStyle.None;
             }
@@ -369,7 +369,7 @@ namespace Fall2020_CSC403_Project
                     break;
             }
         }
-
+        
         public void SaveGameState()
         {
             if (File.Exists(saveLocation))
@@ -395,7 +395,7 @@ namespace Fall2020_CSC403_Project
             }
 
         }
-
+        
         private string[] GetSaveInfo()
         {
             if (File.Exists(saveLocation))

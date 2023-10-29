@@ -77,6 +77,7 @@ namespace Fall2020_CSC403_Project
             return instance;
         }
 
+        // keeps experience bar within GUI element
         private void UpdateExperienceBars()
         {
             float playerExpBar = player.Experience / player.ExperienceNeeded;
