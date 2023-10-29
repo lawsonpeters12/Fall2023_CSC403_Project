@@ -14,11 +14,13 @@ namespace Fall2020_CSC403_Project
         private Player player;
         public static FormLoseScreen lose_screen;
         private String Character;
-        private FrmBattle(String ChosenCharacter)
+        private FrmLevel LevelForm;
+        private FrmBattle(String ChosenCharacter, FrmLevel l)
         {
             InitializeComponent();
             player = Game.player;
             Character = ChosenCharacter;
+            LevelForm = l;
         }
 
         public void Setup()
@@ -29,6 +31,7 @@ namespace Fall2020_CSC403_Project
             BackColor = enemy.Color;
             picBossBattle.Visible = false;
 
+            // Sets the player's image based on their chosen Character.
             if (Character == "Peter")
             {
                 picPlayer.Image = Properties.Resources.petah_battle;
@@ -62,11 +65,11 @@ namespace Fall2020_CSC403_Project
             UpdateExperienceBars();
         }
 
-        public static FrmBattle GetInstance(Enemy enemy, String ChosenCharacter)
+        public static FrmBattle GetInstance(Enemy enemy, String ChosenCharacter, FrmLevel LevelForm)
         {
             if (instance == null)
             {
-                instance = new FrmBattle(ChosenCharacter);
+                instance = new FrmBattle(ChosenCharacter, LevelForm);
                 instance.enemy = enemy;
                 instance.Setup();
 
@@ -118,8 +121,9 @@ namespace Fall2020_CSC403_Project
             }
             else if (player.Health <= 0)
             {
-                lose_screen = new FormLoseScreen();
+                lose_screen = new FormLoseScreen(LevelForm);
                 lose_screen.Show();
+                lose_screen.FormBorderStyle = FormBorderStyle.None;
                 Close();
             }
         }

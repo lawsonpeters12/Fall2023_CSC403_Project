@@ -17,28 +17,31 @@ namespace Fall2020_CSC403_Project
         public FormCharacterSelect()
         {
             InitializeComponent();
-            button1.Click += button1_Click;
-            button2.Click += button2_Click;
-            button3.Click += button3_Click;
+            buttonPeter.Click += buttonPeter_Click;
+            buttonSponge.Click += buttonSponge_Click;
+            buttonWormy.Click += buttonWormy_Click;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Normal;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+    
+        // Sets the player's Character as Peter and starts the game.
+        private void buttonPeter_Click(object sender, EventArgs e)
         {
             level = new FrmLevel("Peter");
             this.Hide();
             level.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        // Sets the player's Character as The Sponge and starts the game
+        private void buttonSponge_Click(object sender, EventArgs e)
         {
             level = new FrmLevel("The Sponge");
             this.Hide();
             level.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        // Sets the player's Character as Wormy and starts the game
+        private void buttonWormy_Click(object sender, EventArgs e)
         {
             level = new FrmLevel("Wormy");
             this.Hide();

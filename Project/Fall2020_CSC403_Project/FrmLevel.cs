@@ -1,6 +1,7 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -35,6 +36,8 @@ namespace Fall2020_CSC403_Project
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
+        
+        // Sets the player's Character to what was chosen in Character Select
         public FrmLevel(String ChosenCharacter)
         {
             InitializeComponent();
@@ -93,15 +96,39 @@ namespace Fall2020_CSC403_Project
                 CreateCollider(picEnemyPoisonPacket, PADDING), 1, poisonIsDefeated);
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
                 cheetoIsDefeated);
+
             
             player.Health = playerHealth;
             player.Experience = playerExperience;
 
-            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+            // Sets appropriate enemy poison packet image properties
+            picEnemyPoisonPacket.Image = Properties.Resources.enemy_poisonpacket;
+            picEnemyPoisonPacket.BackgroundImage = Properties.Resources.enemy_poisonpacket;
+            picEnemyPoisonPacket.SizeMode = PictureBoxSizeMode.StretchImage;
+            enemyPoisonPacket.Color = Color.Green;
+            picEnemyPoisonPacket.SendToBack();
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
+
+            // Sets appropriate enemy cheeto image properties
+            picEnemyCheeto.Image = Properties.Resources.enemy_cheetos;
+            picEnemyCheeto.BackgroundImage = Properties.Resources.enemy_cheetos;
+            picEnemyCheeto.SizeMode = PictureBoxSizeMode.StretchImage;
+            enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+            picEnemyCheeto.SendToBack();
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+
+            // Sets appropriate BossKoolAid image properties
+            picBossKoolAid.Image = Properties.Resources.enemy_koolaid;
+            picBossKoolAid.BackgroundImage = Properties.Resources.enemy_koolaid;
+            picBossKoolAid.SizeMode = PictureBoxSizeMode.StretchImage;
+            bossKoolaid.Color = Color.Red;
+            picBossKoolAid.SendToBack();
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+
+
             this.FormBorderStyle = FormBorderStyle.None;
 
+            // Sets the image of the player's character to whoever was chosen in Character Select
             if (Character == "Peter")
             {
                 picPlayer.Image = picPeter;
@@ -121,10 +148,7 @@ namespace Fall2020_CSC403_Project
                 this.Invalidate();
             }
 
-            bossKoolaid.Color = Color.Red;
-            enemyPoisonPacket.Color = Color.Green;
-            enemyCheeto.Color = Color.FromArgb(255, 245, 161);
-
+            // Places the images and colliders for the walls
             walls = new Character[NUM_WALLS];
             for (int w = 0; w < NUM_WALLS; w++)
             {
@@ -139,6 +163,7 @@ namespace Fall2020_CSC403_Project
             FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
 
+            // Removes bodies of enemies if they had already been defeated when loading from a save state.
             if (poisonIsDefeated)
             {
                 BodyCleanUp(enemyPoisonPacket);
@@ -173,6 +198,7 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
         }
 
+        // Tracks in-game time
         private void tmrUpdateInGameTime_Tick(object sender, EventArgs e)
         {
             TimeSpan span = DateTime.Now - timeBegin;
@@ -209,25 +235,32 @@ namespace Fall2020_CSC403_Project
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
         }
 
+        // Removes the image annd moves the collider of an enemy.
         public void BodyCleanUp(Enemy enemy)
         {
             if (enemy == bossKoolaid)
             {
-                picBossKoolAid.Dispose();
+                picBossKoolAid.Image = null;
+                picBossKoolAid.BackgroundImage = null;
                 bossKoolaid.Collider.MovePosition(0, 0);
                 this.Invalidate();
+
+                // If boss is defeated, win screen is pulled up.
                 FormWinScreen = new FormWinScreen();
                 FormWinScreen.Show();
+                FormWinScreen.FormBorderStyle = FormBorderStyle.None;
             }
             else if (enemy == enemyCheeto)
             {
-                picEnemyCheeto.Dispose();
+                picEnemyCheeto.Image = null;
+                picEnemyCheeto.BackgroundImage = null;
                 enemyCheeto.Collider.MovePosition(0, 0);
                 this.Invalidate();
             }
             else
             {
-                picEnemyPoisonPacket.Dispose();
+                picEnemyPoisonPacket.Image = null;
+                picEnemyPoisonPacket.BackgroundImage = null; 
                 enemyPoisonPacket.Collider.MovePosition(0, 0);
                 this.Invalidate();
             }
@@ -256,11 +289,11 @@ namespace Fall2020_CSC403_Project
         {
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy, Character);
+            frmBattle = FrmBattle.GetInstance(enemy, Character, this);
             frmBattle.Show();
             keysPressed.Clear();
 
-            // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it cleans up the body
+            // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it calls BodyCleanUp to remove the enemy's body
             Timer healthCheckTimer = new Timer();
             healthCheckTimer.Interval = 200;
             healthCheckTimer.Tick += (sender, e) => CheckEnemyHealth(enemy, healthCheckTimer);
@@ -271,6 +304,7 @@ namespace Fall2020_CSC403_Project
         {
             if (enemy.Health <= 0)
             {
+                // Removes enemy's body if enemy runs out of health
                 BodyCleanUp(enemy);
                 timer.Stop();
             }
@@ -278,6 +312,7 @@ namespace Fall2020_CSC403_Project
 
         private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
         {
+            // keysPressed tracks all keys currently being held down
             if (!keysPressed.Contains(e.KeyCode))
             {
                 keysPressed.Add(e.KeyCode);
@@ -300,7 +335,7 @@ namespace Fall2020_CSC403_Project
             {
                 player.GoDownLeft();
             }
-            // Handle non-diagonal movements
+            // Handles orthogonal movements
             else
             {
                 if (keysPressed.Contains(Keys.Left) || keysPressed.Contains(Keys.A))
@@ -322,10 +357,12 @@ namespace Fall2020_CSC403_Project
             }
             switch (e.KeyCode)
             {
+                // Opens pause menu if Esc key is pressed.
                 case Keys.Escape:
                     FormPauseMenu = new FormPauseMenu(this);
                     FormPauseMenu.Show();
                     break;
+                // Opens inventory if I key is pressed.
                 case Keys.I:
                     FormInventory = new FormInventory();
                     FormInventory.Show();
