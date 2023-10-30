@@ -167,12 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\HeartImage.png" />
+    <Content Include="Resources\charselectfinished.png" />
     <None Include="Resources\Character_Select.png" />
     <None Include="Resources\thesponge_nobg.png" />
     <None Include="Resources\wormy_nobg.png" />
     <None Include="Resources\thesponge.png" />
     <None Include="Resources\wormy.png" />
-    <None Include="Resources\Character_Select_Screen.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\petah_nobg.png" />
     <None Include="Resources\petah-removebg-preview.png" />
