@@ -167,7 +167,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\HeartImage.png" />
+    <Content Include="Resources\battle form example.PNG" />
     <Content Include="Resources\charselectfinished.png" />
+    <Content Include="Resources\Level Form example.png" />
+    <Content Include="Resources\Pause Menu example.png" />
     <None Include="Resources\Character_Select.png" />
     <None Include="Resources\thesponge_nobg.png" />
     <None Include="Resources\wormy_nobg.png" />
