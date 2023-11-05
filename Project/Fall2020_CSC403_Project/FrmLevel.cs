@@ -21,14 +21,14 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
-        private FormPauseMenu FormPauseMenu;
-        private FormInventory FormInventory;
+        protected FormPauseMenu FormPauseMenu;
+        protected FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
-        private String Character;
-        private Image picPeter = Properties.Resources.petah_nobg;
-        private Image picSponge = Properties.Resources.thesponge_nobg;
-        private Image picWormy = Properties.Resources.wormy_nobg;
+        protected String Character;
+        protected Image picPeter = Properties.Resources.petah_nobg;
+        protected Image picSponge = Properties.Resources.thesponge_nobg;
+        protected Image picWormy = Properties.Resources.wormy_nobg;
 
 
         // Tracks the keys currently being pressed down.
@@ -180,12 +180,12 @@ namespace Fall2020_CSC403_Project
         }
 
 
-        private Vector2 CreatePosition(PictureBox pic)
+        protected Vector2 CreatePosition(PictureBox pic)
         {
             return new Vector2(pic.Location.X, pic.Location.Y);
         }
 
-        private Collider CreateCollider(PictureBox pic, int padding)
+        protected Collider CreateCollider(PictureBox pic, int padding)
         {
             Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
             return new Collider(rect);
