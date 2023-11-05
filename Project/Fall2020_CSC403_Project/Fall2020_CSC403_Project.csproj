@@ -169,6 +169,8 @@
     <Content Include="data\HeartImage.png" />
     <Content Include="Resources\battle form example.PNG" />
     <Content Include="Resources\charselectfinished.png" />
+    <None Include="Resources\health_potion-removebg-preview.png" />
+    <None Include="Resources\health_potion.png" />
     <Content Include="Resources\Level Form example.png" />
     <Content Include="Resources\Pause Menu example.png" />
     <None Include="Resources\Character_Select.png" />

@@ -364,7 +364,7 @@ namespace Fall2020_CSC403_Project
                     break;
                 // Opens inventory if I key is pressed.
                 case Keys.I:
-                    FormInventory = new FormInventory();
+                    FormInventory = new FormInventory(Character);
                     FormInventory.Show();
                     break;
             }
