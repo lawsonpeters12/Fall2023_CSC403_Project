@@ -14,6 +14,7 @@ namespace Fall2020_CSC403_Project
     public partial class FormCharacterSelect : Form
     {
         private FrmLevel level;
+        
         public FormCharacterSelect()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace Fall2020_CSC403_Project
             level = new FrmLevel("Peter");
             this.Hide();
             level.Show();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace Fall2020_CSC403_Project
             level = new FrmLevel("Wormy");
             this.Hide();
             level.Show();
+
         }
 
         private void FormCharacterSelect_Load(object sender, EventArgs e)

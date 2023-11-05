@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using MyGameLibrary;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,10 +25,13 @@ namespace Fall2020_CSC403_Project
         private FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
-        private String Character;
+        public String Character;
         private Image picPeter = Properties.Resources.petah_nobg;
         private Image picSponge = Properties.Resources.thesponge_nobg;
         private Image picWormy = Properties.Resources.wormy_nobg;
+
+        private Item healthPotion;
+
 
 
         // Tracks the keys currently being pressed down.
@@ -94,12 +98,16 @@ namespace Fall2020_CSC403_Project
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
                 cheetoIsDefeated);
             
+            healthPotion = new Item(CreatePosition(picHealthPot), CreateCollider(picHealthPot, PADDING));
+
+                        
             player.Health = playerHealth;
             player.Experience = playerExperience;
 
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+            healthPotion.Img = picHealthPot.BackgroundImage;
             this.FormBorderStyle = FormBorderStyle.None;
 
             if (Character == "Peter")
@@ -150,7 +158,7 @@ namespace Fall2020_CSC403_Project
             if (bossIsDefeated)
             {
                 BodyCleanUp(bossKoolaid);
-            }
+            }           
 
         }
 
@@ -190,7 +198,7 @@ namespace Fall2020_CSC403_Project
             {
                 player.MoveBack();
             }
-
+                
             // check collision with enemies
             if (HitAChar(player, enemyPoisonPacket))
             {
@@ -203,6 +211,12 @@ namespace Fall2020_CSC403_Project
             else if (HitAChar(player, bossKoolaid))
             {
                 Fight(bossKoolaid);
+            }
+
+            // check collision with item
+            if(HitAnItem(player, healthPotion))
+            {
+                PickupItem(healthPotion);
             }
 
             // update player's picture box
@@ -232,6 +246,16 @@ namespace Fall2020_CSC403_Project
                 this.Invalidate();
             }
         }
+        // method to remove item from level 
+        public void ItemCleanup(Item item)
+        {
+            if(item == healthPotion)
+            {
+                picHealthPot.Dispose();
+                healthPotion.Collider.MovePosition(0, 0);
+                this.Invalidate();
+            }
+        }
 
         private bool HitAWall(Character c)
         {
@@ -247,9 +271,25 @@ namespace Fall2020_CSC403_Project
             return hitAWall;
         }
 
+        //boolean to tell if player collides w item (2)
+        
+        private bool HitAnItem(Character you, Item item)
+        {
+            return you.Collider.Intersects(item.Collider);
+        }
+
         private bool HitAChar(Character you, Character other)
         {
             return you.Collider.Intersects(other.Collider);
+        }
+        // method to append item to player inventory when item is hit (2)
+        private void PickupItem(Item item)
+        {
+            player.ResetMoveSpeed();
+            player.MoveBack();
+
+            ItemCleanup(item);
+            
         }
 
         private void Fight(Enemy enemy)
@@ -327,7 +367,19 @@ namespace Fall2020_CSC403_Project
                     FormPauseMenu.Show();
                     break;
                 case Keys.I:
-                    FormInventory = new FormInventory();
+                    if (Character == "Peter")
+                    {
+                        FormInventory = new FormInventory("Peter");
+                       
+                    }
+                    if (Character == "The Sponge")
+                    {
+                        FormInventory = new FormInventory("The Sponge");
+                    }
+                    if (Character == "Wormy")
+                    {
+                        FormInventory = new FormInventory("Wormy");
+                    }
                     FormInventory.Show();
                     break;
             }

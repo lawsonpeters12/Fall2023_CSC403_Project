@@ -84,6 +84,7 @@ namespace Fall2020_CSC403_Project
             lblEnemyLevel.Text = $"Lvl {enemy.Level}";
         }
 
+
         private void UpdateHealthBars()
         {
             float playerHealthPer = player.Health / (float)player.MaxHealth;
@@ -141,6 +142,11 @@ namespace Fall2020_CSC403_Project
         }
 
         private void FrmBattle_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayerExperienceNumber_Click(object sender, EventArgs e)
         {
 
         }

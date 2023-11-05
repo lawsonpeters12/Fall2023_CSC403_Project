@@ -45,6 +45,7 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.picHealthPot = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -293,6 +295,16 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // picHealthPot
+            // 
+            this.picHealthPot.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.health_potion;
+            this.picHealthPot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHealthPot.Location = new System.Drawing.Point(826, 151);
+            this.picHealthPot.Name = "picHealthPot";
+            this.picHealthPot.Size = new System.Drawing.Size(99, 85);
+            this.picHealthPot.TabIndex = 18;
+            this.picHealthPot.TabStop = false;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -300,6 +312,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1764, 1050);
+            this.Controls.Add(this.picHealthPot);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -343,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,6 +384,7 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-  }
+    private System.Windows.Forms.PictureBox picHealthPot;
+    }
 }
 

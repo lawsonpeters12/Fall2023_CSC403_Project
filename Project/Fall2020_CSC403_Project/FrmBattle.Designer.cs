@@ -79,7 +79,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(105, 605);
+            this.label1.Location = new System.Drawing.Point(103, 604);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(343, 35);
@@ -100,7 +100,7 @@
             this.lblEnemyHealthFull.BackColor = System.Drawing.Color.Blue;
             this.lblEnemyHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnemyHealthFull.ForeColor = System.Drawing.Color.White;
-            this.lblEnemyHealthFull.Location = new System.Drawing.Point(776, 605);
+            this.lblEnemyHealthFull.Location = new System.Drawing.Point(776, 606);
             this.lblEnemyHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnemyHealthFull.Name = "lblEnemyHealthFull";
             this.lblEnemyHealthFull.Size = new System.Drawing.Size(339, 31);
@@ -143,6 +143,7 @@
             this.lblPlayerExperienceNumber.Size = new System.Drawing.Size(316, 29);
             this.lblPlayerExperienceNumber.TabIndex = 11;
             this.lblPlayerExperienceNumber.Text = "lblPlayerExperienceNumber";
+            this.lblPlayerExperienceNumber.Click += new System.EventHandler(this.lblPlayerExperienceNumber_Click);
             // 
             // lblPlayerLevel
             // 
@@ -206,7 +207,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.HeartImage;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(719, 604);
+            this.pictureBox1.Location = new System.Drawing.Point(718, 606);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 35);
