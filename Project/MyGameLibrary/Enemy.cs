@@ -8,15 +8,17 @@ namespace Fall2020_CSC403_Project.code
     public class Enemy : BattleCharacter
     {
         /// <summary>
-        /// THis is the image for an enemy
+        /// This is the image for an enemy
         /// </summary>
         public Image Img { get; set; }
 
         /// <summary>
-        /// this is the background color for the fight form for this enemy
+        /// This is the background color for the fight form for this enemy
         /// </summary>
         public Color Color { get; set; }
-        
+        /// <summary>
+        /// This is a flag for if the enemy is defeated
+        /// </summary>
         public bool isDefeated { get; set; }
 
         /// <summary>
