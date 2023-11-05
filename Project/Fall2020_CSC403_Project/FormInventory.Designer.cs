@@ -125,6 +125,7 @@
             // lblExpTxt
             // 
             this.lblExpTxt.BackColor = System.Drawing.Color.Transparent;
+            this.lblExpTxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpTxt.Location = new System.Drawing.Point(540, 184);
             this.lblExpTxt.Name = "lblExpTxt";
             this.lblExpTxt.Size = new System.Drawing.Size(100, 23);

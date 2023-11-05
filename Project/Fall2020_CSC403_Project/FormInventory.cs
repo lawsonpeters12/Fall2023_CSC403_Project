@@ -80,10 +80,16 @@ namespace Fall2020_CSC403_Project
             lblCharacterTxt.Height = 25;
             lblCharacterTxt.Text = Character;
 
+            lblHealthTxt.Width = 100;
+            lblHealthTxt.Height = 25;
+            lblHealthTxt.Text = "Health";
+
+            lblExpTxt.Width = 100;
+            lblExpTxt.Height = 25;
+            lblExpTxt.Text = "Experience";
 
 
 
-            
 
 
 
