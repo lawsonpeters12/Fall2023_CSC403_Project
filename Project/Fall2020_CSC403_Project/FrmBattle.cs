@@ -21,6 +21,7 @@ namespace Fall2020_CSC403_Project
             player = Game.player;
             Character = ChosenCharacter;
             LevelForm = l;
+            buttonShoot.Click += buttonShoot_Click;
         }
 
         public void Setup()
@@ -31,22 +32,29 @@ namespace Fall2020_CSC403_Project
             BackColor = enemy.Color;
             picBossBattle.Visible = false;
 
+            if (player.items["Bow"] > 0)
+            {
+                buttonShoot.Visible = true;
+                textBoxArrows.Visible = true;
+                textBoxArrows.Text = $"Arrows Remaining : {player.items["Arrows"]}";
+            }
+
             // Sets the player's image based on their chosen Character.
-            if (Character == "Peter")
+            if (Character == "Johnny")
             {
-                picPlayer.Image = Properties.Resources.petah_battle;
+                picPlayer.Image = Properties.Resources.johnny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "The Sponge")
+            else if (Character == "Jimmy")
             {
-                picPlayer.Image = Properties.Resources.thesponge;
+                picPlayer.Image = Properties.Resources.jimmy;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "Wormy")
+            else if (Character == "Jenny")
             {
-                picPlayer.Image = Properties.Resources.wormy;
+                picPlayer.Image = Properties.Resources.jenny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
@@ -129,6 +137,41 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        private void buttonShoot_Click(object sender, EventArgs e)
+        {
+            player.OnAttack(-10);
+            player.items["Arrows"]--;
+            if (player.items["Arrows"] < 1)
+            {
+                buttonShoot.Visible = false;
+                textBoxArrows.Visible = false;
+            }
+            textBoxArrows.Text = $"Arrows Remaining : {player.items["Arrows"]}";
+            if (enemy.Health > 0)
+            {
+                enemy.OnAttack(-enemy.strength);
+            }
+
+            UpdateHealthBars();
+            if (enemy.Health <= 0)
+            {
+                int experienceGain = enemy.MaxHealth * 5;
+                enemy.isDefeated = true;
+                player.AddExperience(experienceGain);
+                player.UpdateLevel();
+                player.Health = player.MaxHealth;
+                instance = null;
+                Close();
+            }
+            else if (player.Health <= 0)
+            {
+                lose_screen = new FormLoseScreen(LevelForm);
+                lose_screen.Show();
+                lose_screen.FormBorderStyle = FormBorderStyle.None;
+                Close();
+            }
+        }
+
         private void EnemyDamage(int amount)
         {
             enemy.AlterHealth(amount);
@@ -146,6 +189,11 @@ namespace Fall2020_CSC403_Project
         }
 
         private void FrmBattle_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

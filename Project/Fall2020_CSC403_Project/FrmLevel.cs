@@ -21,14 +21,15 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
+        private Character bow;
         protected FormPauseMenu FormPauseMenu;
         protected FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
         protected String Character;
-        protected Image picPeter = Properties.Resources.petah_nobg;
-        protected Image picSponge = Properties.Resources.thesponge_nobg;
-        protected Image picWormy = Properties.Resources.wormy_nobg;
+        protected Image picJohnny = Properties.Resources.johnny_nobg;
+        protected Image picJimmy = Properties.Resources.jimmy_nobg;
+        protected Image picJenny = Properties.Resources.jenny_nobg;
 
 
         // Tracks the keys currently being pressed down.
@@ -129,21 +130,21 @@ namespace Fall2020_CSC403_Project
             this.FormBorderStyle = FormBorderStyle.None;
 
             // Sets the image of the player's character to whoever was chosen in Character Select
-            if (Character == "Peter")
+            if (Character == "Johnny")
             {
-                picPlayer.Image = picPeter;
+                picPlayer.Image = picJohnny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "The Sponge")
+            else if (Character == "Jimmy")
             {
-                picPlayer.Image = picSponge;
+                picPlayer.Image = picJimmy;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "Wormy")
+            else if (Character == "Jenny")
             {
-                picPlayer.Image = picWormy;
+                picPlayer.Image = picJenny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
@@ -155,6 +156,8 @@ namespace Fall2020_CSC403_Project
                 PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
                 walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
             }
+
+            bow = new Character(CreatePosition(pictureBox4), CreateCollider(pictureBox4, PADDING));
 
             Game.player = player;
             timeBegin = DateTime.Now;
@@ -230,6 +233,13 @@ namespace Fall2020_CSC403_Project
             {
                 Fight(bossKoolaid);
             }
+            else if (HitAChar(player, bow))
+            {
+                player.items["Bow"] = 1;
+                player.items["Arrows"] = 5;
+                pictureBox4.Visible = false;
+                bow.Collider.MovePosition(0, 0);
+            }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
@@ -262,6 +272,7 @@ namespace Fall2020_CSC403_Project
                 picEnemyPoisonPacket.Image = null;
                 picEnemyPoisonPacket.BackgroundImage = null; 
                 enemyPoisonPacket.Collider.MovePosition(0, 0);
+                pictureBox4.Visible = true;
                 this.Invalidate();
             }
         }
@@ -418,6 +429,11 @@ namespace Fall2020_CSC403_Project
         }
 
         private void picPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picEnemyPoisonPacket_Click(object sender, EventArgs e)
         {
 
         }

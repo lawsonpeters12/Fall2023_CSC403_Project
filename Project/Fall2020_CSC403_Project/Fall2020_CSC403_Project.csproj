@@ -239,10 +239,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\HeartImage.png" />
+    <None Include="Resources\arrow.png" />
     <Content Include="Resources\battle form example.PNG" />
+    <None Include="Resources\Character Select.PNG" />
+    <None Include="Resources\blonde_nobg.PNG" />
+    <None Include="Resources\bow.png" />
     <Content Include="Resources\charselectfinished.png" />
     <None Include="Resources\health_potion-removebg-preview.png" />
     <None Include="Resources\health_potion.png" />
+    <None Include="Resources\jimmy_nobg.png" />
+    <None Include="Resources\johnny_nobg.png" />
+    <None Include="Resources\jenny_nobg.png" />
+    <None Include="Resources\jenny.png" />
+    <None Include="Resources\johnny.png" />
+    <None Include="Resources\jimmy.png" />
     <Content Include="Resources\Level Form example.png" />
     <Content Include="Resources\Pause Menu example.png" />
     <None Include="Resources\Character_Select.png" />

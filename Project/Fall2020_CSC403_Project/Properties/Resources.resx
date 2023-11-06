@@ -157,9 +157,6 @@
   <data name="petah_battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Character_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Character_Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="thesponge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thesponge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,5 +174,32 @@
   </data>
   <data name="health_potion_removebg_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\health_potion-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Character_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Character Select.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jenny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jenny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jenny_nobg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jenny_nobg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jimmy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jimmy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jimmy_nobg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jimmy_nobg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="johnny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\johnny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="johnny_nobg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\johnny_nobg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
