@@ -238,8 +238,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\floor.png" />
+    <None Include="data\archway.png" />
+    <None Include="data\archway2.png" />
+    <None Include="data\floor_sewer.png" />
     <Content Include="data\HeartImage.png" />
     <None Include="Resources\arrow.png" />
+    <None Include="data\wall3.png" />
+    <None Include="data\wall.png" />
+    <None Include="data\separatewall2.png" />
+    <None Include="data\separatewall.png" />
+    <None Include="data\stone.png" />
+    <None Include="data\walltest.png" />
+    <None Include="data\separatewall3.png" />
+    <None Include="data\suswater.png" />
+    <None Include="data\sewer_floor.png" />
+    <None Include="data\sewer_floor1.png" />
+    <None Include="data\sewer_wall.png" />
+    <None Include="data\sewer_wall2.png" />
+    <None Include="data\sewer_wall3.png" />
+    <None Include="data\sewer_archway.png" />
+    <None Include="data\sewer_archway2.png" />
     <Content Include="Resources\battle form example.PNG" />
     <None Include="Resources\Character Select.PNG" />
     <None Include="Resources\blonde_nobg.PNG" />

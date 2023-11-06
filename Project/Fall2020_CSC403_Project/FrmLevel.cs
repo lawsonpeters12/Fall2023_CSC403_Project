@@ -437,5 +437,15 @@ namespace Fall2020_CSC403_Project
         {
 
         }
+
+        private void picWall10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doorToLvl4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -23,5 +23,15 @@ namespace Fall2020_CSC403_Project
             // default game data
 
         }
+
+        private void doorToLvl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doorToLvl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
