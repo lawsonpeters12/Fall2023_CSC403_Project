@@ -1,9 +1,8 @@
-Peter
 24
-791
-432
+164
+243
 2
-120
+0
 True
-True
+False
 False

@@ -17,9 +17,9 @@ namespace Fall2020_CSC403_Project
         private Player player;
         private String Character;
         private int numPotions;
-        private Image picJohnny = Properties.Resources.johnny_nobg;
-        private Image picJimmy = Properties.Resources.jimmy_nobg;
-        private Image picJenny = Properties.Resources.jenny_nobg;
+        private Image picPeter = Properties.Resources.petah_nobg;
+        private Image picSponge = Properties.Resources.thesponge_nobg;
+        private Image picWormy = Properties.Resources.wormy_nobg;
 
         public FormInventory(string ChosenCharacter)
         {
@@ -56,37 +56,23 @@ namespace Fall2020_CSC403_Project
 
         private void FormInventory_Load(object sender, EventArgs e)
         {
-            if (Character == "Johnny")
+            if (Character == "Peter")
             {
-                charBG.Image = picJohnny;
+                charBG.Image = picPeter;
                 charBG.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            if (Character == "Jimmy")
+            if (Character == "The Sponge")
             {
-                charBG.Image = picJimmy;
+                charBG.Image = picSponge;
                 charBG.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            if (Character == "Jenny")
+            if (Character == "Wormy")
             {
-                charBG.Image = picJenny;
+                charBG.Image = picWormy;
                 charBG.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
-            }
-
-            if (player.items["Bow"] > 0)
-            { 
-                pictureBox1.Visible = true;
-                pictureBox1.Image = Properties.Resources.bow;
-            }
-
-            if (player.items["Arrows"] > 0)
-            {
-                pictureBox2.Visible = true;
-                pictureBox2.Image = Properties.Resources.arrow;
-                textBox1.Visible = true;
-                textBox1.Text = $"Arrows: {player.items["Arrows"]}";
             }
 
             // labels
@@ -102,9 +88,7 @@ namespace Fall2020_CSC403_Project
             lblExpTxt.Height = 25;
             lblExpTxt.Text = "Experience";
 
-            lblPotionsTxt.Width = 100;
-            lblPotionsTxt.Height = 25;
-            lblPotionsTxt.Text = "Potions";
+
 
 
 
@@ -113,11 +97,6 @@ namespace Fall2020_CSC403_Project
         }
 
     private void lblPlayerHealth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

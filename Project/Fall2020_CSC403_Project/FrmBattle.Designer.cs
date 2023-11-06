@@ -45,8 +45,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.buttonShoot = new System.Windows.Forms.Button();
-            this.textBoxArrows = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
@@ -57,7 +55,7 @@
             // btnAttack
             // 
             this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttack.Location = new System.Drawing.Point(105, 748);
+            this.btnAttack.Location = new System.Drawing.Point(180, 748);
             this.btnAttack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(192, 66);
@@ -238,27 +236,6 @@
             this.picPlayer.TabIndex = 17;
             this.picPlayer.TabStop = false;
             // 
-            // buttonShoot
-            // 
-            this.buttonShoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShoot.Location = new System.Drawing.Point(358, 748);
-            this.buttonShoot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonShoot.Name = "buttonShoot";
-            this.buttonShoot.Size = new System.Drawing.Size(192, 66);
-            this.buttonShoot.TabIndex = 18;
-            this.buttonShoot.Text = "Shoot Arrow";
-            this.buttonShoot.UseVisualStyleBackColor = true;
-            this.buttonShoot.Visible = false;
-            this.buttonShoot.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBoxArrows
-            // 
-            this.textBoxArrows.Location = new System.Drawing.Point(358, 714);
-            this.textBoxArrows.Name = "textBoxArrows";
-            this.textBoxArrows.Size = new System.Drawing.Size(192, 26);
-            this.textBoxArrows.TabIndex = 19;
-            this.textBoxArrows.Visible = false;
-            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -267,8 +244,6 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1233, 928);
-            this.Controls.Add(this.textBoxArrows);
-            this.Controls.Add(this.buttonShoot);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
@@ -319,7 +294,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox picPlayer;
-        private System.Windows.Forms.Button buttonShoot;
-        private System.Windows.Forms.TextBox textBoxArrows;
     }
 }

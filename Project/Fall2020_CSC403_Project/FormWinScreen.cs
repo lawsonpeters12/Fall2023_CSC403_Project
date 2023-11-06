@@ -12,13 +12,9 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormWinScreen : Form
     {
-        FrmLevel LevelForm;
-        public FormWinScreen(FrmLevel l)
+        public FormWinScreen()
         {
             InitializeComponent();
-            button1.Click += load_button_click;
-            button2.Click += exit_button_click;
-            LevelForm = l;
         }
 
         private void exit_button_click(object sender, EventArgs e)
@@ -26,11 +22,10 @@ namespace Fall2020_CSC403_Project
             Close();
             Application.Exit();
         }
-        
-        private void load_button_click(object sender, EventArgs e)
+
+        private void FormWinScreen_Load(object sender, EventArgs e)
         {
-            LevelForm.LoadGameState(sender, e);
-            Close();
+
         }
     }
 }

@@ -12,12 +12,9 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormLoseScreen : Form
     {
-        private FrmLevel LevelForm;
-        public FormLoseScreen(FrmLevel l)
+        public FormLoseScreen()
         {
             InitializeComponent();
-            LevelForm = l;
-            button1.Click += button1_Click;
         }
         //method close app on clicking exit game button
         private void exit_button_click(object sender, EventArgs e)
@@ -26,12 +23,6 @@ namespace Fall2020_CSC403_Project
             Close();
             Application.Exit();
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LevelForm.LoadGameState(sender, e);
-            this.Hide();
         }
     }
 }
