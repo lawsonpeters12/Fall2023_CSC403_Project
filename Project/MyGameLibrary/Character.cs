@@ -1,4 +1,5 @@
-﻿namespace Fall2020_CSC403_Project.code
+﻿using System.Drawing;
+namespace Fall2020_CSC403_Project.code
 {
     public class Character
     {
@@ -68,5 +69,6 @@
         {
             MoveSpeed = new Vector2(0, 0);
         }
+
     }
 }

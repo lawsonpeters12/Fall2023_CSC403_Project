@@ -88,6 +88,54 @@
     <Compile Include="FrmLevel.Designer.cs">
       <DependentUpon>FrmLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLevel9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel9.Designer.cs">
+      <DependentUpon>FrmLevel9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel8.Designer.cs">
+      <DependentUpon>FrmLevel8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel7.Designer.cs">
+      <DependentUpon>FrmLevel7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel6.Designer.cs">
+      <DependentUpon>FrmLevel6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel5.Designer.cs">
+      <DependentUpon>FrmLevel5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel4.Designer.cs">
+      <DependentUpon>FrmLevel4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel3.Designer.cs">
+      <DependentUpon>FrmLevel3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevel2.Designer.cs">
+      <DependentUpon>FrmLevel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCharacterSelect.resx">
@@ -110,6 +158,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel.resx">
       <DependentUpon>FrmLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel9.resx">
+      <DependentUpon>FrmLevel9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel8.resx">
+      <DependentUpon>FrmLevel8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel7.resx">
+      <DependentUpon>FrmLevel7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel6.resx">
+      <DependentUpon>FrmLevel6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel5.resx">
+      <DependentUpon>FrmLevel5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel4.resx">
+      <DependentUpon>FrmLevel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel3.resx">
+      <DependentUpon>FrmLevel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevel2.resx">
+      <DependentUpon>FrmLevel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,15 +238,47 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\health_potion.png" />
-    <None Include="data\health_potion-removebg-preview.png" />
+    <None Include="data\floor.png" />
+    <None Include="data\archway.png" />
+    <None Include="data\archway2.png" />
+    <None Include="data\floor_sewer.png" />
     <Content Include="data\HeartImage.png" />
+    <None Include="Resources\arrow.png" />
+    <None Include="data\wall3.png" />
+    <None Include="data\wall.png" />
+    <None Include="data\separatewall2.png" />
+    <None Include="data\separatewall.png" />
+    <None Include="data\stone.png" />
+    <None Include="data\walltest.png" />
+    <None Include="data\separatewall3.png" />
+    <None Include="data\suswater.png" />
+    <None Include="data\sewer_floor.png" />
+    <None Include="data\sewer_floor1.png" />
+    <None Include="data\sewer_wall.png" />
+    <None Include="data\sewer_wall2.png" />
+    <None Include="data\sewer_wall3.png" />
+    <None Include="data\sewer_archway.png" />
+    <None Include="data\sewer_archway2.png" />
+    <Content Include="Resources\battle form example.PNG" />
+    <None Include="Resources\Character Select.PNG" />
+    <None Include="Resources\blonde_nobg.PNG" />
+    <None Include="Resources\bow.png" />
+    <Content Include="Resources\charselectfinished.png" />
+    <None Include="Resources\health_potion-removebg-preview.png" />
+    <None Include="Resources\health_potion.png" />
+    <None Include="Resources\jimmy_nobg.png" />
+    <None Include="Resources\johnny_nobg.png" />
+    <None Include="Resources\jenny_nobg.png" />
+    <None Include="Resources\jenny.png" />
+    <None Include="Resources\johnny.png" />
+    <None Include="Resources\jimmy.png" />
+    <Content Include="Resources\Level Form example.png" />
+    <Content Include="Resources\Pause Menu example.png" />
     <None Include="Resources\Character_Select.png" />
     <None Include="Resources\thesponge_nobg.png" />
     <None Include="Resources\wormy_nobg.png" />
     <None Include="Resources\thesponge.png" />
     <None Include="Resources\wormy.png" />
-    <None Include="Resources\Character_Select_Screen.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\petah_nobg.png" />
     <None Include="Resources\petah-removebg-preview.png" />

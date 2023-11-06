@@ -2,6 +2,7 @@
 using MyGameLibrary;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -21,14 +22,15 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
-        private FormPauseMenu FormPauseMenu;
-        private FormInventory FormInventory;
+        private Character bow;
+        protected FormPauseMenu FormPauseMenu;
+        protected FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
-        public String Character;
-        private Image picPeter = Properties.Resources.petah_nobg;
-        private Image picSponge = Properties.Resources.thesponge_nobg;
-        private Image picWormy = Properties.Resources.wormy_nobg;
+        protected String Character;
+        protected Image picJohnny = Properties.Resources.johnny_nobg;
+        protected Image picJimmy = Properties.Resources.jimmy_nobg;
+        protected Image picJenny = Properties.Resources.jenny_nobg;
 
         private Item healthPotion;
 
@@ -39,6 +41,8 @@ namespace Fall2020_CSC403_Project
 
         private DateTime timeBegin;
         private FrmBattle frmBattle;
+        
+        // Sets the player's Character to what was chosen in Character Select
         public FrmLevel(String ChosenCharacter)
         {
             InitializeComponent();
@@ -52,7 +56,7 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 13;
             
-            // default load data
+            // default game data
             var playerHealth = 20;
             Vector2 loadLocation = CreatePosition(picPlayer);
             var playerLevel = 1;
@@ -64,7 +68,7 @@ namespace Fall2020_CSC403_Project
             // Loads save file
             if (loadGame)
             {
-                // save found
+                // save file found
                 if (File.Exists(saveLocation))
                 {
                     // replaces defaults with saved values
@@ -91,12 +95,13 @@ namespace Fall2020_CSC403_Project
             
             // initialization of defaults or saved data 
             player = new Player(loadLocation, CreateCollider(picPlayer, PADDING), playerLevel);
-            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 3,
+            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 2,
                 bossIsDefeated);
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
                 CreateCollider(picEnemyPoisonPacket, PADDING), 1, poisonIsDefeated);
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
                 cheetoIsDefeated);
+
             
             healthPotion = new Item(CreatePosition(picHealthPot), CreateCollider(picHealthPot, PADDING));
 
@@ -104,41 +109,62 @@ namespace Fall2020_CSC403_Project
             player.Health = playerHealth;
             player.Experience = playerExperience;
 
-            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+            // Sets appropriate enemy poison packet image properties
+            picEnemyPoisonPacket.Image = Properties.Resources.enemy_poisonpacket;
+            picEnemyPoisonPacket.BackgroundImage = Properties.Resources.enemy_poisonpacket;
+            picEnemyPoisonPacket.SizeMode = PictureBoxSizeMode.StretchImage;
+            enemyPoisonPacket.Color = Color.Green;
+            picEnemyPoisonPacket.SendToBack();
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
+
+            // Sets appropriate enemy cheeto image properties
+            picEnemyCheeto.Image = Properties.Resources.enemy_cheetos;
+            picEnemyCheeto.BackgroundImage = Properties.Resources.enemy_cheetos;
+            picEnemyCheeto.SizeMode = PictureBoxSizeMode.StretchImage;
+            enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+            picEnemyCheeto.SendToBack();
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
-            healthPotion.Img = picHealthPot.BackgroundImage;
+
+            // Sets appropriate BossKoolAid image properties
+            picBossKoolAid.Image = Properties.Resources.enemy_koolaid;
+            picBossKoolAid.BackgroundImage = Properties.Resources.enemy_koolaid;
+            picBossKoolAid.SizeMode = PictureBoxSizeMode.StretchImage;
+            bossKoolaid.Color = Color.Red;
+            picBossKoolAid.SendToBack();
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+
+
             this.FormBorderStyle = FormBorderStyle.None;
 
-            if (Character == "Peter")
+            // Sets the image of the player's character to whoever was chosen in Character Select
+            if (Character == "Johnny")
             {
-                picPlayer.Image = picPeter;
+                picPlayer.Image = picJohnny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "The Sponge")
+            else if (Character == "Jimmy")
             {
-                picPlayer.Image = picSponge;
+                picPlayer.Image = picJimmy;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
-            else if (Character == "Wormy")
+            else if (Character == "Jenny")
             {
-                picPlayer.Image = picWormy;
+                picPlayer.Image = picJenny;
                 picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Invalidate();
             }
 
-            bossKoolaid.Color = Color.Red;
-            enemyPoisonPacket.Color = Color.Green;
-            enemyCheeto.Color = Color.FromArgb(255, 245, 161);
-
+            // Places the images and colliders for the walls
             walls = new Character[NUM_WALLS];
             for (int w = 0; w < NUM_WALLS; w++)
             {
                 PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
                 walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
             }
+
+            bow = new Character(CreatePosition(pictureBox4), CreateCollider(pictureBox4, PADDING));
 
             Game.player = player;
             timeBegin = DateTime.Now;
@@ -147,6 +173,7 @@ namespace Fall2020_CSC403_Project
             FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
 
+            // Removes bodies of enemies if they had already been defeated when loading from a save state.
             if (poisonIsDefeated)
             {
                 BodyCleanUp(enemyPoisonPacket);
@@ -163,12 +190,12 @@ namespace Fall2020_CSC403_Project
         }
 
 
-        private Vector2 CreatePosition(PictureBox pic)
+        protected Vector2 CreatePosition(PictureBox pic)
         {
             return new Vector2(pic.Location.X, pic.Location.Y);
         }
 
-        private Collider CreateCollider(PictureBox pic, int padding)
+        protected Collider CreateCollider(PictureBox pic, int padding)
         {
             Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
             return new Collider(rect);
@@ -181,6 +208,7 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
         }
 
+        // Tracks in-game time
         private void tmrUpdateInGameTime_Tick(object sender, EventArgs e)
         {
             TimeSpan span = DateTime.Now - timeBegin;
@@ -212,6 +240,13 @@ namespace Fall2020_CSC403_Project
             {
                 Fight(bossKoolaid);
             }
+            else if (HitAChar(player, bow))
+            {
+                player.items["Bow"] = 1;
+                player.items["Arrows"] = 5;
+                pictureBox4.Visible = false;
+                bow.Collider.MovePosition(0, 0);
+            }
 
             // check collision with item
             if(HitAnItem(player, healthPotion))
@@ -223,26 +258,34 @@ namespace Fall2020_CSC403_Project
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
         }
 
+        // Removes the image annd moves the collider of an enemy.
         public void BodyCleanUp(Enemy enemy)
         {
             if (enemy == bossKoolaid)
             {
-                picBossKoolAid.Dispose();
+                picBossKoolAid.Image = null;
+                picBossKoolAid.BackgroundImage = null;
                 bossKoolaid.Collider.MovePosition(0, 0);
                 this.Invalidate();
-                FormWinScreen = new FormWinScreen();
+
+                // If boss is defeated, win screen is pulled up.
+                FormWinScreen = new FormWinScreen(this);
                 FormWinScreen.Show();
+                FormWinScreen.FormBorderStyle = FormBorderStyle.None;
             }
             else if (enemy == enemyCheeto)
             {
-                picEnemyCheeto.Dispose();
+                picEnemyCheeto.Image = null;
+                picEnemyCheeto.BackgroundImage = null;
                 enemyCheeto.Collider.MovePosition(0, 0);
                 this.Invalidate();
             }
             else
             {
-                picEnemyPoisonPacket.Dispose();
+                picEnemyPoisonPacket.Image = null;
+                picEnemyPoisonPacket.BackgroundImage = null; 
                 enemyPoisonPacket.Collider.MovePosition(0, 0);
+                pictureBox4.Visible = true;
                 this.Invalidate();
             }
         }
@@ -296,11 +339,11 @@ namespace Fall2020_CSC403_Project
         {
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy, Character);
+            frmBattle = FrmBattle.GetInstance(enemy, Character, this);
             frmBattle.Show();
             keysPressed.Clear();
 
-            // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it cleans up the body
+            // Creates Timer that tracks the enemy's health in combat. When the enemy reaches 0 health, it calls BodyCleanUp to remove the enemy's body
             Timer healthCheckTimer = new Timer();
             healthCheckTimer.Interval = 200;
             healthCheckTimer.Tick += (sender, e) => CheckEnemyHealth(enemy, healthCheckTimer);
@@ -311,6 +354,7 @@ namespace Fall2020_CSC403_Project
         {
             if (enemy.Health <= 0)
             {
+                // Removes enemy's body if enemy runs out of health
                 BodyCleanUp(enemy);
                 timer.Stop();
             }
@@ -318,6 +362,7 @@ namespace Fall2020_CSC403_Project
 
         private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
         {
+            // keysPressed tracks all keys currently being held down
             if (!keysPressed.Contains(e.KeyCode))
             {
                 keysPressed.Add(e.KeyCode);
@@ -340,7 +385,7 @@ namespace Fall2020_CSC403_Project
             {
                 player.GoDownLeft();
             }
-            // Handle non-diagonal movements
+            // Handles orthogonal movements
             else
             {
                 if (keysPressed.Contains(Keys.Left) || keysPressed.Contains(Keys.A))
@@ -362,29 +407,19 @@ namespace Fall2020_CSC403_Project
             }
             switch (e.KeyCode)
             {
+                // Opens pause menu if Esc key is pressed.
                 case Keys.Escape:
                     FormPauseMenu = new FormPauseMenu(this);
                     FormPauseMenu.Show();
                     break;
+                // Opens inventory if I key is pressed.
                 case Keys.I:
-                    if (Character == "Peter")
-                    {
-                        FormInventory = new FormInventory("Peter");
-                       
-                    }
-                    if (Character == "The Sponge")
-                    {
-                        FormInventory = new FormInventory("The Sponge");
-                    }
-                    if (Character == "Wormy")
-                    {
-                        FormInventory = new FormInventory("Wormy");
-                    }
+                    FormInventory = new FormInventory(Character);
                     FormInventory.Show();
                     break;
             }
         }
-
+        
         public void SaveGameState()
         {
             if (File.Exists(saveLocation))
@@ -410,7 +445,7 @@ namespace Fall2020_CSC403_Project
             }
 
         }
-
+        
         private string[] GetSaveInfo()
         {
             if (File.Exists(saveLocation))
@@ -433,6 +468,21 @@ namespace Fall2020_CSC403_Project
         }
 
         private void picPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picEnemyPoisonPacket_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picWall10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doorToLvl4_Click(object sender, EventArgs e)
         {
 
         }
