@@ -8,13 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +99,7 @@
       <workItem from="1698875785430" duration="3928000" />
       <workItem from="1699044874129" duration="1529000" />
       <workItem from="1699046435414" duration="1707000" />
+      <workItem from="1699307260643" duration="2729000" />
     </task>
     <servers />
   </component>

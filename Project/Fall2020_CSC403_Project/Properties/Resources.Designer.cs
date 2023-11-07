@@ -19,7 +19,7 @@ namespace Fall2020_CSC403_Project.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -76,6 +76,26 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap archway2 {
             get {
                 object obj = ResourceManager.GetObject("archway2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap archway3 {
+            get {
+                object obj = ResourceManager.GetObject("archway3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap archway4 {
+            get {
+                object obj = ResourceManager.GetObject("archway4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,6 +205,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap floor_sewer {
             get {
                 object obj = ResourceManager.GetObject("floor_sewer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floor_sewer1 {
+            get {
+                object obj = ResourceManager.GetObject("floor_sewer1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -382,6 +412,16 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sewer_archway3 {
+            get {
+                object obj = ResourceManager.GetObject("sewer_archway3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sewer_floor {
             get {
                 object obj = ResourceManager.GetObject("sewer_floor", resourceCulture);
@@ -415,6 +455,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap sewer_wall3 {
             get {
                 object obj = ResourceManager.GetObject("sewer_wall3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sewer_wall4 {
+            get {
+                object obj = ResourceManager.GetObject("sewer_wall4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -482,9 +532,29 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap wall2a {
+            get {
+                object obj = ResourceManager.GetObject("wall2a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wall3 {
             get {
                 object obj = ResourceManager.GetObject("wall3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall4a {
+            get {
+                object obj = ResourceManager.GetObject("wall4a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

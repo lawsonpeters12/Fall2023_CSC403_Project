@@ -32,5 +32,15 @@ namespace Fall2020_CSC403_Project
         {
 
         }
+
+        private void picWall2_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void picWall7_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

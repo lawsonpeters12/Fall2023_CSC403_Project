@@ -33,5 +33,10 @@ namespace Fall2020_CSC403_Project
         {
 
         }
+
+        private void FrmLevel2_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
