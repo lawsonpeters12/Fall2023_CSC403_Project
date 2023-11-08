@@ -31,6 +31,7 @@ namespace Fall2020_CSC403_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picWall0 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,7 @@ namespace Fall2020_CSC403_Project
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.doorToLvl3 = new System.Windows.Forms.PictureBox();
+            this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
@@ -96,7 +98,7 @@ namespace Fall2020_CSC403_Project
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.Location = new System.Drawing.Point(156, 577);
-            this.picPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(72, 130);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +124,6 @@ namespace Fall2020_CSC403_Project
             this.doorToLvl1.Size = new System.Drawing.Size(179, 171);
             this.doorToLvl1.TabIndex = 6;
             this.doorToLvl1.TabStop = false;
-            this.doorToLvl1.Click += new System.EventHandler(this.doorToLvl1_Click);
             // 
             // picWall6
             // 
@@ -162,7 +163,12 @@ namespace Fall2020_CSC403_Project
             this.doorToLvl3.Size = new System.Drawing.Size(173, 142);
             this.doorToLvl3.TabIndex = 10;
             this.doorToLvl3.TabStop = false;
-            this.doorToLvl3.Click += new System.EventHandler(this.doorToLvl3_Click);
+            // 
+            // tmrPlayerMove
+            // 
+            this.tmrPlayerMove.Enabled = true;
+            this.tmrPlayerMove.Interval = 10;
+            this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
             // 
             // FrmLevel2
             // 
@@ -184,7 +190,7 @@ namespace Fall2020_CSC403_Project
             this.Controls.Add(this.picWall5);
             this.Name = "FrmLevel2";
             this.Text = "FrmLevel2";
-            this.Load += new System.EventHandler(this.FrmLevel2_Load_1);
+            this.Load += new System.EventHandler(this.FrmLevel2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
@@ -217,5 +223,6 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox picWall5;
         private System.Windows.Forms.PictureBox picWall4;
         private System.Windows.Forms.PictureBox doorToLvl3;
+        private System.Windows.Forms.Timer tmrPlayerMove;
     }
 }

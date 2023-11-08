@@ -33,7 +33,6 @@
             this.picWall0 = new System.Windows.Forms.PictureBox();
             this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.frontDoor = new System.Windows.Forms.PictureBox();
             this.doorToLvl4 = new System.Windows.Forms.PictureBox();
             this.doorToLvl8 = new System.Windows.Forms.PictureBox();
@@ -56,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontDoor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl8)).BeginInit();
@@ -151,18 +149,6 @@
             this.pictureBox4.TabIndex = 28;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1717, 621);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
             // 
             // frontDoor
             // 
@@ -285,7 +271,7 @@
             this.picWall9.Location = new System.Drawing.Point(1202, 433);
             this.picWall9.Margin = new System.Windows.Forms.Padding(4);
             this.picWall9.Name = "picWall9";
-            this.picWall9.Size = new System.Drawing.Size(519, 74);
+            this.picWall9.Size = new System.Drawing.Size(597, 74);
             this.picWall9.TabIndex = 10;
             this.picWall9.TabStop = false;
             // 
@@ -353,7 +339,7 @@
             this.picBossKoolAid.BackColor = System.Drawing.Color.Transparent;
             this.picBossKoolAid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBossKoolAid.BackgroundImage")));
             this.picBossKoolAid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBossKoolAid.Location = new System.Drawing.Point(1494, 104);
+            this.picBossKoolAid.Location = new System.Drawing.Point(1496, 164);
             this.picBossKoolAid.Margin = new System.Windows.Forms.Padding(4);
             this.picBossKoolAid.Name = "picBossKoolAid";
             this.picBossKoolAid.Size = new System.Drawing.Size(258, 238);
@@ -385,7 +371,6 @@
             this.Controls.Add(this.picWall0);
             this.Controls.Add(this.picEnemyPoisonPacket);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.frontDoor);
             this.Controls.Add(this.picWall10);
             this.Controls.Add(this.picWall11);
@@ -415,7 +400,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontDoor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl8)).EndInit();
@@ -470,7 +454,6 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-    private System.Windows.Forms.PictureBox pictureBox1;
     private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

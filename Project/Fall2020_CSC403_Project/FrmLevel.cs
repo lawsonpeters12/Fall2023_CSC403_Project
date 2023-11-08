@@ -21,10 +21,12 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
+        private Character door;
         private Character bow;
         protected FormPauseMenu FormPauseMenu;
         protected FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
+        private FrmLevel2 Level2;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
         protected String Character;
         protected Image picJohnny = Properties.Resources.johnny_nobg;
@@ -157,6 +159,8 @@ namespace Fall2020_CSC403_Project
                 walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
             }
 
+            door = new Character(CreatePosition(doorToLvl2), CreateCollider(doorToLvl2, PADDING));
+
             bow = new Character(CreatePosition(pictureBox4), CreateCollider(pictureBox4, PADDING));
 
             Game.player = player;
@@ -218,6 +222,14 @@ namespace Fall2020_CSC403_Project
             if (HitAWall(player))
             {
                 player.MoveBack();
+            }
+
+            if (HitADoor(player))
+            {
+                player.MoveBack();
+                Level2 = new FrmLevel2(Character, player);
+                Level2.Show();
+                this.Close();
             }
 
             // check collision with enemies
@@ -289,6 +301,18 @@ namespace Fall2020_CSC403_Project
                 }
             }
             return hitAWall;
+        }
+
+        private bool HitADoor(Character c)
+        {
+            bool hitADoor = false;
+            
+            if (c.Collider.Intersects(door.Collider))
+            {
+                hitADoor = true;
+            }
+            // returns which door you are hitting
+            return hitADoor;
         }
 
         private bool HitAChar(Character you, Character other)
