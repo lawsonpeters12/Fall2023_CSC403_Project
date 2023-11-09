@@ -156,13 +156,16 @@
             // 
             // frontDoor
             // 
-            this.frontDoor.BackColor = System.Drawing.Color.Red;
-            this.frontDoor.Location = new System.Drawing.Point(1015, 1151);
+            this.frontDoor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.frontDoor.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.door;
+            this.frontDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.frontDoor.Location = new System.Drawing.Point(1033, 1136);
             this.frontDoor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.frontDoor.Name = "frontDoor";
-            this.frontDoor.Size = new System.Drawing.Size(302, 146);
+            this.frontDoor.Size = new System.Drawing.Size(227, 160);
             this.frontDoor.TabIndex = 24;
             this.frontDoor.TabStop = false;
+            this.frontDoor.Click += new System.EventHandler(this.frontDoor_Click);
             // 
             // doorToLvl4
             // 
@@ -268,7 +271,7 @@
             this.picWall6.Location = new System.Drawing.Point(508, 1150);
             this.picWall6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picWall6.Name = "picWall6";
-            this.picWall6.Size = new System.Drawing.Size(506, 147);
+            this.picWall6.Size = new System.Drawing.Size(555, 147);
             this.picWall6.TabIndex = 9;
             this.picWall6.TabStop = false;
             // 
@@ -336,7 +339,7 @@
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer.Location = new System.Drawing.Point(1091, 937);
+            this.picPlayer.Location = new System.Drawing.Point(1128, 887);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(81, 174);
@@ -386,10 +389,10 @@
             // 
             this.picWall3.BackColor = System.Drawing.Color.Transparent;
             this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
-            this.picWall3.Location = new System.Drawing.Point(1312, 1151);
+            this.picWall3.Location = new System.Drawing.Point(1259, 1151);
             this.picWall3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picWall3.Name = "picWall3";
-            this.picWall3.Size = new System.Drawing.Size(829, 146);
+            this.picWall3.Size = new System.Drawing.Size(882, 146);
             this.picWall3.TabIndex = 33;
             this.picWall3.TabStop = false;
             // 
