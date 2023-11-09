@@ -73,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.health_potion_removebg_preview;
+            this.button2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.potionoption_removebg_preview;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";

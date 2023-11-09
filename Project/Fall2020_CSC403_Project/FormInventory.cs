@@ -89,6 +89,7 @@ namespace Fall2020_CSC403_Project
                 textBox1.Text = $"Arrows: {player.items["Arrows"]}";
             }
 
+
             // labels
             lblCharacterTxt.Width = 100;
             lblCharacterTxt.Height = 25;
