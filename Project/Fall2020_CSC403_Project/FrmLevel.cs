@@ -50,7 +50,7 @@ namespace Fall2020_CSC403_Project
         public void FrmLevel_Load(object sender, EventArgs e)
         {
             const int PADDING = 7;
-            const int NUM_WALLS = 13;
+            const int NUM_WALLS = 12;
             
             // default game data
             var playerHealth = 20;
@@ -157,7 +157,7 @@ namespace Fall2020_CSC403_Project
                 walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
             }
 
-            bow = new Character(CreatePosition(pictureBox4), CreateCollider(pictureBox4, PADDING));
+            bow = new Character(CreatePosition(bowItem), CreateCollider(bowItem, PADDING));
 
             Game.player = player;
             timeBegin = DateTime.Now;
@@ -237,7 +237,7 @@ namespace Fall2020_CSC403_Project
             {
                 player.items["Bow"] = 1;
                 player.items["Arrows"] = 5;
-                pictureBox4.Visible = false;
+                bowItem.Visible = false;
                 bow.Collider.MovePosition(0, 0);
             }
 
@@ -272,7 +272,7 @@ namespace Fall2020_CSC403_Project
                 picEnemyPoisonPacket.Image = null;
                 picEnemyPoisonPacket.BackgroundImage = null; 
                 enemyPoisonPacket.Collider.MovePosition(0, 0);
-                pictureBox4.Visible = true;
+                bowItem.Visible = true;
                 this.Invalidate();
             }
         }
@@ -444,6 +444,21 @@ namespace Fall2020_CSC403_Project
         }
 
         private void doorToLvl4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picWall3_Click(object sender, EventArgs e)
         {
 
         }

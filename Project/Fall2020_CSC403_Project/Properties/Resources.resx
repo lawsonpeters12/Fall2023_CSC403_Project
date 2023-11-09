@@ -124,9 +124,6 @@
   <data name="separatewall3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\separatewall3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="separatewall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\separatewall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +135,6 @@
   </data>
   <data name="enemy_koolaid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\enemy_koolaid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sewer_floor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\sewer_floor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wormy_nobg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wormy_nobg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,16 +151,13 @@
   <data name="sewer_wall4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sewer_wall4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="jenny" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jenny.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jimmy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jimmy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wall4a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="wall4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\wall4a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thesponge" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,23 +214,23 @@
   <data name="sewer_archway" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\sewer_archway.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wall2a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wall2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="separatewall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\separatewall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wall1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\wall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\stone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="separatewall2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\separatewall2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="floor_sewer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\floor_sewer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sewer_archway3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sewer_archway3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bgd_sb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\bgd_sb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="separatewall2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\separatewall2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="enemy_cheetos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\enemy_cheetos.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,6 +247,9 @@
   <data name="bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wall2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\wall2a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wormy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wormy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,7 +265,10 @@
   <data name="floor_sewer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\floor_sewer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floor_sewer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\floor_sewer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="separatewall4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\separatewall4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
