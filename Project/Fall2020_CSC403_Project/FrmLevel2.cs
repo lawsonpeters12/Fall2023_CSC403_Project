@@ -31,12 +31,7 @@ namespace Fall2020_CSC403_Project
             LevelSetup();
             
             this.FormBorderStyle = FormBorderStyle.None;
-            walls = new Character[NUM_WALLS];
-            for (int w = 0; w < NUM_WALLS; w++)
-            {
-                PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
-                walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
-            }
+            walls = InitializeWalls(NUM_WALLS);
 
             Game.player = player;
             WindowState = FormWindowState.Maximized;

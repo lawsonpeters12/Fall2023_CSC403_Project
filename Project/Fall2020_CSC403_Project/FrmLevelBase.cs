@@ -16,6 +16,7 @@ namespace Fall2020_CSC403_Project
         private List<Keys> keysPressed = new List<Keys>();
         private FormPauseMenu PauseMenu;
         private FormInventory Inventory;
+        private Character[] walls;
         private Image PlayerSprite
         {
             get
@@ -59,6 +60,20 @@ namespace Fall2020_CSC403_Project
             Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
             return new Collider(rect);
         }
+        
+        protected Character[] InitializeWalls(int numWalls)
+        {
+            walls = new Character[numWalls];
+            for (int w = 0; w < numWalls; w++)
+            {
+                PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
+                walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, 7));
+            }
+        
+            return walls;
+        }
+        
+        // initialize doors, add a tag to each door to tell which level it is going to
 
         protected void BaseKeyUp(object sender, KeyEventArgs e)
         {

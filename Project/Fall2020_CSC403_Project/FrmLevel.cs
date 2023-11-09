@@ -101,10 +101,6 @@ namespace Fall2020_CSC403_Project
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
                 cheetoIsDefeated);
 
-            
-            //player.Health = playerHealth;
-            //player.Experience = playerExperience;
-
             // Sets appropriate enemy poison packet image properties
             picEnemyPoisonPacket.Image = Properties.Resources.enemy_poisonpacket;
             picEnemyPoisonPacket.BackgroundImage = Properties.Resources.enemy_poisonpacket;
@@ -133,12 +129,7 @@ namespace Fall2020_CSC403_Project
             this.FormBorderStyle = FormBorderStyle.None;
 
             // Places the images and colliders for the walls
-            walls = new Character[NUM_WALLS];
-            for (int w = 0; w < NUM_WALLS; w++)
-            {
-                PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
-                walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
-            }
+            walls = InitializeWalls(NUM_WALLS);
 
             door = new Character(CreatePosition(doorToLvl2), CreateCollider(doorToLvl2, PADDING));
 
