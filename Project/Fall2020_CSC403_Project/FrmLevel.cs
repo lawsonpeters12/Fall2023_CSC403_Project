@@ -22,6 +22,8 @@ namespace Fall2020_CSC403_Project
         private Enemy enemyCheeto;
         private Character[] walls;
         private Character bow;
+        private Character itemPotion;
+        private Character itemKey1;
         protected FormPauseMenu FormPauseMenu;
         protected FormInventory FormInventory;
         private FormWinScreen FormWinScreen;
@@ -158,6 +160,8 @@ namespace Fall2020_CSC403_Project
             }
 
             bow = new Character(CreatePosition(bowItem), CreateCollider(bowItem, PADDING));
+            itemPotion = new Character(CreatePosition(picHealthPot), CreateCollider(picHealthPot, PADDING));
+            itemKey1 = new Character(CreatePosition(picKey1), CreateCollider(picKey1, PADDING));
 
             Game.player = player;
             timeBegin = DateTime.Now;
@@ -239,6 +243,18 @@ namespace Fall2020_CSC403_Project
                 player.items["Arrows"] = 5;
                 bowItem.Visible = false;
                 bow.Collider.MovePosition(0, 0);
+            }
+            else if (HitAChar(player, itemPotion))
+            {
+                player.items["Potions"] += 1;
+                picHealthPot.Visible = false;
+                itemPotion.Collider.MovePosition(0, 0);
+            }
+            else if (HitAChar(player, itemKey1))
+            {
+                player.items["Keys"] += 1;
+                picKey1.Visible = false;
+                itemKey1.Collider.MovePosition(0, 0);
             }
 
             // update player's picture box

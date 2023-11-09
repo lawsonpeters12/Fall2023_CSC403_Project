@@ -53,6 +53,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
+            this.picHealthPot = new System.Windows.Forms.PictureBox();
+            this.picKey1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
@@ -77,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -396,6 +400,28 @@
             this.picWall3.TabIndex = 33;
             this.picWall3.TabStop = false;
             // 
+            // picHealthPot
+            // 
+            this.picHealthPot.BackColor = System.Drawing.Color.Transparent;
+            this.picHealthPot.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.potionoption_removebg_preview;
+            this.picHealthPot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHealthPot.Location = new System.Drawing.Point(1002, 806);
+            this.picHealthPot.Name = "picHealthPot";
+            this.picHealthPot.Size = new System.Drawing.Size(100, 50);
+            this.picHealthPot.TabIndex = 34;
+            this.picHealthPot.TabStop = false;
+            // 
+            // picKey1
+            // 
+            this.picKey1.BackColor = System.Drawing.Color.Transparent;
+            this.picKey1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.key_removebg_preview;
+            this.picKey1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picKey1.Location = new System.Drawing.Point(958, 619);
+            this.picKey1.Name = "picKey1";
+            this.picKey1.Size = new System.Drawing.Size(100, 50);
+            this.picKey1.TabIndex = 35;
+            this.picKey1.TabStop = false;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -404,6 +430,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.floor;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.picKey1);
+            this.Controls.Add(this.picHealthPot);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picWall7);
             this.Controls.Add(this.lblInGameTime);
@@ -461,6 +489,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,6 +531,8 @@
     private System.Windows.Forms.PictureBox pictureBox3;
     private System.Windows.Forms.PictureBox pictureBox5;
     private System.Windows.Forms.PictureBox picWall3;
+        private System.Windows.Forms.PictureBox picHealthPot;
+        private System.Windows.Forms.PictureBox picKey1;
     }
 }
 
