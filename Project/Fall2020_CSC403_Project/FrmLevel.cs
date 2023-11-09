@@ -13,10 +13,12 @@ using System.Windows.Forms;
 namespace Fall2020_CSC403_Project
 {
     
-    public partial class FrmLevel : Form
+    public partial class FrmLevel : FrmLevelBase
     {
-        private Player player;
-
+        public static Vector2 spawnPoint = new Vector2(747, 596);
+        
+        protected override Player player { get; set; }
+        protected override PictureBox playerPicture => picPlayer;
         private Enemy enemyPoisonPacket;
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
@@ -29,9 +31,6 @@ namespace Fall2020_CSC403_Project
         private FrmLevel2 Level2;
         private FormCharacterSelect FormCharacterSelect = new FormCharacterSelect();
         protected String Character;
-        protected Image picJohnny = Properties.Resources.johnny_nobg;
-        protected Image picJimmy = Properties.Resources.jimmy_nobg;
-        protected Image picJenny = Properties.Resources.jenny_nobg;
 
 
         // Tracks the keys currently being pressed down.
@@ -41,10 +40,10 @@ namespace Fall2020_CSC403_Project
         private FrmBattle frmBattle;
         
         // Sets the player's Character to what was chosen in Character Select
-        public FrmLevel(String ChosenCharacter)
+        public FrmLevel(Player player)
         {
             InitializeComponent();
-            Character = ChosenCharacter;
+            this.player = player;
         }
         private string saveLocation = @"..\..\Save.txt";
         private bool loadGame;
@@ -91,8 +90,10 @@ namespace Fall2020_CSC403_Project
                 }
             }
             
-            // initialization of defaults or saved data 
-            player = new Player(loadLocation, CreateCollider(picPlayer, PADDING), playerLevel);
+            LevelSetup();
+            
+            // initialization of defaults or saved data
+            
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING), 2,
                 bossIsDefeated);
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
@@ -101,8 +102,8 @@ namespace Fall2020_CSC403_Project
                 cheetoIsDefeated);
 
             
-            player.Health = playerHealth;
-            player.Experience = playerExperience;
+            //player.Health = playerHealth;
+            //player.Experience = playerExperience;
 
             // Sets appropriate enemy poison packet image properties
             picEnemyPoisonPacket.Image = Properties.Resources.enemy_poisonpacket;
@@ -130,26 +131,6 @@ namespace Fall2020_CSC403_Project
 
 
             this.FormBorderStyle = FormBorderStyle.None;
-
-            // Sets the image of the player's character to whoever was chosen in Character Select
-            if (Character == "Johnny")
-            {
-                picPlayer.Image = picJohnny;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
-            else if (Character == "Jimmy")
-            {
-                picPlayer.Image = picJimmy;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
-            else if (Character == "Jenny")
-            {
-                picPlayer.Image = picJenny;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
 
             // Places the images and colliders for the walls
             walls = new Character[NUM_WALLS];
@@ -186,25 +167,6 @@ namespace Fall2020_CSC403_Project
 
         }
 
-
-        protected Vector2 CreatePosition(PictureBox pic)
-        {
-            return new Vector2(pic.Location.X, pic.Location.Y);
-        }
-
-        protected Collider CreateCollider(PictureBox pic, int padding)
-        {
-            Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
-            return new Collider(rect);
-        }
-
-        // If key is released, removes it from keysPressed
-        private void FrmLevel_KeyUp(object sender, KeyEventArgs e)
-        {
-            keysPressed.Remove(e.KeyCode);
-            player.ResetMoveSpeed();
-        }
-
         // Tracks in-game time
         private void tmrUpdateInGameTime_Tick(object sender, EventArgs e)
         {
@@ -226,8 +188,9 @@ namespace Fall2020_CSC403_Project
 
             if (HitADoor(player))
             {
-                player.MoveBack();
-                Level2 = new FrmLevel2(Character, player);
+                Level2 = new FrmLevel2(player);
+                // move player position to new door
+                player.Position = FrmLevel2.leftDoor;
                 Level2.Show();
                 this.Close();
             }
@@ -305,12 +268,8 @@ namespace Fall2020_CSC403_Project
 
         private bool HitADoor(Character c)
         {
-            bool hitADoor = false;
-            
-            if (c.Collider.Intersects(door.Collider))
-            {
-                hitADoor = true;
-            }
+            bool hitADoor = c.Collider.Intersects(door.Collider);
+
             // returns which door you are hitting
             return hitADoor;
         }
@@ -345,66 +304,6 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        private void FrmLevel_KeyDown(object sender, KeyEventArgs e)
-        {
-            // keysPressed tracks all keys currently being held down
-            if (!keysPressed.Contains(e.KeyCode))
-            {
-                keysPressed.Add(e.KeyCode);
-            }
-
-            // Handles diagonal movements
-            if ((keysPressed.Contains(Keys.Up) && keysPressed.Contains(Keys.Right)) || keysPressed.Contains(Keys.W) && keysPressed.Contains(Keys.D))
-            {
-                player.GoUpRight();
-            }
-            else if ((keysPressed.Contains(Keys.Up) && keysPressed.Contains(Keys.Left)) || keysPressed.Contains(Keys.W) && keysPressed.Contains(Keys.A))
-            {
-                player.GoUpLeft();
-            }
-            else if ((keysPressed.Contains(Keys.Down) && keysPressed.Contains(Keys.Right)) || keysPressed.Contains(Keys.S) && keysPressed.Contains(Keys.D))
-            {
-                player.GoDownRight();
-            }
-            else if ((keysPressed.Contains(Keys.Down) && keysPressed.Contains(Keys.Left)) || keysPressed.Contains(Keys.S) && keysPressed.Contains(Keys.A))
-            {
-                player.GoDownLeft();
-            }
-            // Handles orthogonal movements
-            else
-            {
-                if (keysPressed.Contains(Keys.Left) || keysPressed.Contains(Keys.A))
-                {
-                    player.GoLeft();
-                }
-                if (keysPressed.Contains(Keys.Right) || keysPressed.Contains(Keys.D))
-                {
-                    player.GoRight();
-                }
-                if (keysPressed.Contains(Keys.Up) || keysPressed.Contains(Keys.W))
-                {
-                    player.GoUp();
-                }
-                if (keysPressed.Contains(Keys.Down) || keysPressed.Contains(Keys.S))
-                {
-                    player.GoDown();
-                }
-            }
-            switch (e.KeyCode)
-            {
-                // Opens pause menu if Esc key is pressed.
-                case Keys.Escape:
-                    FormPauseMenu = new FormPauseMenu(this);
-                    FormPauseMenu.Show();
-                    break;
-                // Opens inventory if I key is pressed.
-                case Keys.I:
-                    FormInventory = new FormInventory(Character);
-                    FormInventory.Show();
-                    break;
-            }
-        }
-        
         public void SaveGameState()
         {
             if (File.Exists(saveLocation))

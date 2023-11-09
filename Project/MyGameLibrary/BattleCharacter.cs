@@ -9,20 +9,17 @@ namespace Fall2020_CSC403_Project.code
         public int Experience { get; set; }
         public int Level { get; set; }
         public int Health { get; set; }
-        public int MaxHealth { get; private set; }
-        public int strength { get; private set; }
+        public int MaxHealth => 16 + (4 * Level);
 
-        public float ExperienceNeeded;
+        public int strength => Level * 2;
 
+        public float ExperienceNeeded => Level * 100;
 
         public event Action<int> AttackEvent;
 
         public BattleCharacter(Vector2 initPos, Collider collider, int level) : base(initPos, collider)
         {
-            this.Level = level;
-            ExperienceNeeded = Level * 100;
-            MaxHealth = 16 + (4 * Level);
-            strength = Level * 2;
+            Level = level;
             Health = MaxHealth;
         }
 
@@ -46,10 +43,7 @@ namespace Fall2020_CSC403_Project.code
             if (Experience >= ExperienceNeeded)
             {
                 Level++;
-                ExperienceNeeded = Level * 100;
                 Experience = 0;
-                MaxHealth += 4;
-                strength += 2;
             }
         }
     }

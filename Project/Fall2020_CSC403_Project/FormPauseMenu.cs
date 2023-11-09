@@ -14,8 +14,8 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormPauseMenu : Form
     {
-        FrmLevel LevelForm;
-        public FormPauseMenu(FrmLevel l)
+        Player player;
+        public FormPauseMenu(Player l)
         {
             InitializeComponent();
             button1.Click += button1_Click;
@@ -23,7 +23,7 @@ namespace Fall2020_CSC403_Project
             button3.Click += button3_Click;
             button4.Click += button4_Click;
             button5.Click += button5_Click;
-            LevelForm = l;
+            player = l;
         }
 
         // Exit button
@@ -46,12 +46,14 @@ namespace Fall2020_CSC403_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            LevelForm.SaveGameState();     
+            // save the game
+            player.SaveTest();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LevelForm.LoadGameState(sender, e);
+            // load the game
+            //LevelForm.LoadGameState(sender, e);
         }
        
     }
