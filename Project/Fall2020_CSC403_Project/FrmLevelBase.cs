@@ -33,6 +33,9 @@ namespace Fall2020_CSC403_Project
             KeyUp += BaseKeyUp;
             KeyDown += BaseKeyDown;
         }
+
+        // DO NOT USE
+        public FrmLevelBase(){}
         
         protected void LevelSetup()
         {
