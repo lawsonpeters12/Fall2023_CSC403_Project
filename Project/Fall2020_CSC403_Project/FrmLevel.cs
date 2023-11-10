@@ -97,6 +97,7 @@ namespace Fall2020_CSC403_Project
                 bossIsDefeated);
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket),
                 CreateCollider(picEnemyPoisonPacket, PADDING), 1, poisonIsDefeated);
+            //enemyPoisonPacket.GoRight();
             enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING), 2,
                 cheetoIsDefeated);
 
