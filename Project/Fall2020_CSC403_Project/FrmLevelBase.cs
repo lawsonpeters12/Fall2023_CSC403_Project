@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,44 +9,70 @@ namespace Fall2020_CSC403_Project
     public class FrmLevelBase : Form
     {
         // level specific things
-        protected virtual Player player { get; set; }
-        protected virtual PictureBox playerPicture { get; }
-
+        protected Player player { get; }
+        protected List<Enemy> enemies { get; set; }
+        public Color? FightColor { get; protected set; }
+        protected List<Door> doors { get; set; }
+        
+        private Dictionary<Enemy, PictureBox> enemyBoxes;
         private List<Keys> keysPressed = new List<Keys>();
         private FormPauseMenu PauseMenu;
         private FormInventory Inventory;
-        private Character[] walls;
-        private Image PlayerSprite
-        {
-            get
-            {
-                switch (player.PlayerModel)
-                {
-                    case PlayerCharacter.Jenny:
-                        return Properties.Resources.jenny_nobg;
-                    case PlayerCharacter.Jimmy:
-                        return Properties.Resources.jimmy_nobg;
-                    case PlayerCharacter.Johnny:
-                        return Properties.Resources.johnny_nobg;
-                }
+        private List<Character> walls = new List<Character>();
+        private PictureBox playerPicture;
+        private string LevelName;
 
-                return Properties.Resources.johnny_nobg; // base case 
+        public FrmLevelBase(Player player, string levelName)
+        {
+            LevelName = levelName;
+            this.player = player;
+            enemies = new List<Enemy>();
+            FightColor = Color.Chocolate;
+            doors = new List<Door>();
+            enemyBoxes = new Dictionary<Enemy, PictureBox>();
+            KeyUp += BaseKeyUp;
+            KeyDown += BaseKeyDown;
+        }
+        
+        protected void LevelSetup()
+        {
+            player.LevelName = LevelName;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            InitializeWalls();
+            InitializePlayer();
+            foreach (var enemy in enemies)
+            {
+                InitializeEnemy(enemy);
             }
         }
 
-        public FrmLevelBase()
+        private void InitializePlayer()
         {
-            KeyUp += BaseKeyUp;
-            KeyDown += BaseKeyDown;
-            
+            playerPicture = new PictureBox
+            {
+                Name = "player",
+                Size = player.Collider.rect.Size,
+                Location = new Point((int)player.Position.x, (int)player.Position.y),
+                Image = player.PlayerImage(),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            Controls.Add(playerPicture);
         }
-        
-        public void LevelSetup()
+        private void InitializeEnemy(Enemy enemy)
         {
-            playerPicture.Location = new Point((int)player.Position.x, (int)player.Position.y);
-            playerPicture.Image = PlayerSprite;
-            playerPicture.SizeMode = PictureBoxSizeMode.StretchImage;
-            playerPicture.Size = player.Collider.rect.Size;
+            if (enemy.IsDefeated(player)) return;
+            var enemyPic = new PictureBox
+            {
+                Name = "enemy",
+                Size = enemy.Size,
+                Location = new Point((int)enemy.Position.x, (int)enemy.Position.y),
+                Image = enemy.EnemyImage(),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            Controls.Add(enemyPic);
+            enemyBoxes.Add(enemy, enemyPic);
         }
 
         protected Vector2 CreatePosition(PictureBox pic)
@@ -61,20 +86,78 @@ namespace Fall2020_CSC403_Project
             return new Collider(rect);
         }
         
-        protected Character[] InitializeWalls(int numWalls)
+        private void InitializeWalls()
         {
-            walls = new Character[numWalls];
-            for (int w = 0; w < numWalls; w++)
+            foreach (var control in Controls)
             {
-                PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
-                walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, 7));
+                if (control is PictureBox pictureBox && pictureBox.Name.StartsWith("picWall"))
+                {
+                    walls.Add(new Character(CreatePosition(pictureBox), CreateCollider(pictureBox, 7)));
+                }
             }
-        
-            return walls;
+        }
+
+        protected void CleanupBody(Enemy enemy)
+        {
+            var pictureBox = enemyBoxes[enemy];
+            if (pictureBox != null)
+            {
+                pictureBox.Visible = false;
+            }
+            enemy.Collider.MovePosition(0, 0);
+            Invalidate();
+        }
+
+        protected void Fight(Enemy enemy)
+        {
+            player.ResetMoveSpeed();
+            player.MoveBack();
+            var frmBattle = FrmBattle.GetInstance(enemy, player, this);
+            frmBattle.FightOver += (sender, args) =>
+            {
+                if (enemy.Health <= 0)
+                {
+                    // Removes enemy's body if enemy runs out of health
+                    CleanupBody(enemy);
+                }
+            };
+            keysPressed.Clear();
+            frmBattle.Show();
+        }
+
+        protected void Tick()
+        {
+            if (!Visible) return;
+            player.Move();
+            var collisionObjects = new List<Character>();
+            collisionObjects.AddRange(walls);
+            collisionObjects.AddRange(doors);
+            collisionObjects.AddRange(enemies);
+            foreach (var collisionObject in collisionObjects)
+            {
+                if (player.Collider.Intersects((collisionObject.Collider)))
+                {
+                    switch (collisionObject)
+                    {
+                        case Enemy enemy when enemy.IsDefeated(player):
+                            break;
+                        case Enemy enemy:
+                            Fight(enemy);
+                            break;
+                        case Door door:
+                            player.Position = door.SpawnPoint;
+                            door.TargetLevel.Show();
+                            Close();
+                            break;
+                        default:
+                            player.MoveBack();
+                            break;
+                    }
+                }
+            }
+            playerPicture.Location = new Point((int)player.Position.x, (int)player.Position.y);
         }
         
-        // initialize doors, add a tag to each door to tell which level it is going to
-
         protected void BaseKeyUp(object sender, KeyEventArgs e)
         {
             keysPressed.Remove(e.KeyCode);
@@ -148,6 +231,52 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FrmLevelBase
+            // 
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Location = new System.Drawing.Point(15, 15);
+            this.Name = "FrmLevelBase";
+            this.ResumeLayout(false);
+        }
     }
-    // helper function that takes in enemy info and inits it or sumn
+
+    public static class Extensions
+    {
+        public static Image EnemyImage(this Enemy enemy)
+        {
+            switch (enemy.EnemyModel)
+            {
+                case EnemyCharacter.KoolAid:
+                    return Properties.Resources.enemy_koolaid;
+                case EnemyCharacter.EnemyCheeto:
+                    return Properties.Resources.enemy_cheetos;
+                case EnemyCharacter.PoisonPacket:
+                    return Properties.Resources.enemy_poisonpacket;
+            }
+            return null; // base case 
+        }
+
+        public static Image PlayerImage(this Player player)
+        {
+            switch (player.PlayerModel)
+            {
+                case PlayerCharacter.Jenny:
+                    return Properties.Resources.jenny_nobg;
+                case PlayerCharacter.Jimmy:
+                    return Properties.Resources.jimmy_nobg;
+                case PlayerCharacter.Johnny:
+                    return Properties.Resources.johnny_nobg;
+            }
+            return Properties.Resources.johnny_nobg; // base case
+        }
+    }
 }

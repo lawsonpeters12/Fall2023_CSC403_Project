@@ -12,8 +12,8 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormLoseScreen : Form
     {
-        private FrmLevel LevelForm;
-        public FormLoseScreen(FrmLevel l)
+        private FrmLevelBase LevelForm;
+        public FormLoseScreen(FrmLevelBase l)
         {
             InitializeComponent();
             LevelForm = l;
@@ -30,7 +30,6 @@ namespace Fall2020_CSC403_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LevelForm.LoadGameState(sender, e);
             this.Hide();
         }
     }

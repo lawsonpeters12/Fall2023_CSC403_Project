@@ -1,26 +1,21 @@
 using Fall2020_CSC403_Project.code;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FrmLevel3 : Form
+    public partial class FrmLevel3 : FrmLevelBase
     {
-
-        public FrmLevel3(String ChosenCharacter)
+        public static Vector2 bottomDoorSpawn = new Vector2(1185, 634);
+        public FrmLevel3(Player player) : base(player, "level3")
         {
             InitializeComponent();
         }
 
         public void FrmLevel3_Load(object sender, EventArgs e)
         {
-            // init player and enemy locations and walls
-            // we're gonna have to hardcode the body cleanup for every enemy that i put in this room if we can't inherit frmlevel
-            // gonna have to call the function anyways every time
-            // default game data
+            
         }
 
         private void picWall1_Click(object sender, EventArgs e)

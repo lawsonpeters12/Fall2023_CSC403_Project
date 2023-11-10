@@ -29,7 +29,7 @@ namespace Fall2020_CSC403_Project
         
         private void load_button_click(object sender, EventArgs e)
         {
-            LevelForm.LoadGameState(sender, e);
+            //LevelForm.LoadGameState(sender, e);
             Close();
         }
     }

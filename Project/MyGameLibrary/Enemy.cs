@@ -19,16 +19,47 @@ namespace Fall2020_CSC403_Project.code
         /// <summary>
         /// This is a flag for if the enemy is defeated
         /// </summary>
-        public bool isDefeated { get; set; }
+        
+        public string Name { get; }
+        public EnemyCharacter EnemyModel { get; }
+
+        public Size Size => GetEnemySize(EnemyModel);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="initPos">this is the initial position of the enemy</param>
         /// <param name="collider">this is the collider for the enemy</param>
-        public Enemy(Vector2 initPos, Collider collider, int level, bool isDefeated) : base(initPos, collider, level)
+        public Enemy(Vector2 initPos, EnemyCharacter enemyModel, int level, string name) : base(initPos, new Collider(new Rectangle(new Point((int)initPos.x, (int)initPos.y), GetEnemySize(enemyModel))), level)
         {
-            this.isDefeated = isDefeated;
+            Name = name;
+            EnemyModel = enemyModel;
         }
+
+        public bool IsDefeated(Player player)
+        {
+            return player.DefeatedEnemies.Contains(Name);
+        }
+        
+        private static Size GetEnemySize(EnemyCharacter enemyModel)
+        {
+            switch (enemyModel)
+            {
+                case EnemyCharacter.EnemyCheeto:
+                    return new Size(64, 125);
+                case EnemyCharacter.KoolAid:
+                    return new Size(249, 217);
+                case EnemyCharacter.PoisonPacket:
+                    return new Size(104, 128);
+            }
+            return new Size(80, 80);
+        }
+    }
+
+    public enum EnemyCharacter
+    {
+        KoolAid,
+        PoisonPacket,
+        EnemyCheeto
     }
 }

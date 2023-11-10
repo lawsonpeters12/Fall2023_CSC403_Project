@@ -13,14 +13,13 @@ namespace Fall2020_CSC403_Project
         private Enemy enemy;
         private Player player;
         public static FormLoseScreen lose_screen;
-        private String Character;
-        private FrmLevel LevelForm;
-        private FrmBattle(String ChosenCharacter, FrmLevel l)
+        private FrmLevelBase LevelForm;
+        public event EventHandler FightOver;
+        private FrmBattle(Player player, FrmLevelBase level)
         {
             InitializeComponent();
-            player = Game.player;
-            Character = ChosenCharacter;
-            LevelForm = l;
+            this.player = player;
+            LevelForm = level;
             buttonShoot.Click += buttonShoot_Click;
         }
 
@@ -29,7 +28,7 @@ namespace Fall2020_CSC403_Project
             // update for this enemy
             picEnemy.BackgroundImage = enemy.Img;
             picEnemy.Refresh();
-            BackColor = enemy.Color;
+            BackColor = LevelForm.FightColor ?? Color.Chocolate;
             picBossBattle.Visible = false;
 
             if (player.items["Bow"] > 0)
@@ -40,48 +39,34 @@ namespace Fall2020_CSC403_Project
             }
 
             // Sets the player's image based on their chosen Character.
-            if (Character == "Johnny")
-            {
-                picPlayer.Image = Properties.Resources.johnny;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
-            else if (Character == "Jimmy")
-            {
-                picPlayer.Image = Properties.Resources.jimmy;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
-            else if (Character == "Jenny")
-            {
-                picPlayer.Image = Properties.Resources.jenny;
-                picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Invalidate();
-            }
-
-
+            picPlayer.Image = player.PlayerImage();
+            picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+            picEnemy.Image = enemy.EnemyImage();
+            picEnemy.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // Observer pattern
             enemy.AttackEvent += PlayerDamage;
             player.AttackEvent += EnemyDamage;
-
             
             // show health
             UpdateHealthBars();
-
             //show experience
             UpdateExperienceBars();
+            
+            var delegates = instance.FightOver?.GetInvocationList() ?? new Delegate[]{};
+            foreach (var d in delegates)
+            {
+                instance.FightOver -= d as EventHandler;
+            }
         }
 
-        public static FrmBattle GetInstance(Enemy enemy, String ChosenCharacter, FrmLevel LevelForm)
+        public static FrmBattle GetInstance(Enemy enemy, Player player, FrmLevelBase LevelForm)
         {
-            if (instance == null)
-            {
-                instance = new FrmBattle(ChosenCharacter, LevelForm);
-                instance.enemy = enemy;
-                instance.Setup();
-
-            }
+            if (instance != null) return instance;
+            
+            instance = new FrmBattle(player, LevelForm);
+            instance.enemy = enemy;
+            instance.Setup();
             return instance;
         }
 
@@ -118,23 +103,7 @@ namespace Fall2020_CSC403_Project
             }
 
             UpdateHealthBars();
-            if (enemy.Health <= 0)
-            {
-                int experienceGain = enemy.MaxHealth * 5;
-                enemy.isDefeated = true;
-                player.AddExperience(experienceGain);
-                player.UpdateLevel();
-                player.Health = player.MaxHealth;
-                instance = null;
-                Close();
-            }
-            else if (player.Health <= 0)
-            {
-                lose_screen = new FormLoseScreen(LevelForm);
-                lose_screen.Show();
-                lose_screen.FormBorderStyle = FormBorderStyle.None;
-                Close();
-            }
+            CheckHealth();
         }
 
         private void buttonShoot_Click(object sender, EventArgs e)
@@ -153,14 +122,20 @@ namespace Fall2020_CSC403_Project
             }
 
             UpdateHealthBars();
+            CheckHealth();
+        }
+
+        private void CheckHealth()
+        {
             if (enemy.Health <= 0)
             {
                 int experienceGain = enemy.MaxHealth * 5;
-                enemy.isDefeated = true;
+                player.DefeatedEnemies.Add(enemy.Name);
                 player.AddExperience(experienceGain);
                 player.UpdateLevel();
                 player.Health = player.MaxHealth;
                 instance = null;
+                FightOver?.Invoke(this, null);
                 Close();
             }
             else if (player.Health <= 0)
@@ -168,10 +143,10 @@ namespace Fall2020_CSC403_Project
                 lose_screen = new FormLoseScreen(LevelForm);
                 lose_screen.Show();
                 lose_screen.FormBorderStyle = FormBorderStyle.None;
+                FightOver?.Invoke(this, null);
                 Close();
             }
         }
-
         private void EnemyDamage(int amount)
         {
             enemy.AlterHealth(amount);

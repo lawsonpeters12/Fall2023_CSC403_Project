@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Door.cs" />
     <Compile Include="FormCharacterSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel2.resx">
       <DependentUpon>FrmLevel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevelBase.resx">
+      <DependentUpon>FrmLevelBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
