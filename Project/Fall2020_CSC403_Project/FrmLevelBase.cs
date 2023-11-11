@@ -12,6 +12,8 @@ namespace Fall2020_CSC403_Project
         protected Player player { get; }
         protected List<Enemy> enemies { get; set; }
         public Color? FightColor { get; protected set; }
+        
+        public Image FightImage { get; protected set; }
         protected List<Door> doors { get; set; }
         protected List<Gloop> gloops { get; set; }
         
@@ -29,6 +31,7 @@ namespace Fall2020_CSC403_Project
             this.player = player;
             enemies = new List<Enemy>();
             FightColor = Color.Chocolate;
+            FightImage = null;
             doors = new List<Door>();
             gloops = new List<Gloop>();
             enemyBoxes = new Dictionary<Enemy, PictureBox>();

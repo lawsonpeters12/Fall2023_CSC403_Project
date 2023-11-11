@@ -235,8 +235,8 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Location = new System.Drawing.Point(500, 500);
-            this.Name = "FormInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "FormInventory";
             this.Text = "Inventory";
             this.Load += new System.EventHandler(this.FormInventory_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

@@ -29,6 +29,7 @@ namespace Fall2020_CSC403_Project
             picEnemy.BackgroundImage = enemy.Img;
             picEnemy.Refresh();
             BackColor = LevelForm.FightColor ?? Color.Chocolate;
+            BackgroundImage = LevelForm.FightImage ?? null;
             picBossBattle.Visible = false;
 
             if (player.items["Bow"] > 0)
