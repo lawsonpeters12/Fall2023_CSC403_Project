@@ -27,7 +27,7 @@ namespace Fall2020_CSC403_Project
             var enemyPoisonPacket = new Enemy(new Vector2(167, 250), EnemyCharacter.PoisonPacket, 1, "packet_level1");
             enemies = new List<Enemy>{bossKoolaid, enemyCheeto, enemyPoisonPacket};
 
-            this.FightImage = global::Fall2020_CSC403_Project.Properties.Resources.wall1;
+            
             
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.leftDoorSpawn, new FrmLevel2(player)));

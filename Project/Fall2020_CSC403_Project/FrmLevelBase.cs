@@ -5,17 +5,35 @@ using Fall2020_CSC403_Project.code;
 
 namespace Fall2020_CSC403_Project
 {
-    // should know about pause and inventory
     public class FrmLevelBase : Form
     {
         // level specific things
         protected Player player { get; }
         protected List<Enemy> enemies { get; set; }
         public Color? FightColor { get; protected set; }
-        
-        public Image FightImage { get; protected set; }
         protected List<Door> doors { get; set; }
         protected List<Gloop> gloops { get; set; }
+
+        public Image FightBackground
+        {
+            get
+            {
+                switch (LevelName)
+                {
+                    case "level1":
+                    case "level2":
+                    case "level3":
+                    case "level7":
+                    case "level8":
+                        return Properties.Resources.backgroundBricks;
+                    case "level4":
+                    case "level5":
+                    case "level6":
+                        return Properties.Resources.sewerBackground;
+                }
+                return Properties.Resources.wall4;
+            }
+        }
         
         private Dictionary<Enemy, PictureBox> enemyBoxes;
         private List<Keys> keysPressed = new List<Keys>();
@@ -31,7 +49,6 @@ namespace Fall2020_CSC403_Project
             this.player = player;
             enemies = new List<Enemy>();
             FightColor = Color.Chocolate;
-            FightImage = null;
             doors = new List<Door>();
             gloops = new List<Gloop>();
             enemyBoxes = new Dictionary<Enemy, PictureBox>();
@@ -290,6 +307,15 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.johnny_nobg;
             }
             return Properties.Resources.johnny_nobg; // base case
+        }
+        public static Image FightBackgroundImage(this string levelName)
+        {
+            switch (levelName)
+            {
+                case "level1":
+                    return Properties.Resources.backgroundBricks;
+            }
+            return Properties.Resources.wall4; // base case
         }
     }
 }
