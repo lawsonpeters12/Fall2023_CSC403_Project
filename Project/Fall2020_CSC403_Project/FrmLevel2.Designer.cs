@@ -67,7 +67,7 @@ namespace Fall2020_CSC403_Project
             // 
             // picWall2
             // 
-            this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4a;
+            this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
             this.picWall2.Location = new System.Drawing.Point(-19, 755);
             this.picWall2.Margin = new System.Windows.Forms.Padding(2);
             this.picWall2.Name = "picWall2";
@@ -87,7 +87,7 @@ namespace Fall2020_CSC403_Project
             // 
             // picWall1
             // 
-            this.picWall1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2a;
+            this.picWall1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2;
             this.picWall1.Location = new System.Drawing.Point(1351, 22);
             this.picWall1.Margin = new System.Windows.Forms.Padding(2);
             this.picWall1.Name = "picWall1";

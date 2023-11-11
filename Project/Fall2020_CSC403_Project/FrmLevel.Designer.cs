@@ -154,7 +154,7 @@
       // picWall11
       // 
       this.picWall11.BackColor = System.Drawing.Color.Transparent;
-      this.picWall11.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2a;
+      this.picWall11.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2;
       this.picWall11.Location = new System.Drawing.Point(1347, 632);
       this.picWall11.Name = "picWall11";
       this.picWall11.Size = new System.Drawing.Size(95, 193);
@@ -164,7 +164,7 @@
       // picWall3
       // 
       this.picWall3.BackColor = System.Drawing.Color.Transparent;
-      this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4a;
+      this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
       this.picWall3.Location = new System.Drawing.Point(912, 748);
       this.picWall3.Name = "picWall3";
       this.picWall3.Size = new System.Drawing.Size(538, 105);
@@ -197,7 +197,7 @@
       // picWall8
       // 
       this.picWall8.BackColor = System.Drawing.Color.Transparent;
-      this.picWall8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2a;
+      this.picWall8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2;
       this.picWall8.Location = new System.Drawing.Point(1347, 26);
       this.picWall8.Name = "picWall8";
       this.picWall8.Size = new System.Drawing.Size(95, 461);
@@ -207,7 +207,7 @@
       // picWall7
       // 
       this.picWall7.BackColor = System.Drawing.Color.Transparent;
-      this.picWall7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4a;
+      this.picWall7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
       this.picWall7.Location = new System.Drawing.Point(874, 748);
       this.picWall7.Name = "picWall7";
       this.picWall7.Size = new System.Drawing.Size(217, 219);
@@ -228,7 +228,7 @@
       // picWall6
       // 
       this.picWall6.BackColor = System.Drawing.Color.Transparent;
-      this.picWall6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4a;
+      this.picWall6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
       this.picWall6.Location = new System.Drawing.Point(339, 748);
       this.picWall6.Name = "picWall6";
       this.picWall6.Size = new System.Drawing.Size(338, 106);
@@ -261,7 +261,7 @@
       // picWall5
       // 
       this.picWall5.BackColor = System.Drawing.Color.Transparent;
-      this.picWall5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4a;
+      this.picWall5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
       this.picWall5.Location = new System.Drawing.Point(-30, 748);
       this.picWall5.Name = "picWall5";
       this.picWall5.Size = new System.Drawing.Size(389, 219);
