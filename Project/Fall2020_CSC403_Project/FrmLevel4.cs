@@ -7,40 +7,30 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FrmLevel4 : Form
+    public partial class FrmLevel4 : FrmLevelBase
     {
-
-        public FrmLevel4(String ChosenCharacter)
+        public static Vector2 rightDoorSpawn = new Vector2(1247, 547);
+        public static Vector2 leftDoorSpawn = new Vector2(121, 547);
+        public FrmLevel4(Player player) : base (player, "level4")
         {
             InitializeComponent();
         }
 
         public void FrmLevel4_Load(object sender, EventArgs e)
         {
-            // init player and enemy locations and walls
-            // we're gonna have to hardcode the body cleanup for every enemy that i put in this room if we can't inherit frmlevel
-            // gonna have to call the function anyways every time
-            // default game data
+            PictureBox pic = Controls.Find("doorToLvl1", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel.leftDoorSpawn, new FrmLevel(player)));
+            
+            pic = Controls.Find("doorToLvl5", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel5.brightDoorSpawn, new FrmLevel5(player)));
+            
+            LevelSetup();
+            Game.player = player;
+            DoubleBuffered = true;
         }
-
-        private void FrmLevel4_Load_1(object sender, EventArgs e)
+        private void tmrPlayerMove_Tick(object sender, EventArgs e)
         {
-
-        }
-
-        private void picWall0_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picWall2_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void picWall7_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
+            Tick();
         }
     }
 }

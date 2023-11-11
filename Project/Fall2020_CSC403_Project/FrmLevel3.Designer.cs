@@ -31,19 +31,21 @@ namespace Fall2020_CSC403_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picWall0 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
-            this.doorToLvl3 = new System.Windows.Forms.PictureBox();
+            this.doorToLvl2 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picWall6 = new System.Windows.Forms.PictureBox();
             this.picWall7 = new System.Windows.Forms.PictureBox();
             this.picWall1 = new System.Windows.Forms.PictureBox();
+            this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doorToLvl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doorToLvl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
@@ -81,17 +83,17 @@ namespace Fall2020_CSC403_Project
             this.picWall3.TabIndex = 2;
             this.picWall3.TabStop = false;
             // 
-            // doorToLvl3
+            // doorToLvl2
             // 
-            this.doorToLvl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.doorToLvl3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway3;
-            this.doorToLvl3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doorToLvl3.Location = new System.Drawing.Point(1141, 758);
-            this.doorToLvl3.Margin = new System.Windows.Forms.Padding(2);
-            this.doorToLvl3.Name = "doorToLvl3";
-            this.doorToLvl3.Size = new System.Drawing.Size(149, 102);
-            this.doorToLvl3.TabIndex = 10;
-            this.doorToLvl3.TabStop = false;
+            this.doorToLvl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.doorToLvl2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway3;
+            this.doorToLvl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doorToLvl2.Location = new System.Drawing.Point(1141, 758);
+            this.doorToLvl2.Margin = new System.Windows.Forms.Padding(2);
+            this.doorToLvl2.Name = "doorToLvl2";
+            this.doorToLvl2.Size = new System.Drawing.Size(149, 102);
+            this.doorToLvl2.TabIndex = 10;
+            this.doorToLvl2.TabStop = false;
             // 
             // picWall4
             // 
@@ -145,7 +147,12 @@ namespace Fall2020_CSC403_Project
             this.picWall1.Size = new System.Drawing.Size(95, 839);
             this.picWall1.TabIndex = 3;
             this.picWall1.TabStop = false;
-            this.picWall1.Click += new System.EventHandler(this.picWall1_Click);
+            // 
+            // tmrPlayerMove
+            // 
+            this.tmrPlayerMove.Enabled = true;
+            this.tmrPlayerMove.Interval = 10;
+            this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
             // 
             // FrmLevel3
             // 
@@ -161,22 +168,24 @@ namespace Fall2020_CSC403_Project
             this.Controls.Add(this.picWall0);
             this.Controls.Add(this.picWall7);
             this.Controls.Add(this.picWall6);
-            this.Controls.Add(this.doorToLvl3);
+            this.Controls.Add(this.doorToLvl2);
             this.Controls.Add(this.picWall3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLevel3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLevel2";
+            this.Text = "FrmLevel3";
+            this.Load += new System.EventHandler(this.FrmLevel3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doorToLvl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doorToLvl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -188,10 +197,11 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox picWall2;
         private System.Windows.Forms.PictureBox picWall3;
         private System.Windows.Forms.PictureBox picWall1;
-        private System.Windows.Forms.PictureBox doorToLvl3;
+        private System.Windows.Forms.PictureBox doorToLvl2;
         private System.Windows.Forms.PictureBox picWall4;
         private System.Windows.Forms.PictureBox picWall5;
         private System.Windows.Forms.PictureBox picWall6;
         private System.Windows.Forms.PictureBox picWall7;
+        private System.Windows.Forms.Timer tmrPlayerMove;
     }
 }

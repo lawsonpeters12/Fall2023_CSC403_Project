@@ -13,6 +13,7 @@ namespace Fall2020_CSC403_Project
         protected List<Enemy> enemies { get; set; }
         public Color? FightColor { get; protected set; }
         protected List<Door> doors { get; set; }
+        protected List<Gloop> gloops { get; set; }
         
         private Dictionary<Enemy, PictureBox> enemyBoxes;
         private List<Keys> keysPressed = new List<Keys>();
@@ -29,6 +30,7 @@ namespace Fall2020_CSC403_Project
             enemies = new List<Enemy>();
             FightColor = Color.Chocolate;
             doors = new List<Door>();
+            gloops = new List<Gloop>();
             enemyBoxes = new Dictionary<Enemy, PictureBox>();
             KeyUp += BaseKeyUp;
             KeyDown += BaseKeyDown;
@@ -72,7 +74,7 @@ namespace Fall2020_CSC403_Project
                 Location = new Point((int)enemy.Position.x, (int)enemy.Position.y),
                 Image = enemy.EnemyImage(),
                 BackColor = Color.Transparent,
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.StretchImage,
             };
             Controls.Add(enemyPic);
             enemyBoxes.Add(enemy, enemyPic);
@@ -136,6 +138,8 @@ namespace Fall2020_CSC403_Project
             collisionObjects.AddRange(walls);
             collisionObjects.AddRange(doors);
             collisionObjects.AddRange(enemies);
+            collisionObjects.AddRange(gloops);
+            player.GO_INC = 3; // reset move speed out of gloop
             foreach (var collisionObject in collisionObjects)
             {
                 if (player.Collider.Intersects((collisionObject.Collider)))
@@ -151,6 +155,9 @@ namespace Fall2020_CSC403_Project
                             player.Position = door.SpawnPoint;
                             door.TargetLevel.Show();
                             Close();
+                            break;
+                        case Gloop gloop:
+                            player.GO_INC = 1;
                             break;
                         default:
                             player.MoveBack();

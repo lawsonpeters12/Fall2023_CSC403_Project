@@ -1,36 +1,36 @@
 using Fall2020_CSC403_Project.code;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FrmLevel8 : Form
+    public partial class FrmLevel8 : FrmLevelBase
     {
-
-        public FrmLevel8(String ChosenCharacter)
+        public static Vector2 bottomDoorSpawn = new Vector2(694, 682);
+        public static Vector2 leftDoorSpawn = new Vector2(129, 313);
+        public static Vector2 topDoorSpawn = new Vector2(691, 127);
+        public FrmLevel8(Player player) : base(player, "level8")
         {
             InitializeComponent();
         }
 
         public void FrmLevel8_Load(object sender, EventArgs e)
         {
-            // init player and enemy locations and walls
-            // we're gonna have to hardcode the body cleanup for every enemy that i put in this room if we can't inherit frmlevel
-            // gonna have to call the function anyways every time
-            // default game data
+            PictureBox pic = Controls.Find("doorToLvl1", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel.topDoorSpawn, new FrmLevel(player)));
+            
+            pic = Controls.Find("doorToLvl7", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel7.rightDoorSpawn, new FrmLevel7(player)));
+            
+            LevelSetup();
+            Game.player = player;
+            DoubleBuffered = true;
         }
-
-        private void picPlayer1_Click(object sender, EventArgs e)
+        
+        private void tmrPlayerMove_Tick(object sender, EventArgs e)
         {
-
-        }
-
-        private void picPlayer0_Click(object sender, EventArgs e)
-        {
-
+            Tick();
         }
     }
 }

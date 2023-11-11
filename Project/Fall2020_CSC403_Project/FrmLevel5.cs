@@ -7,30 +7,30 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FrmLevel5 : Form
+    public partial class FrmLevel5 : FrmLevelBase
     {
-
-        public FrmLevel5(String ChosenCharacter)
+        public static Vector2 brightDoorSpawn = new Vector2(1247, 547);
+        public static Vector2 trightDoorSpawn = new Vector2(1384, 187);
+        public FrmLevel5(Player player) : base (player, "level5")
         {
             InitializeComponent();
         }
 
         public void FrmLevel5_Load(object sender, EventArgs e)
         {
-            // init player and enemy locations and walls
-            // we're gonna have to hardcode the body cleanup for every enemy that i put in this room if we can't inherit frmlevel
-            // gonna have to call the function anyways every time
-            // default game data
+            PictureBox pic = Controls.Find("doorToLvl4", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel4.rightDoorSpawn, new FrmLevel4(player)));
+            
+            pic = Controls.Find("doorToLvl6", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel6.rightDoorSpawn, new FrmLevel6(player)));
+            
+            LevelSetup();
+            Game.player = player;
+            DoubleBuffered = true;
         }
-
-        private void picWall0_Click(object sender, EventArgs e)
+        private void tmrPlayerMove_Tick(object sender, EventArgs e)
         {
-
-        }
-
-        private void picWall4_Click(object sender, EventArgs e)
-        {
-
+            Tick();
         }
     }
 }

@@ -143,6 +143,7 @@
     <Compile Include="FrmLevelBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gloop.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCharacterSelect.resx">

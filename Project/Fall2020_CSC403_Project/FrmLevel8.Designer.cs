@@ -31,30 +31,28 @@ namespace Fall2020_CSC403_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLevel8));
             this.picWall6 = new System.Windows.Forms.PictureBox();
             this.doorToLvl7 = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.doorToLvl1 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
-            this.picPlayer0 = new System.Windows.Forms.PictureBox();
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall0 = new System.Windows.Forms.PictureBox();
-            this.picPlayer2 = new System.Windows.Forms.PictureBox();
             this.picPlayer1 = new System.Windows.Forms.PictureBox();
+            this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,18 +110,6 @@ namespace Fall2020_CSC403_Project
             this.picWall4.TabIndex = 18;
             this.picWall4.TabStop = false;
             // 
-            // picPlayer0
-            // 
-            this.picPlayer0.BackColor = System.Drawing.Color.Transparent;
-            this.picPlayer0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer0.Location = new System.Drawing.Point(694, 682);
-            this.picPlayer0.Name = "picPlayer0";
-            this.picPlayer0.Size = new System.Drawing.Size(51, 104);
-            this.picPlayer0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPlayer0.TabIndex = 4;
-            this.picPlayer0.TabStop = false;
-            this.picPlayer0.Click += new System.EventHandler(this.picPlayer0_Click);
-            // 
             // picWall1
             // 
             this.picWall1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picWall1.BackgroundImage")));
@@ -164,17 +150,6 @@ namespace Fall2020_CSC403_Project
             this.picWall0.TabIndex = 0;
             this.picWall0.TabStop = false;
             // 
-            // picPlayer2
-            // 
-            this.picPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.picPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer2.Location = new System.Drawing.Point(129, 313);
-            this.picPlayer2.Name = "picPlayer2";
-            this.picPlayer2.Size = new System.Drawing.Size(54, 105);
-            this.picPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPlayer2.TabIndex = 33;
-            this.picPlayer2.TabStop = false;
-            // 
             // picPlayer1
             // 
             this.picPlayer1.BackColor = System.Drawing.Color.Transparent;
@@ -186,6 +161,12 @@ namespace Fall2020_CSC403_Project
             this.picPlayer1.TabIndex = 34;
             this.picPlayer1.TabStop = false;
             // 
+            // tmrPlayerMove
+            // 
+            this.tmrPlayerMove.Enabled = true;
+            this.tmrPlayerMove.Interval = 10;
+            this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
+            // 
             // FrmLevel8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,34 +174,32 @@ namespace Fall2020_CSC403_Project
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.floor;
-            this.ClientSize = new System.Drawing.Size(1283, 682);
+            this.ClientSize = new System.Drawing.Size(1442, 899);
             this.Controls.Add(this.picPlayer1);
-            this.Controls.Add(this.picPlayer2);
             this.Controls.Add(this.picWall1);
             this.Controls.Add(this.picWall6);
             this.Controls.Add(this.doorToLvl7);
             this.Controls.Add(this.picWall5);
             this.Controls.Add(this.doorToLvl1);
             this.Controls.Add(this.picWall4);
-            this.Controls.Add(this.picPlayer0);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall0);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FrmLevel8";
-            this.Text = "FrmLevel7";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmLevel8";
+            this.Load += new System.EventHandler(this.FrmLevel8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorToLvl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer1)).EndInit();
             this.ResumeLayout(false);
         }
@@ -230,14 +209,13 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox picWall0;
         private System.Windows.Forms.PictureBox picWall2;
         private System.Windows.Forms.PictureBox picWall3;
-        private System.Windows.Forms.PictureBox picPlayer0;
         private System.Windows.Forms.PictureBox picWall1;
         private System.Windows.Forms.PictureBox picWall4;
         private System.Windows.Forms.PictureBox doorToLvl1;
         private System.Windows.Forms.PictureBox picWall5;
         private System.Windows.Forms.PictureBox doorToLvl7;
         private System.Windows.Forms.PictureBox picWall6;
-        private System.Windows.Forms.PictureBox picPlayer2;
         private System.Windows.Forms.PictureBox picPlayer1;
+        private System.Windows.Forms.Timer tmrPlayerMove;
     }
 }

@@ -3,9 +3,9 @@ namespace Fall2020_CSC403_Project.code
 {
     public class Character
     {
-        private const int GO_INC = 3;
+        public int GO_INC = 3; // might have to change this for move speed, just need to change it back after you stop colliding with gloop
 
-        public Vector2 MoveSpeed { get; private set; }
+        public Vector2 MoveSpeed { get; set; }
         public Vector2 LastPosition { get; private set; }
         public Vector2 Position { get; set; }
         public Collider Collider { get; private set; }

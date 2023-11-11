@@ -31,6 +31,7 @@ namespace Fall2020_CSC403_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picWall0 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,7 @@ namespace Fall2020_CSC403_Project
             this.doorToLvl8 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picBoss = new System.Windows.Forms.PictureBox();
+            this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
@@ -132,6 +134,11 @@ namespace Fall2020_CSC403_Project
             this.picBoss.TabIndex = 26;
             this.picBoss.TabStop = false;
             // 
+            // tmrPlayerMove
+            // 
+            this.tmrPlayerMove.Enabled = true;
+            this.tmrPlayerMove.Interval = 10;
+            // 
             // FrmLevel9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +146,7 @@ namespace Fall2020_CSC403_Project
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.floor;
-            this.ClientSize = new System.Drawing.Size(1283, 682);
+            this.ClientSize = new System.Drawing.Size(1461, 891);
             this.Controls.Add(this.picWall1);
             this.Controls.Add(this.picBoss);
             this.Controls.Add(this.picWall4);
@@ -151,7 +158,8 @@ namespace Fall2020_CSC403_Project
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FrmLevel9";
-            this.Text = "FrmLevel7";
+            this.Text = "FrmLevel9";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
@@ -161,6 +169,7 @@ namespace Fall2020_CSC403_Project
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoss)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -173,5 +182,6 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox doorToLvl8;
         private System.Windows.Forms.PictureBox picWall4;
         private System.Windows.Forms.PictureBox picBoss;
+        private System.Windows.Forms.Timer tmrPlayerMove;
     }
 }

@@ -30,12 +30,12 @@
       this.picWall0 = new System.Windows.Forms.PictureBox();
       this.pictureBox4 = new System.Windows.Forms.PictureBox();
       this.picDoor3 = new System.Windows.Forms.PictureBox();
-      this.picDoor1 = new System.Windows.Forms.PictureBox();
-      this.picDoor2 = new System.Windows.Forms.PictureBox();
+      this.doorToLvl4 = new System.Windows.Forms.PictureBox();
+      this.doorToLvl8 = new System.Windows.Forms.PictureBox();
       this.picWall10 = new System.Windows.Forms.PictureBox();
       this.picWall11 = new System.Windows.Forms.PictureBox();
       this.picWall3 = new System.Windows.Forms.PictureBox();
-      this.picDoor0 = new System.Windows.Forms.PictureBox();
+      this.doorToLvl2 = new System.Windows.Forms.PictureBox();
       this.picWall2 = new System.Windows.Forms.PictureBox();
       this.picWall8 = new System.Windows.Forms.PictureBox();
       this.picWall7 = new System.Windows.Forms.PictureBox();
@@ -48,12 +48,12 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picDoor3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl4)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl8)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor0)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
@@ -115,29 +115,29 @@
       this.picDoor3.TabIndex = 24;
       this.picDoor3.TabStop = false;
       // 
-      // picDoor1
+      // doorToLvl4
       // 
-      this.picDoor1.BackColor = System.Drawing.Color.Silver;
-      this.picDoor1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway2;
-      this.picDoor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picDoor1.Location = new System.Drawing.Point(-10, 478);
-      this.picDoor1.Margin = new System.Windows.Forms.Padding(2);
-      this.picDoor1.Name = "picDoor1";
-      this.picDoor1.Size = new System.Drawing.Size(114, 144);
-      this.picDoor1.TabIndex = 23;
-      this.picDoor1.TabStop = false;
+      this.doorToLvl4.BackColor = System.Drawing.Color.Silver;
+      this.doorToLvl4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway2;
+      this.doorToLvl4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.doorToLvl4.Location = new System.Drawing.Point(-10, 478);
+      this.doorToLvl4.Margin = new System.Windows.Forms.Padding(2);
+      this.doorToLvl4.Name = "doorToLvl4";
+      this.doorToLvl4.Size = new System.Drawing.Size(114, 144);
+      this.doorToLvl4.TabIndex = 23;
+      this.doorToLvl4.TabStop = false;
       // 
-      // picDoor2
+      // doorToLvl8
       // 
-      this.picDoor2.BackColor = System.Drawing.Color.Gray;
-      this.picDoor2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway;
-      this.picDoor2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picDoor2.Location = new System.Drawing.Point(718, 0);
-      this.picDoor2.Margin = new System.Windows.Forms.Padding(2);
-      this.picDoor2.Name = "picDoor2";
-      this.picDoor2.Size = new System.Drawing.Size(141, 102);
-      this.picDoor2.TabIndex = 22;
-      this.picDoor2.TabStop = false;
+      this.doorToLvl8.BackColor = System.Drawing.Color.Gray;
+      this.doorToLvl8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway;
+      this.doorToLvl8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.doorToLvl8.Location = new System.Drawing.Point(718, 0);
+      this.doorToLvl8.Margin = new System.Windows.Forms.Padding(2);
+      this.doorToLvl8.Name = "doorToLvl8";
+      this.doorToLvl8.Size = new System.Drawing.Size(141, 102);
+      this.doorToLvl8.TabIndex = 22;
+      this.doorToLvl8.TabStop = false;
       // 
       // picWall10
       // 
@@ -171,17 +171,17 @@
       this.picWall3.TabIndex = 19;
       this.picWall3.TabStop = false;
       // 
-      // picDoor0
+      // doorToLvl2
       // 
-      this.picDoor0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-      this.picDoor0.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway4;
-      this.picDoor0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picDoor0.Location = new System.Drawing.Point(1347, 478);
-      this.picDoor0.Margin = new System.Windows.Forms.Padding(2);
-      this.picDoor0.Name = "picDoor0";
-      this.picDoor0.Size = new System.Drawing.Size(95, 158);
-      this.picDoor0.TabIndex = 18;
-      this.picDoor0.TabStop = false;
+      this.doorToLvl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+      this.doorToLvl2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway4;
+      this.doorToLvl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.doorToLvl2.Location = new System.Drawing.Point(1347, 478);
+      this.doorToLvl2.Margin = new System.Windows.Forms.Padding(2);
+      this.doorToLvl2.Name = "doorToLvl2";
+      this.doorToLvl2.Size = new System.Drawing.Size(95, 158);
+      this.doorToLvl2.TabIndex = 18;
+      this.doorToLvl2.TabStop = false;
       // 
       // picWall2
       // 
@@ -283,7 +283,7 @@
       this.Controls.Add(this.picWall10);
       this.Controls.Add(this.picWall11);
       this.Controls.Add(this.picWall3);
-      this.Controls.Add(this.picDoor0);
+      this.Controls.Add(this.doorToLvl2);
       this.Controls.Add(this.picWall7);
       this.Controls.Add(this.picWall9);
       this.Controls.Add(this.picWall6);
@@ -291,8 +291,8 @@
       this.Controls.Add(this.picWall4);
       this.Controls.Add(this.picWall5);
       this.Controls.Add(this.picWall2);
-      this.Controls.Add(this.picDoor2);
-      this.Controls.Add(this.picDoor1);
+      this.Controls.Add(this.doorToLvl8);
+      this.Controls.Add(this.doorToLvl4);
       this.DoubleBuffered = true;
       this.Name = "FrmLevel";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -302,12 +302,12 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picDoor3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl4)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl8)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall10)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picDoor0)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doorToLvl2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall8)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
@@ -319,15 +319,15 @@
       this.ResumeLayout(false);
     }
 
-    private System.Windows.Forms.PictureBox picDoor1;
+    private System.Windows.Forms.PictureBox doorToLvl4;
 
-    private System.Windows.Forms.PictureBox picDoor2;
+    private System.Windows.Forms.PictureBox doorToLvl8;
 
     private System.Windows.Forms.PictureBox picDoor3;
 
     private System.Windows.Forms.PictureBox picWall3;
 
-    private System.Windows.Forms.PictureBox picDoor0;
+    private System.Windows.Forms.PictureBox doorToLvl2;
 
     #endregion
 

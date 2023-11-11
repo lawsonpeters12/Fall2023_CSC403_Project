@@ -18,6 +18,9 @@ namespace Fall2020_CSC403_Project
         {
             PictureBox pic = Controls.Find("picDoor0", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.rightDoorSpawn, new FrmLevel(player)));
+
+            pic = Controls.Find("picDoor1", true)[0] as PictureBox;
+            doors.Add(Door.MakeDoor(pic, FrmLevel3.bottomDoorSpawn, new FrmLevel3(player)));
             
             LevelSetup();
             Game.player = player;

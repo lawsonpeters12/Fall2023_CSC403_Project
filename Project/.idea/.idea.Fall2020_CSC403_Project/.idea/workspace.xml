@@ -8,13 +8,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Resources/wall41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Gloop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyGameLibrary/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Character.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +46,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/e1/a256ce9f/Control.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/33/704d28b2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/3e/ea323c6c/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41914444499f4996a3e6af79cf6c1fdb574b98/cc/741a8e3b/__BinaryParser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c0f8d183e43847009e4e164aee6d042f91960/5d/e2cdbe8e/Rectangle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/a9/5337c65f/Timer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -114,6 +131,8 @@
       <workItem from="1699589524608" duration="13101000" />
       <workItem from="1699603172438" duration="3457000" />
       <workItem from="1699659152172" duration="639000" />
+      <workItem from="1699722359883" duration="8705000" />
+      <workItem from="1699735989918" duration="56000" />
     </task>
     <servers />
   </component>
