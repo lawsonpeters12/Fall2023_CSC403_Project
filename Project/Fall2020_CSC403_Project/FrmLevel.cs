@@ -47,5 +47,25 @@ namespace Fall2020_CSC403_Project
             //     bow.Collider.MovePosition(0, 0);
             // }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picWall3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frontDoor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
