@@ -74,6 +74,12 @@
     <Compile Include="FormPauseMenu.Designer.cs">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTitleScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTitleScreen.Designer.cs">
+      <DependentUpon>FormTitleScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWinScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPauseMenu.resx">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTitleScreen.resx">
+      <DependentUpon>FormTitleScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWinScreen.resx">
       <DependentUpon>FormWinScreen.cs</DependentUpon>
@@ -252,6 +261,8 @@
   <ItemGroup>
     <None Include="Resources\backgroundBricks.png" />
     <None Include="Resources\sewerBackground.png" />
+    <None Include="Resources\TitleScreen.jpg" />
+    <None Include="Resources\TitleScreen.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
