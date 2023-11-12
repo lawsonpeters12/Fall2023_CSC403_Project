@@ -259,6 +259,8 @@
     <None Include="data\archway4.png" />
     <None Include="data\wall2a.png" />
     <None Include="data\separatewall4.png" />
+    <None Include="data\potionoption-removebg-preview.png" />
+    <None Include="data\key-removebg-preview.png" />
     <Content Include="Resources\sewer_archway3.png" />
     <Content Include="Resources\sewer_wall4.png" />
     <Content Include="Resources\wall2.png" />

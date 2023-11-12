@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fall2020_CSC403_Project
 {
@@ -16,7 +17,7 @@ namespace Fall2020_CSC403_Project
     {
         private Player player;
         private String Character;
-        private int numPotions;
+        //private int numPotions;
         private Image picJohnny = Properties.Resources.johnny_nobg;
         private Image picJimmy = Properties.Resources.jimmy_nobg;
         private Image picJenny = Properties.Resources.jenny_nobg;
@@ -26,7 +27,7 @@ namespace Fall2020_CSC403_Project
             InitializeComponent();
             Character = ChosenCharacter;
             player = Game.player;
-            numPotions = 0;
+            //numPotions = 0;
 
             
         }
@@ -40,18 +41,19 @@ namespace Fall2020_CSC403_Project
 
         private void use_health_potion(object sender, EventArgs e)
         {
-            while (numPotions > 0)
+            player.Health -= 1;
+            UpdateHealthBar();
+            player.items["Potions"] -= 1;
+            if (player.items["Potions"] == 0)
             {
-                if (player.Health < player.MaxHealth)
-                {
-                    player.Health += 10;
-                }
-                else
-                {
-                    break;
-                }
-                numPotions--;
+                picHealthPot.Visible = false;
+                useHealthPot.Visible = false;
+                textBox2.Visible = false;
             }
+        }
+        private void ShowHealthButton(object sender, EventArgs e)
+        {
+            useHealthPot.Visible = true;
         }
 
         private void FormInventory_Load(object sender, EventArgs e)
@@ -88,11 +90,26 @@ namespace Fall2020_CSC403_Project
                 textBox1.Visible = true;
                 textBox1.Text = $"Arrows: {player.items["Arrows"]}";
             }
+            if (player.items["Potions"] > 0)
+            {
+                picHealthPot.Visible = true;
+                picHealthPot.Image = Properties.Resources.potionoption_removebg_preview;
+                picHealthPot.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBox2.Visible = true;
+                textBox2.Text = $"{player.items["Potions"]}";
+            }
+            if (player.items["Keys"] == 1)
+            {
+                picKey1.Visible = true;
+                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
 
             // labels
-            lblCharacterTxt.Width = 100;
+            lblCharacterTxt.Width = 200;
             lblCharacterTxt.Height = 25;
-            lblCharacterTxt.Text = Character;
+            lblCharacterTxt.Text = $"Level {player.Level} {Character}";
 
             lblHealthTxt.Width = 100;
             lblHealthTxt.Height = 25;
@@ -106,13 +123,45 @@ namespace Fall2020_CSC403_Project
             lblPotionsTxt.Height = 25;
             lblPotionsTxt.Text = "Potions";
 
+            lblWeaponsTxt.Width = 100;
+            lblWeaponsTxt.Height = 25;
+            lblWeaponsTxt.Text = "Weapons";
 
+            lblKeysTxt.Width = 100;
+            lblKeysTxt.Height = 25;
+            lblKeysTxt.Text = "Keys";
 
+            // labels for player stats
+
+            UpdateHealthBar();
+            UpdateExperienceBar();
 
 
         }
+        private void UpdateHealthBar()
+        {
+            float playerHealthPercent = player.Health / (float)player.MaxHealth;
+            const int MAX_HEALTH_BAR = 226;
 
-    private void lblPlayerHealth_Click(object sender, EventArgs e)
+            lblMaxHealth.Width = MAX_HEALTH_BAR;
+
+            lblCurrentHealth.Width = (int)(MAX_HEALTH_BAR * playerHealthPercent);
+            lblCurrentHealth.Text = $"{player.Health} / {player.MaxHealth}";
+        }
+        private void UpdateExperienceBar()
+        {
+            float playerExpPercet = player.Experience / player.ExperienceNeeded;
+            const int XP_NEEDED_BAR = 226;
+
+            lblNeededXp.Width = XP_NEEDED_BAR;
+            lblNeededXp.Text = $"{player.Experience} / {player.ExperienceNeeded}";
+
+            lblCurrXp.Width = (int)(XP_NEEDED_BAR * playerExpPercet);
+            lblCurrXp.Text = $"{player.Experience} / {player.ExperienceNeeded}";
+
+        }
+
+        private void lblPlayerHealth_Click(object sender, EventArgs e)
         {
 
         }

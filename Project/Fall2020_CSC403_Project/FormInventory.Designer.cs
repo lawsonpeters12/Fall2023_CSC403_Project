@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
             this.charBG = new System.Windows.Forms.PictureBox();
             this.lblCharacterTxt = new System.Windows.Forms.Label();
             this.lblHealthTxt = new System.Windows.Forms.Label();
@@ -45,10 +44,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.picHealthPot = new System.Windows.Forms.PictureBox();
+            this.picKey1 = new System.Windows.Forms.PictureBox();
+            this.useHealthPot = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -65,22 +70,11 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.picHealthPot);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(87, 461);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(92, 57);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.health_potion_removebg_preview;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 54);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.use_health_potion);
             // 
             // charBG
             // 
@@ -113,6 +107,8 @@
             // 
             // lblMaxHealth
             // 
+            this.lblMaxHealth.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblMaxHealth.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMaxHealth.Location = new System.Drawing.Point(540, 130);
             this.lblMaxHealth.Name = "lblMaxHealth";
             this.lblMaxHealth.Size = new System.Drawing.Size(100, 23);
@@ -121,7 +117,8 @@
             // 
             // lblCurrentHealth
             // 
-            this.lblCurrentHealth.Location = new System.Drawing.Point(540, 130);
+            this.lblCurrentHealth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblCurrentHealth.Location = new System.Drawing.Point(542, 130);
             this.lblCurrentHealth.Name = "lblCurrentHealth";
             this.lblCurrentHealth.Size = new System.Drawing.Size(100, 23);
             this.lblCurrentHealth.TabIndex = 6;
@@ -139,6 +136,7 @@
             // 
             // lblNeededXp
             // 
+            this.lblNeededXp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lblNeededXp.Location = new System.Drawing.Point(540, 226);
             this.lblNeededXp.Name = "lblNeededXp";
             this.lblNeededXp.Size = new System.Drawing.Size(100, 23);
@@ -147,7 +145,8 @@
             // 
             // lblCurrXp
             // 
-            this.lblCurrXp.Location = new System.Drawing.Point(540, 226);
+            this.lblCurrXp.BackColor = System.Drawing.Color.Green;
+            this.lblCurrXp.Location = new System.Drawing.Point(542, 226);
             this.lblCurrXp.Name = "lblCurrXp";
             this.lblCurrXp.Size = new System.Drawing.Size(100, 23);
             this.lblCurrXp.TabIndex = 9;
@@ -209,6 +208,47 @@
             this.textBox1.TabIndex = 15;
             this.textBox1.Visible = false;
             // 
+            // picHealthPot
+            // 
+            this.picHealthPot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHealthPot.Location = new System.Drawing.Point(3, 3);
+            this.picHealthPot.Name = "picHealthPot";
+            this.picHealthPot.Size = new System.Drawing.Size(89, 50);
+            this.picHealthPot.TabIndex = 0;
+            this.picHealthPot.TabStop = false;
+            this.picHealthPot.Visible = false;
+            this.picHealthPot.MouseHover += new System.EventHandler(this.ShowHealthButton);
+            // 
+            // picKey1
+            // 
+            this.picKey1.BackColor = System.Drawing.Color.Transparent;
+            this.picKey1.Location = new System.Drawing.Point(608, 464);
+            this.picKey1.Name = "picKey1";
+            this.picKey1.Size = new System.Drawing.Size(83, 50);
+            this.picKey1.TabIndex = 16;
+            this.picKey1.TabStop = false;
+            // 
+            // useHealthPot
+            // 
+            this.useHealthPot.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.useHealthPot.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.useHealthPot.Location = new System.Drawing.Point(141, 474);
+            this.useHealthPot.Name = "useHealthPot";
+            this.useHealthPot.Size = new System.Drawing.Size(68, 40);
+            this.useHealthPot.TabIndex = 17;
+            this.useHealthPot.Text = "Use";
+            this.useHealthPot.UseVisualStyleBackColor = false;
+            this.useHealthPot.Visible = false;
+            this.useHealthPot.Click += new System.EventHandler(this.use_health_potion);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(189, 422);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(24, 26);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.Visible = false;
+            // 
             // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -216,6 +256,9 @@
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.inventory_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(956, 547);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.useHealthPot);
+            this.Controls.Add(this.picKey1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -243,6 +286,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.charBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +297,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox charBG;
         private System.Windows.Forms.Label lblCharacterTxt;
         private System.Windows.Forms.Label lblHealthTxt;
@@ -267,5 +311,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox picHealthPot;
+        private System.Windows.Forms.PictureBox picKey1;
+        private System.Windows.Forms.Button useHealthPot;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
