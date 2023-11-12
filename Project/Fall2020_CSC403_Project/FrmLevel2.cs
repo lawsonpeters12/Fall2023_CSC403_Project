@@ -17,9 +17,6 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel2_Load(object sender, EventArgs e)
         {
-            var bossKoolaid = new Enemy(new Vector2(1071, 117), EnemyCharacter.KoolAid, 2, "koolaid_level2");
-            enemies = new List<Enemy>{bossKoolaid};
-            
             PictureBox pic = Controls.Find("picDoor0", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.rightDoorSpawn, new FrmLevel(player)));
 

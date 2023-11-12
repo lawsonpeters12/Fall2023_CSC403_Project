@@ -47,7 +47,7 @@ namespace Fall2020_CSC403_Project
             this.picWall10 = new System.Windows.Forms.PictureBox();
             this.picPlayer2 = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
-            this.gooGloop1 = new System.Windows.Forms.PictureBox();
+            this.gooGloop0 = new System.Windows.Forms.PictureBox();
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
@@ -64,7 +64,7 @@ namespace Fall2020_CSC403_Project
             ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gooGloop1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gooGloop0)).BeginInit();
             this.SuspendLayout();
             // 
             // picWall9
@@ -233,16 +233,16 @@ namespace Fall2020_CSC403_Project
             this.picWall11.TabIndex = 21;
             this.picWall11.TabStop = false;
             // 
-            // gooGloop1
+            // gooGloop0
             // 
-            this.gooGloop1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gooGloop1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.suswater;
-            this.gooGloop1.Location = new System.Drawing.Point(1005, 390);
-            this.gooGloop1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.gooGloop1.Name = "gooGloop1";
-            this.gooGloop1.Size = new System.Drawing.Size(143, 91);
-            this.gooGloop1.TabIndex = 24;
-            this.gooGloop1.TabStop = false;
+            this.gooGloop0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gooGloop0.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.suswater;
+            this.gooGloop0.Location = new System.Drawing.Point(996, 390);
+            this.gooGloop0.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gooGloop0.Name = "gooGloop0";
+            this.gooGloop0.Size = new System.Drawing.Size(160, 91);
+            this.gooGloop0.TabIndex = 24;
+            this.gooGloop0.TabStop = false;
             // 
             // tmrPlayerMove
             // 
@@ -258,7 +258,7 @@ namespace Fall2020_CSC403_Project
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.floor_sewer;
             this.ClientSize = new System.Drawing.Size(1432, 869);
-            this.Controls.Add(this.gooGloop1);
+            this.Controls.Add(this.gooGloop0);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall0);
             this.Controls.Add(this.picPlayer2);
@@ -295,7 +295,7 @@ namespace Fall2020_CSC403_Project
             ((System.ComponentModel.ISupportInitialize)(this.picWall10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gooGloop1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gooGloop0)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -317,7 +317,7 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.PictureBox doorToLvl5;
         private System.Windows.Forms.PictureBox picWall10;
         private System.Windows.Forms.PictureBox picPlayer2;
-        private System.Windows.Forms.PictureBox gooGloop1;
+        private System.Windows.Forms.PictureBox gooGloop0;
         private System.Windows.Forms.Timer tmrPlayerMove;
     }
 }
