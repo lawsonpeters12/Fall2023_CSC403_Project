@@ -9,8 +9,8 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmLevel6 : FrmLevelBase
     {
-        public static Vector2 topDoorSpawn = new Vector2(1113, 109);
-        public static Vector2 rightDoorSpawn = new Vector2(129, 566);
+        public static Vector2 topDoorSpawn = new Vector2(884, 72);
+        public static Vector2 rightDoorSpawn = new Vector2(116, 392);
         public FrmLevel6(Player player) : base (player, "level6")
         {
             InitializeComponent();

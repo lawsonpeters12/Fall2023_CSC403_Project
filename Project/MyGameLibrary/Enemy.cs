@@ -49,7 +49,7 @@ namespace Fall2020_CSC403_Project.code
                 case EnemyCharacter.EnemyCheeto:
                     return new Size(64, 125);
                 case EnemyCharacter.KoolAid:
-                    return new Size(249, 217);
+                    return new Size(200, 160);
                 case EnemyCharacter.PoisonPacket:
                     return new Size(104, 128);
             }

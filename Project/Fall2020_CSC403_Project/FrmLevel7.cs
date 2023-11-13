@@ -7,9 +7,10 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmLevel7 : FrmLevelBase
     {
-        public static Vector2 rightDoorSpawn = new Vector2(1265, 349);
-        public static Vector2 bottomDoorSpawn = new Vector2(1141, 683);
-        public FrmLevel7(Player player) : base (player, "level7")
+        public static Vector2 rightDoorSpawn = new Vector2(1068, 239);
+        public static Vector2 bottomDoorSpawn = new Vector2(287, 430);
+
+        public FrmLevel7(Player player) : base(player, "level7")
         {
             InitializeComponent();
         }
@@ -21,19 +22,16 @@ namespace Fall2020_CSC403_Project
 
             pic = Controls.Find("doorToLvl6", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel6.topDoorSpawn, new FrmLevel6(player)));
-            
+
             LevelSetup();
             Game.player = player;
             DoubleBuffered = true;
         }
+
         private void tmrPlayerMove_Tick(object sender, EventArgs e)
         {
             Tick();
         }
 
-								private void picWall1_Click(object sender, EventArgs e)
-								{
-
-								}
-				}
+    }
 }

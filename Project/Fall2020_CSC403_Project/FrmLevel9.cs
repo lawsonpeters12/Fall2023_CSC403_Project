@@ -9,7 +9,7 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmLevel9 : Form
     {
-
+        public static Vector2 bottomDoorSpawn = new Vector2(586, 450);
         public FrmLevel9(String ChosenCharacter)
         {
             InitializeComponent();
@@ -23,14 +23,5 @@ namespace Fall2020_CSC403_Project
             // default game data
         }
 
-								private void picWall2_Click(object sender, EventArgs e)
-								{
-
-								}
-
-        private void FrmLevel9_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
