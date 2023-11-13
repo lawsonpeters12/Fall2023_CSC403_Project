@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Security;
+using System.Reflection;
 using System.Windows.Forms;
 using Fall2020_CSC403_Project.code;
 
@@ -13,6 +15,7 @@ namespace Fall2020_CSC403_Project
         public Color? FightColor { get; protected set; }
         protected List<Door> doors { get; set; }
         protected List<Gloop> gloops { get; set; }
+        public List<Item> items { get; set; }
 
         public Image FightBackground
         {
@@ -36,6 +39,7 @@ namespace Fall2020_CSC403_Project
         }
         
         private Dictionary<Enemy, PictureBox> enemyBoxes;
+        private Dictionary<Item, PictureBox> itemBoxes;
         private List<Keys> keysPressed = new List<Keys>();
         private FormPauseMenu PauseMenu;
         private FormInventory Inventory;
@@ -48,10 +52,12 @@ namespace Fall2020_CSC403_Project
             LevelName = levelName;
             this.player = player;
             enemies = new List<Enemy>();
+            items = new List<Item>();
             FightColor = Color.Chocolate;
             doors = new List<Door>();
             gloops = new List<Gloop>();
             enemyBoxes = new Dictionary<Enemy, PictureBox>();
+            itemBoxes = new Dictionary<Item, PictureBox>();
             KeyUp += BaseKeyUp;
             KeyDown += BaseKeyDown;
         }
@@ -68,6 +74,10 @@ namespace Fall2020_CSC403_Project
             foreach (var enemy in enemies)
             {
                 InitializeEnemy(enemy);
+            }
+            foreach (var item in items)
+            {
+                InitializeItem(item);
             }
         }
 
@@ -94,10 +104,26 @@ namespace Fall2020_CSC403_Project
                 Location = new Point((int)enemy.Position.x, (int)enemy.Position.y),
                 Image = enemy.EnemyImage(),
                 BackColor = Color.Transparent,
-                SizeMode = PictureBoxSizeMode.StretchImage,
+                SizeMode = PictureBoxSizeMode.StretchImage
             };
             Controls.Add(enemyPic);
             enemyBoxes.Add(enemy, enemyPic);
+        }
+
+        private void InitializeItem(Item item)
+        {
+            if (item.IsPickedUp(player)) return;
+            var itemPic = new PictureBox()
+            {
+                Name = "item",
+                Size = item.Size,
+                Location = new Point((int)item.Position.x, (int)item.Position.y),
+                Image = item.ItemImage(),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            Controls.Add(itemPic);
+            itemBoxes.Add(item, itemPic);
         }
 
         protected Vector2 CreatePosition(PictureBox pic)
@@ -133,6 +159,18 @@ namespace Fall2020_CSC403_Project
             Invalidate();
         }
 
+        protected void CleanupItem(Item item)
+        {
+            var pictureBox = itemBoxes[item];
+            player.PickedUpItems.Add(item.Name);
+            if (pictureBox != null)
+            {
+                pictureBox.Visible = false;
+            }
+            item.Collider.MovePosition(0,0);
+            Invalidate();
+        }
+
         protected void Fight(Enemy enemy)
         {
             player.ResetMoveSpeed();
@@ -159,6 +197,7 @@ namespace Fall2020_CSC403_Project
             collisionObjects.AddRange(doors);
             collisionObjects.AddRange(enemies);
             collisionObjects.AddRange(gloops);
+            collisionObjects.AddRange(items);
             player.GO_INC = 3; // reset move speed out of gloop
             foreach (var collisionObject in collisionObjects)
             {
@@ -167,6 +206,7 @@ namespace Fall2020_CSC403_Project
                     switch (collisionObject)
                     {
                         case Enemy enemy when enemy.IsDefeated(player):
+                        case Item item when item.IsPickedUp(player):
                             break;
                         case Enemy enemy:
                             Fight(enemy);
@@ -177,8 +217,27 @@ namespace Fall2020_CSC403_Project
                             Close();
                             break;
                         case Gloop gloop:
+                            gloop.MoveBack();
                             player.GO_INC = 1;
                             break;
+                        case Item item when item.ItemModel == ItemType.Arrow:
+                            player.items["Arrows"] += 2;
+                            CleanupItem(item);
+                            break;
+                        case Item item when item.ItemModel == ItemType.Bow:
+                            player.items["Bow"] ++;
+                            player.items["Arrows"] += 5;
+                            CleanupItem(item);
+                            break;
+                        case Item item when item.ItemModel == ItemType.HealingPotion:
+                            player.items["Potions"] ++;
+                            CleanupItem(item);
+                            break;
+                        case Item item when item.ItemModel == ItemType.Key:
+                            player.items["Keys"] ++;
+                            CleanupItem(item);
+                            break;
+                        // when we pick up an item do: player.PickedUpItems.Add(item.Name)
                         default:
                             player.MoveBack();
                             break;
@@ -308,14 +367,21 @@ namespace Fall2020_CSC403_Project
             }
             return Properties.Resources.johnny_nobg; // base case
         }
-        public static Image FightBackgroundImage(this string levelName)
+
+        public static Image ItemImage(this Item item)
         {
-            switch (levelName)
+            switch (item.ItemModel)
             {
-                case "level1":
-                    return Properties.Resources.backgroundBricks;
+                case ItemType.Arrow:
+                    return Properties.Resources.arrow;
+                case ItemType.Bow:
+                    return Properties.Resources.bow;
+                case ItemType.HealingPotion:
+                    return Properties.Resources.health_potion;
+                case ItemType.Key:
+                    return Properties.Resources.key_removebg_preview;
             }
-            return Properties.Resources.wall4; // base case
+            return Properties.Resources.health_potion;
         }
     }
 }

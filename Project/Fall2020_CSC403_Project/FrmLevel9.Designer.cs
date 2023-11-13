@@ -57,27 +57,28 @@ namespace Fall2020_CSC403_Project
             this.picWall0.Location = new System.Drawing.Point(-56, -6);
             this.picWall0.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picWall0.Name = "picWall0";
-            this.picWall0.Size = new System.Drawing.Size(2242, 155);
+            this.picWall0.Size = new System.Drawing.Size(1862, 135);
             this.picWall0.TabIndex = 0;
             this.picWall0.TabStop = false;
             // 
             // picWall2
             // 
             this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
-            this.picWall2.Location = new System.Drawing.Point(-514, 1222);
+            this.picWall2.Location = new System.Drawing.Point(57, 878);
             this.picWall2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picWall2.Name = "picWall2";
-            this.picWall2.Size = new System.Drawing.Size(1468, 145);
+            this.picWall2.Size = new System.Drawing.Size(840, 89);
             this.picWall2.TabIndex = 1;
             this.picWall2.TabStop = false;
+            this.picWall2.Click += new System.EventHandler(this.picWall2_Click);
             // 
             // picWall3
             // 
             this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
-            this.picWall3.Location = new System.Drawing.Point(-2, 28);
+            this.picWall3.Location = new System.Drawing.Point(3, -6);
             this.picWall3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picWall3.Name = "picWall3";
-            this.picWall3.Size = new System.Drawing.Size(158, 1314);
+            this.picWall3.Size = new System.Drawing.Size(116, 974);
             this.picWall3.TabIndex = 2;
             this.picWall3.TabStop = false;
             // 
@@ -96,10 +97,10 @@ namespace Fall2020_CSC403_Project
             // picWall1
             // 
             this.picWall1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall2;
-            this.picWall1.Location = new System.Drawing.Point(2037, 26);
+            this.picWall1.Location = new System.Drawing.Point(1706, 18);
             this.picWall1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picWall1.Name = "picWall1";
-            this.picWall1.Size = new System.Drawing.Size(152, 1316);
+            this.picWall1.Size = new System.Drawing.Size(100, 872);
             this.picWall1.TabIndex = 18;
             this.picWall1.TabStop = false;
             // 
@@ -108,30 +109,30 @@ namespace Fall2020_CSC403_Project
             this.doorToLvl8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.doorToLvl8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.archway3;
             this.doorToLvl8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doorToLvl8.Location = new System.Drawing.Point(950, 1222);
+            this.doorToLvl8.Location = new System.Drawing.Point(890, 875);
             this.doorToLvl8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.doorToLvl8.Name = "doorToLvl8";
-            this.doorToLvl8.Size = new System.Drawing.Size(236, 145);
+            this.doorToLvl8.Size = new System.Drawing.Size(236, 92);
             this.doorToLvl8.TabIndex = 24;
             this.doorToLvl8.TabStop = false;
             // 
             // picWall4
             // 
             this.picWall4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall4;
-            this.picWall4.Location = new System.Drawing.Point(1180, 1222);
+            this.picWall4.Location = new System.Drawing.Point(1118, 875);
             this.picWall4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picWall4.Name = "picWall4";
-            this.picWall4.Size = new System.Drawing.Size(1008, 145);
+            this.picWall4.Size = new System.Drawing.Size(688, 92);
             this.picWall4.TabIndex = 25;
             this.picWall4.TabStop = false;
             // 
             // picBoss
             // 
             this.picBoss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.picBoss.Location = new System.Drawing.Point(920, 175);
+            this.picBoss.Location = new System.Drawing.Point(866, 112);
             this.picBoss.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.picBoss.Name = "picBoss";
-            this.picBoss.Size = new System.Drawing.Size(348, 505);
+            this.picBoss.Size = new System.Drawing.Size(306, 378);
             this.picBoss.TabIndex = 26;
             this.picBoss.TabStop = false;
             // 
@@ -144,10 +145,9 @@ namespace Fall2020_CSC403_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.floor;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1798, 951);
             this.Controls.Add(this.picWall1);
             this.Controls.Add(this.picBoss);
             this.Controls.Add(this.picWall4);
@@ -161,6 +161,7 @@ namespace Fall2020_CSC403_Project
             this.Name = "FrmLevel9";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLevel9";
+            this.Load += new System.EventHandler(this.FrmLevel9_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();

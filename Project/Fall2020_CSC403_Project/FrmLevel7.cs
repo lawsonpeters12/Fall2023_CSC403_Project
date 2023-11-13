@@ -30,5 +30,10 @@ namespace Fall2020_CSC403_Project
         {
             Tick();
         }
-    }
+
+								private void picWall1_Click(object sender, EventArgs e)
+								{
+
+								}
+				}
 }

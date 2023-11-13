@@ -22,5 +22,15 @@ namespace Fall2020_CSC403_Project
             // gonna have to call the function anyways every time
             // default game data
         }
+
+								private void picWall2_Click(object sender, EventArgs e)
+								{
+
+								}
+
+        private void FrmLevel9_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,13 +21,16 @@ namespace Fall2020_CSC403_Project
         
         public void FrmLevel_Load(object sender, EventArgs e)
         {
-            // pass collider size Vector2, might want to make it bigger/smaller than image size
+            // Sample enemies
             var bossKoolaid = new Enemy(new Vector2(1071, 117), EnemyCharacter.KoolAid, 2, "koolaid_level1");
             var enemyCheeto = new Enemy(new Vector2(1256, 497), EnemyCharacter.EnemyCheeto, 2, "cheeto_level1");
             var enemyPoisonPacket = new Enemy(new Vector2(167, 250), EnemyCharacter.PoisonPacket, 1, "packet_level1");
             enemies = new List<Enemy>{bossKoolaid, enemyCheeto, enemyPoisonPacket};
 
-            
+            // Sample items
+            var testItem = new Item(new Vector2(500, 500), ItemType.Arrow, "testItem1_level1");
+            var testItem2 = new Item(new Vector2(600, 500), ItemType.Bow, "testItem2_level1");
+            items = new List<Item>{testItem, testItem2};
             
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.leftDoorSpawn, new FrmLevel2(player)));
@@ -46,13 +49,36 @@ namespace Fall2020_CSC403_Project
         private void tmrPlayerMove_Tick(object sender, EventArgs e)
         {
             Tick();
-            // if (HitAChar(player, bow))
-            // {
-            //     player.items["Bow"] = 1;
-            //     player.items["Arrows"] = 5;
-            //     pictureBox4.Visible = false;
-            //     bow.Collider.MovePosition(0, 0);
-            // }
         }
-    }
+
+								private void doorToLvl8_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void picWall9_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void picWall8_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void doorToLvl2_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void picWall11_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void frontDoor_Click(object sender, EventArgs e)
+								{
+
+								}
+				}
 }

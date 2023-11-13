@@ -19,7 +19,7 @@ namespace Fall2020_CSC403_Project
         public void FrmLevel5_Load(object sender, EventArgs e)
         {
             PictureBox pic = Controls.Find("doorToLvl4", true)[0] as PictureBox;
-            doors.Add(Door.MakeDoor(pic, FrmLevel4.rightDoorSpawn, new FrmLevel4(player)));
+            doors.Add(Door.MakeDoor(pic, FrmLevel4.leftDoorSpawn, new FrmLevel4(player)));
             
             pic = Controls.Find("doorToLvl6", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel6.rightDoorSpawn, new FrmLevel6(player)));
@@ -32,5 +32,15 @@ namespace Fall2020_CSC403_Project
         {
             Tick();
         }
-    }
+
+								private void picWall2_Click(object sender, EventArgs e)
+								{
+
+								}
+
+								private void picWall4_Click(object sender, EventArgs e)
+								{
+
+								}
+				}
 }
