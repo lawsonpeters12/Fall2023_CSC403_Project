@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using Fall2020_CSC403_Project.code;
+using System.Collections.Generic;
 
 namespace Fall2020_CSC403_Project.code
 {
@@ -22,15 +24,14 @@ namespace Fall2020_CSC403_Project.code
         
         public string Name { get; }
         public EnemyCharacter EnemyModel { get; }
-
-        public Size Size => GetEnemySize(EnemyModel);
+        public Size Size => SetEnemySize(EnemyModel);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="initPos">this is the initial position of the enemy</param>
         /// <param name="collider">this is the collider for the enemy</param>
-        public Enemy(Vector2 initPos, EnemyCharacter enemyModel, int level, string name) : base(initPos, new Collider(new Rectangle(new Point((int)initPos.x, (int)initPos.y), GetEnemySize(enemyModel))), level)
+        public Enemy(Vector2 initPos, EnemyCharacter enemyModel, int level, string name) : base(initPos, new Collider(new Rectangle(new Point((int)initPos.x, (int)initPos.y), SetEnemySize(enemyModel))), level)
         {
             Name = name;
             EnemyModel = enemyModel;
@@ -41,7 +42,7 @@ namespace Fall2020_CSC403_Project.code
             return player.DefeatedEnemies.Contains(Name);
         }
         
-        private static Size GetEnemySize(EnemyCharacter enemyModel)
+        private static Size SetEnemySize(EnemyCharacter enemyModel)
         {
             switch (enemyModel)
             {
@@ -60,6 +61,6 @@ namespace Fall2020_CSC403_Project.code
     {
         KoolAid,
         PoisonPacket,
-        EnemyCheeto
+        EnemyCheeto,
     }
 }
