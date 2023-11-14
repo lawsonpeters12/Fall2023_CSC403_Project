@@ -5,7 +5,6 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormLoseScreen : FrmLevelBase
     {
-        private FrmLevelBase LevelForm;
         public FormLoseScreen()
         {
             InitializeComponent();

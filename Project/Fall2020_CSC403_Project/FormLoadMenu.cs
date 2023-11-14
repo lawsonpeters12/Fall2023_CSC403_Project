@@ -9,13 +9,9 @@ namespace Fall2020_CSC403_Project
         public FormLoadMenu()
         {
             InitializeComponent();
-            load1.Click += load1_Click;
-            load2.Click += load2_Click;
-            load3.Click += load3_Click;
-            returnButton.Click += returnButton_Click;
         }
 
-        // Loads the game from whichever of the 3 save slots the player selects, if they exist
+        // Lo ads the game from whichever of the 3 save slots the player selects, if they exist
         private void load1_Click(object sender, EventArgs e)
         {
             if (!File.Exists("save1.json"))

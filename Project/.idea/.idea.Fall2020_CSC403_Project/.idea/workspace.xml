@@ -9,13 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyGameLibrary/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,8 @@
       <workItem from="1699746417231" duration="297000" />
       <workItem from="1699828633688" duration="10741000" />
       <workItem from="1699849607052" duration="1883000" />
-      <workItem from="1699926937827" duration="5666000" />
+      <workItem from="1699926937827" duration="6344000" />
+      <workItem from="1699939292165" duration="1133000" />
     </task>
     <servers />
   </component>
