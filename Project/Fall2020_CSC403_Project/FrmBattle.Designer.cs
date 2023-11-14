@@ -47,6 +47,8 @@
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.buttonShoot = new System.Windows.Forms.Button();
             this.textBoxArrows = new System.Windows.Forms.TextBox();
+            this.button_heal = new System.Windows.Forms.Button();
+            this.textBoxPotions = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
@@ -258,6 +260,26 @@
             this.textBoxArrows.TabIndex = 19;
             this.textBoxArrows.Visible = false;
             // 
+            // button_heal
+            // 
+            this.button_heal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_heal.Location = new System.Drawing.Point(611, 748);
+            this.button_heal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_heal.Name = "button_heal";
+            this.button_heal.Size = new System.Drawing.Size(192, 66);
+            this.button_heal.TabIndex = 20;
+            this.button_heal.Text = "Heal";
+            this.button_heal.UseVisualStyleBackColor = true;
+            this.button_heal.Visible = false;
+            // 
+            // textBoxPotions
+            // 
+            this.textBoxPotions.Location = new System.Drawing.Point(611, 714);
+            this.textBoxPotions.Name = "textBoxPotions";
+            this.textBoxPotions.Size = new System.Drawing.Size(192, 26);
+            this.textBoxPotions.TabIndex = 21;
+            this.textBoxPotions.Visible = false;
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -266,6 +288,8 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1233, 928);
+            this.Controls.Add(this.textBoxPotions);
+            this.Controls.Add(this.button_heal);
             this.Controls.Add(this.textBoxArrows);
             this.Controls.Add(this.buttonShoot);
             this.Controls.Add(this.picPlayer);
@@ -320,5 +344,7 @@
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.Button buttonShoot;
         private System.Windows.Forms.TextBox textBoxArrows;
+        private System.Windows.Forms.Button button_heal;
+        private System.Windows.Forms.TextBox textBoxPotions;
     }
 }

@@ -20,6 +20,7 @@ namespace Fall2020_CSC403_Project
             this.player = player;
             LevelForm = level;
             buttonShoot.Click += buttonShoot_Click;
+            button_heal.Click += button_heal_Click;
         }
 
         public void Setup()
@@ -35,7 +36,14 @@ namespace Fall2020_CSC403_Project
             {
                 buttonShoot.Visible = true;
                 textBoxArrows.Visible = true;
-                textBoxArrows.Text = $"Arrows Remaining : {player.items["Arrows"]}";
+                textBoxArrows.Text = $"Arrows Remaining : {player.items["Arrows"]}";    
+            }
+
+            if (player.items["Potions"] > 0)
+            {
+                button_heal.Visible = true;
+                textBoxPotions.Visible = true;
+                textBoxPotions.Text = $"Potions Remaining : {player.items["Potions"]}";
             }
 
             // Sets the player's image based on their chosen Character.
@@ -123,6 +131,22 @@ namespace Fall2020_CSC403_Project
 
             UpdateHealthBars();
             CheckHealth();
+        }
+
+        private void button_heal_Click(object sender, EventArgs e)
+        {
+            if (player.Health != player.MaxHealth)
+            {
+                player.Health = Math.Min(player.Health + 10, player.MaxHealth);
+                this.UpdateHealthBars();
+                player.items["Potions"] -= 1;
+                textBoxPotions.Text = $"Potions Remaining : {player.items["Potions"]}";
+                if (player.items["Potions"] < 1)
+                {
+                    button_heal.Visible = false;
+                    textBoxPotions.Visible = false;
+                }
+            }
         }
 
         private void CheckHealth()
