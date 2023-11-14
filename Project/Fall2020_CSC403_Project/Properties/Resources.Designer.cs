@@ -462,16 +462,6 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap potionoption_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("potionoption-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ratmen {
             get {
                 object obj = ResourceManager.GetObject("ratmen", resourceCulture);

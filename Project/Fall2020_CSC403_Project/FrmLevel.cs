@@ -27,7 +27,8 @@ namespace Fall2020_CSC403_Project
             // Sample items
             var testItem = new Item(new Vector2(500, 500), ItemType.Arrow, "testItem1_level1");
             var testItem2 = new Item(new Vector2(167, 250), ItemType.Bow, "testItem2_level1");
-            items = new List<Item>{testItem, testItem2};
+            var healthPotion = new Item(new Vector2(250, 300), ItemType.HealingPotion, "healingPotion_lvl1");
+            items = new List<Item>{testItem, testItem2, healthPotion};
             
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.leftDoorSpawn, new FrmLevel2(player)));

@@ -21,6 +21,9 @@ namespace Fall2020_CSC403_Project
 
             enemies = new List<Enemy> { enemyGhost, enemyHellBeast, };
 
+            var key1 = new Item(new Vector2(125, 100), ItemType.Key, "key1_lvl3");
+            items = new List<Item> {key1};
+
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.topDoorSpawn, new FrmLevel2(player)));
             

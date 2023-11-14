@@ -85,7 +85,7 @@ namespace Fall2020_CSC403_Project
             if (player.items["Potions"] > 0)
             {
                 picHealthPot.Visible = true;
-                picHealthPot.Image = Properties.Resources.potionoption_removebg_preview;
+                picHealthPot.Image = Properties.Resources.health_potion;
                 picHealthPot.SizeMode = PictureBoxSizeMode.StretchImage;
                 textBox2.Visible = true;
                 textBox2.Text = $"{player.items["Potions"]}";
