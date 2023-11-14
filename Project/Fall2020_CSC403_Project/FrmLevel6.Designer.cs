@@ -227,6 +227,7 @@ namespace Fall2020_CSC403_Project
 	        this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
 	        this.Name = "FrmLevel6";
 	        this.Text = "FrmLevel6";
+	        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 	        this.Load += new System.EventHandler(this.FrmLevel6_Load);
 	        ((System.ComponentModel.ISupportInitialize)(this.gooGloop1)).EndInit();
 	        ((System.ComponentModel.ISupportInitialize)(this.gooGloop0)).EndInit();
