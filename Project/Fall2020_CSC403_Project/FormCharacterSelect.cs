@@ -7,9 +7,6 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FormCharacterSelect : Form
     {
-        // best place to load :) actually not, THE LOAD FORM!!!
-        private FrmLevel level;
-        private Form[] levels;
         private Player player;
         
         public FormCharacterSelect()

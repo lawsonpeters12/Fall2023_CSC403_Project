@@ -167,7 +167,7 @@ namespace Fall2020_CSC403_Project
                 lose_screen.Show();
                 lose_screen.FormBorderStyle = FormBorderStyle.None;
                 FightOver?.Invoke(this, null);
-                Close();
+                Hide(); // temp fix for game crash
             }
         }
         private void EnemyDamage(int amount)

@@ -9,10 +9,6 @@ namespace Fall2020_CSC403_Project
         public FormSaveMenu(Player player)
         {
             InitializeComponent();
-            save1.Click += save1_Click;
-            save2.Click += save2_Click;
-            save3.Click += save3_Click;
-            returnButton.Click += returnButton_Click;
             Player = player;
         }
 
