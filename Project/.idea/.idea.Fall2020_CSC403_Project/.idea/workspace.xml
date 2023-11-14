@@ -8,28 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Resources/redeathscreen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel4.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel5.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel6.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel7.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel9.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Properties/Resources.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyGameLibrary/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,6 +123,7 @@
       <workItem from="1699746417231" duration="297000" />
       <workItem from="1699828633688" duration="10741000" />
       <workItem from="1699849607052" duration="1883000" />
+      <workItem from="1699925177359" duration="447000" />
     </task>
     <servers />
   </component>

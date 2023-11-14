@@ -270,6 +270,7 @@
     <None Include="Resources\demonBoss.png" />
     <None Include="Resources\enemy_ghost.png" />
     <None Include="Resources\ratmen.gif" />
+    <None Include="Resources\redeathscreen.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
