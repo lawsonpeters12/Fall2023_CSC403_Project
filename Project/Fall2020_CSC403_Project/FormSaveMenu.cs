@@ -12,6 +12,7 @@ namespace Fall2020_CSC403_Project
             save1.Click += save1_Click;
             save2.Click += save2_Click;
             save3.Click += save3_Click;
+            returnButton.Click += returnButton_Click;
             Player = player;
         }
 
@@ -33,6 +34,10 @@ namespace Fall2020_CSC403_Project
             SaveGame(Player, 3);
             Hide();
         }
-       
+        
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            Hide(); 
+        }
     }
 }

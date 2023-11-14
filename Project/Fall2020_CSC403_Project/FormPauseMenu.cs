@@ -56,9 +56,6 @@ namespace Fall2020_CSC403_Project
         {
             FormLoadMenu loadMenu = new FormLoadMenu();
             loadMenu.Show();
-            
-            Hide();
         }
-       
     }
 }

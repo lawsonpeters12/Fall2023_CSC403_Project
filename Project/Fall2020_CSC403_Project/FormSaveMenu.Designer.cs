@@ -32,6 +32,7 @@
             this.save1 = new System.Windows.Forms.Button();
             this.save2 = new System.Windows.Forms.Button();
             this.save3 = new System.Windows.Forms.Button();
+            this.returnButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +81,18 @@
             this.save3.UseVisualStyleBackColor = true;
             this.save3.Click += new System.EventHandler(this.save3_Click);
             // 
+            // returnButton
+            // 
+            this.returnButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.returnButton.Location = new System.Drawing.Point(39, 175);
+            this.returnButton.Margin = new System.Windows.Forms.Padding(2);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(109, 55);
+            this.returnButton.TabIndex = 4;
+            this.returnButton.Text = "Return";
+            this.returnButton.UseVisualStyleBackColor = false;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
+            // 
             // FormSaveMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +100,7 @@
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.backgroundBricks;
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.returnButton);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSaveMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -94,6 +108,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button returnButton;
 
         #endregion
 

@@ -320,7 +320,11 @@ namespace Fall2020_CSC403_Project
                 }
             }
         }
-
+        /// <summary>
+        /// Saves the game to one of 3 save slots
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="saveSlot"></param>
         protected void SaveGame(Player player, int saveSlot)
         {
             var playerSave = JsonConvert.SerializeObject(player);
@@ -328,15 +332,12 @@ namespace Fall2020_CSC403_Project
             {
                 case 1:
                     File.WriteAllText("save1.json",playerSave);
-                    Console.WriteLine("Save Slot 1!");
                     break;
                 case 2:
                     File.WriteAllText("save2.json",playerSave);
-                    Console.WriteLine("Save Slot 2!");
                     break;
                 case 3:
                     File.WriteAllText("save3.json",playerSave);
-                    Console.WriteLine("Save Slot 3!");
                     break;
                 default:
                     File.WriteAllText("save1.json",playerSave);
@@ -345,7 +346,7 @@ namespace Fall2020_CSC403_Project
         }
 
         /// <summary>
-        /// Loads the game 
+        /// Loads the game from one of 3 load slots
         /// </summary>
         /// <returns>FrmLevel of whatever level the player was on</returns>
         protected FrmLevelBase LoadGame(int loadSlot)
@@ -353,30 +354,15 @@ namespace Fall2020_CSC403_Project
             string playerInfo;
             switch (loadSlot)
             {
-                // load file existence checking and slot chosing
+                // load file existence checking and slot choosing
                 case 1:
-                    if (File.Exists("save1.json"))
-                    {
-                        playerInfo = File.ReadAllText("save1.json");
-                        Console.Write("Load Slot 1!");
-                    }
-                    else { goto default;}
+                    playerInfo = File.ReadAllText("save1.json");
                     break;
                 case 2:
-                    if (File.Exists("save2.json"))
-                    {
-                        playerInfo = File.ReadAllText("save2.json");
-                        Console.Write("Load Slot 2!");
-                    }
-                    else { goto default; }
+                    playerInfo = File.ReadAllText("save2.json");
                     break;
                 case 3:
-                    if (File.Exists("save3.json"))
-                    {
-                        playerInfo = File.ReadAllText("save3.json");
-                        Console.Write("Load Slot 3!");
-                    }
-                    else { goto default;}
+                    playerInfo = File.ReadAllText("save3.json");
                     break;
                 default:
                     return new FrmLevel(player);
