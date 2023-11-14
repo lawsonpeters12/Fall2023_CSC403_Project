@@ -70,6 +70,8 @@ namespace Fall2020_CSC403_Project.code
                     return new Size(200, 200);
                 case EnemyCharacter.SewerCrawly:
                     return new Size(150, 150);
+                case EnemyCharacter.miniBoss:
+                    return new Size(200, 200);
             }
             return new Size(80, 80);
         }
@@ -85,5 +87,6 @@ namespace Fall2020_CSC403_Project.code
         Slime,
         BiggerSlime,
         SewerCrawly,
+        miniBoss
     }
 }

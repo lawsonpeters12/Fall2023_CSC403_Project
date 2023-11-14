@@ -448,6 +448,8 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.reverseSlime;
                 case EnemyCharacter.SewerCrawly:
                     return Properties.Resources.sewer_spiderman;
+                case EnemyCharacter.miniBoss:
+                    return Properties.Resources.miniboss;
             }
             return null; // base case 
         }

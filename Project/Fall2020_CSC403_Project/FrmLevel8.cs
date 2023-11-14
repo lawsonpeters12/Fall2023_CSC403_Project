@@ -36,6 +36,9 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel8_Load(object sender, EventArgs e)
         {
+            var enemyMiniBoss = new Enemy(new Vector2(550, 50), EnemyCharacter.miniBoss, 1, "miniBoss_level8");
+            enemies = new List<Enemy> { enemyMiniBoss };
+
             PictureBox pic = Controls.Find("doorToLvl1", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.topDoorSpawn, new FrmLevel(player)));
             

@@ -314,6 +314,7 @@
     <None Include="Resources\titlescreen_2.wav" />
     <None Include="Resources\fight.wav" />
     <None Include="Resources\reverseSlime.gif" />
+    <None Include="Resources\miniboss.gif" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
