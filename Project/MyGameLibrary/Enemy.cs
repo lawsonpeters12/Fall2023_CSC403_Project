@@ -50,8 +50,10 @@ namespace Fall2020_CSC403_Project.code
                     return new Size(64, 125);
                 case EnemyCharacter.KoolAid:
                     return new Size(200, 160);
-                case EnemyCharacter.PoisonPacket:
+                case EnemyCharacter.Ghost:
                     return new Size(104, 128);
+                case EnemyCharacter.Boss:
+                    return new Size(300, 350);
             }
             return new Size(80, 80);
         }
@@ -60,7 +62,8 @@ namespace Fall2020_CSC403_Project.code
     public enum EnemyCharacter
     {
         KoolAid,
-        PoisonPacket,
+        Ghost,
         EnemyCheeto,
+        Boss,
     }
 }

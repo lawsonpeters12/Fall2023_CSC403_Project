@@ -348,8 +348,10 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.enemy_koolaid;
                 case EnemyCharacter.EnemyCheeto:
                     return Properties.Resources.enemy_cheetos;
-                case EnemyCharacter.PoisonPacket:
-                    return Properties.Resources.enemy_poisonpacket;
+                case EnemyCharacter.Ghost:
+                    return Properties.Resources.enemy_ghost;
+                case EnemyCharacter.Boss:
+                    return Properties.Resources.demonBoss;
             }
             return null; // base case 
         }

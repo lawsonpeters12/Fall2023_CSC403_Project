@@ -264,6 +264,11 @@
     <None Include="Resources\sewerBackground.png" />
     <None Include="Resources\TitleScreen.jpg" />
     <None Include="Resources\TitleScreen.png" />
+    <None Include="Resources\enemy_ghost.gif" />
+    <None Include="Resources\enemy_ghost1.gif" />
+    <None Include="Resources\demonBoss.gif" />
+    <None Include="Resources\demonBoss.png" />
+    <None Include="Resources\enemy_ghost.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
