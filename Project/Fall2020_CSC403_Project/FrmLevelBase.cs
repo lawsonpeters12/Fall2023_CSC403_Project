@@ -401,6 +401,8 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.demonBoss;
                 case EnemyCharacter.Rat:
                     return Properties.Resources.ratmen;
+                case EnemyCharacter.HellHound:
+                    return Properties.Resources.hellhoundwalking;
             }
             return null; // base case 
         }

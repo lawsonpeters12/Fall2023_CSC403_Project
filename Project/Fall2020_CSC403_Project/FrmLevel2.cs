@@ -17,6 +17,10 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel2_Load(object sender, EventArgs e)
         {
+            // Sample enemies
+            var enemyHellHound = new Enemy(new Vector2(750, 100), EnemyCharacter.HellHound, 4, "hellhound_level2");
+            enemies = new List<Enemy> { enemyHellHound };
+
             PictureBox pic = Controls.Find("picDoor0", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.rightDoorSpawn, new FrmLevel(player)));
 
