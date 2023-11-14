@@ -393,12 +393,8 @@ namespace Fall2020_CSC403_Project
     {
         public static Image EnemyImage(this Enemy enemy)
         {
-            switch (enemy.EnemyModel)
-            {
-                case EnemyCharacter.KoolAid:
-                    return Properties.Resources.enemy_koolaid;
-                case EnemyCharacter.EnemyCheeto:
-                    return Properties.Resources.enemy_cheetos;
+            switch (enemy.EnemyModel) { 
+
                 case EnemyCharacter.Ghost:
                     return Properties.Resources.enemy_ghost;
                 case EnemyCharacter.Boss:

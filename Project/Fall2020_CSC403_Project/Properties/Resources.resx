@@ -292,9 +292,6 @@
   <data name="door2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\door2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="demonBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\demonBoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="enemy_ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enemy_ghost.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -303,5 +300,8 @@
   </data>
   <data name="redeathscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redeathscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="demonBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\demonBoss.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

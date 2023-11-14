@@ -18,7 +18,7 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel9_Load(object sender, EventArgs e)
         {
-            var Boss = new Enemy(new Vector2(500, 25), EnemyCharacter.Boss, 20, "boss_level9");
+            var Boss = new Enemy(new Vector2(750, 75), EnemyCharacter.Boss, 20, "boss_level9");
             enemies = new List<Enemy> { Boss, };
 
             PictureBox pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;

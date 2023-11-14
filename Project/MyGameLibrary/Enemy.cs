@@ -46,10 +46,6 @@ namespace Fall2020_CSC403_Project.code
         {
             switch (enemyModel)
             {
-                case EnemyCharacter.EnemyCheeto:
-                    return new Size(64, 125);
-                case EnemyCharacter.KoolAid:
-                    return new Size(200, 160);
                 case EnemyCharacter.Ghost:
                     return new Size(150, 150);
                 case EnemyCharacter.Boss:
@@ -63,9 +59,7 @@ namespace Fall2020_CSC403_Project.code
 
     public enum EnemyCharacter
     {
-        KoolAid,
         Ghost,
-        EnemyCheeto,
         Boss,
         Rat
     }
