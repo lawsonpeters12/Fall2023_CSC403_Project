@@ -441,6 +441,12 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.hellhoundwalking;
                 case EnemyCharacter.HellBeast:
                     return Properties.Resources.hellbeast;
+                case EnemyCharacter.Slime:
+                    return Properties.Resources.slime_guy;
+                case EnemyCharacter.SewerCrawly:
+                    return Properties.Resources.sewer_spiderman;
+                case EnemyCharacter.Spider:
+                    return Properties.Resources.spider;
             }
             return null; // base case 
         }

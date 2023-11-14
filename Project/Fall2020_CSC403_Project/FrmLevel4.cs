@@ -16,6 +16,11 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel4_Load(object sender, EventArgs e)
         {
+            var enemySlime = new Enemy(new Vector2(485, 450), EnemyCharacter.Slime, 6, "slime_level4");
+            var enemyRat = new Enemy(new Vector2(250, 80), EnemyCharacter.Rat, 7, "rat_level4"); 
+
+            enemies = new List<Enemy> { enemySlime, enemyRat }; 
+
             PictureBox pic = Controls.Find("doorToLvl1", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.leftDoorSpawn, new FrmLevel(player)));
             

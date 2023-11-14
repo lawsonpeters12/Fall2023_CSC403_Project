@@ -552,6 +552,16 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sewer_spiderman {
+            get {
+                object obj = ResourceManager.GetObject("sewer_spiderman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sewer_wall {
             get {
                 object obj = ResourceManager.GetObject("sewer_wall", resourceCulture);
@@ -595,6 +605,26 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap sewerBackground {
             get {
                 object obj = ResourceManager.GetObject("sewerBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slime_guy {
+            get {
+                object obj = ResourceManager.GetObject("slime_guy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spider {
+            get {
+                object obj = ResourceManager.GetObject("spider", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

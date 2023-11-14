@@ -301,6 +301,10 @@
     <None Include="Resources\hellhoundwalking.gif" />
     <None Include="Resources\hellbeast.gif" />
     <None Include="Resources\map.png" />
+    <None Include="Resources\slime_guy.gif" />
+    <None Include="Resources\sewer_spiderman.gif" />
+    <None Include="Resources\slime_tongue.gif" />
+    <None Include="Resources\spider.gif" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />

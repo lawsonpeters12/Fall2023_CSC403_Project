@@ -64,6 +64,12 @@ namespace Fall2020_CSC403_Project.code
                     return new Size(150, 100);
                 case EnemyCharacter.HellBeast:
                     return new Size(150, 150);
+                case EnemyCharacter.Slime:
+                    return new Size(115, 115);
+                case EnemyCharacter.SewerCrawly:
+                    return new Size(150, 150);
+                case EnemyCharacter.Spider:
+                    return new Size(100, 100);
             }
             return new Size(80, 80);
         }
@@ -76,5 +82,8 @@ namespace Fall2020_CSC403_Project.code
         Rat,
         HellHound,
         HellBeast,
+        Slime,
+        SewerCrawly,
+        Spider,
     }
 }
