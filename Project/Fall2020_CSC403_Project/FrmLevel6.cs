@@ -36,7 +36,7 @@ namespace Fall2020_CSC403_Project
         public void FrmLevel6_Load(object sender, EventArgs e)
         {
 
-            var key2 = new Item(new Vector2(250,75), ItemType.Key, "key2_level6");
+            var key2 = new Item(new Vector2(175,100), ItemType.Key, "key2_level6");
             items = new List<Item> { key2 };
 
             var enemyRat = new Enemy(new Vector2(250, 50), EnemyCharacter.Rat, 1, "rat_level6");

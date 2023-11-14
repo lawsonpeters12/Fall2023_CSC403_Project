@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.picHealthPot = new System.Windows.Forms.PictureBox();
             this.charBG = new System.Windows.Forms.PictureBox();
             this.lblCharacterTxt = new System.Windows.Forms.Label();
             this.lblHealthTxt = new System.Windows.Forms.Label();
@@ -44,16 +45,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.picHealthPot = new System.Windows.Forms.PictureBox();
             this.picKey1 = new System.Windows.Forms.PictureBox();
             this.useHealthPot = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.picKey2 = new System.Windows.Forms.PictureBox();
+            this.picKey3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKey1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -75,6 +79,17 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(92, 57);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // picHealthPot
+            // 
+            this.picHealthPot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picHealthPot.Location = new System.Drawing.Point(3, 3);
+            this.picHealthPot.Name = "picHealthPot";
+            this.picHealthPot.Size = new System.Drawing.Size(89, 50);
+            this.picHealthPot.TabIndex = 0;
+            this.picHealthPot.TabStop = false;
+            this.picHealthPot.Visible = false;
+            this.picHealthPot.MouseHover += new System.EventHandler(this.ShowHealthButton);
             // 
             // charBG
             // 
@@ -208,17 +223,6 @@
             this.textBox1.TabIndex = 15;
             this.textBox1.Visible = false;
             // 
-            // picHealthPot
-            // 
-            this.picHealthPot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHealthPot.Location = new System.Drawing.Point(3, 3);
-            this.picHealthPot.Name = "picHealthPot";
-            this.picHealthPot.Size = new System.Drawing.Size(89, 50);
-            this.picHealthPot.TabIndex = 0;
-            this.picHealthPot.TabStop = false;
-            this.picHealthPot.Visible = false;
-            this.picHealthPot.MouseHover += new System.EventHandler(this.ShowHealthButton);
-            // 
             // picKey1
             // 
             this.picKey1.BackColor = System.Drawing.Color.Transparent;
@@ -249,6 +253,26 @@
             this.textBox2.TabIndex = 18;
             this.textBox2.Visible = false;
             // 
+            // picKey2
+            // 
+            this.picKey2.BackColor = System.Drawing.Color.Transparent;
+            this.picKey2.Location = new System.Drawing.Point(697, 461);
+            this.picKey2.Name = "picKey2";
+            this.picKey2.Size = new System.Drawing.Size(90, 56);
+            this.picKey2.TabIndex = 19;
+            this.picKey2.TabStop = false;
+            this.picKey2.Visible = false;
+            // 
+            // picKey3
+            // 
+            this.picKey3.BackColor = System.Drawing.Color.Transparent;
+            this.picKey3.Location = new System.Drawing.Point(793, 464);
+            this.picKey3.Name = "picKey3";
+            this.picKey3.Size = new System.Drawing.Size(85, 50);
+            this.picKey3.TabIndex = 20;
+            this.picKey3.TabStop = false;
+            this.picKey3.Visible = false;
+            // 
             // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -256,6 +280,8 @@
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.inventory_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(956, 547);
+            this.Controls.Add(this.picKey3);
+            this.Controls.Add(this.picKey2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.useHealthPot);
             this.Controls.Add(this.picKey1);
@@ -278,16 +304,18 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Location = new System.Drawing.Point(500, 500);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "FormInventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
             this.Load += new System.EventHandler(this.FormInventory_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHealthPot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKey1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picKey3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +343,7 @@
         private System.Windows.Forms.PictureBox picKey1;
         private System.Windows.Forms.Button useHealthPot;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox picKey2;
+        private System.Windows.Forms.PictureBox picKey3;
     }
 }

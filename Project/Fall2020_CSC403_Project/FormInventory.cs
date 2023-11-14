@@ -96,7 +96,27 @@ namespace Fall2020_CSC403_Project
                 picKey1.Image = Properties.Resources.key_removebg_preview;
                 picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-
+            else if (player.items["Keys"] == 2)
+            {
+                picKey1.Visible = true;
+                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
+                picKey2.Visible = true;
+                picKey2.Image = Properties.Resources.key_removebg_preview;
+                picKey2.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (player.items["Keys"] == 3)
+            {
+                picKey1.Visible = true;
+                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
+                picKey2.Visible = true;
+                picKey2.Image = Properties.Resources.key_removebg_preview;
+                picKey2.SizeMode = PictureBoxSizeMode.StretchImage;
+                picKey3.Visible = true;
+                picKey3.Image = Properties.Resources.key_removebg_preview;
+                picKey3.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
 
             // labels
             lblCharacterTxt.Width = 200;

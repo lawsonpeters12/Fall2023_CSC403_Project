@@ -37,6 +37,9 @@ namespace Fall2020_CSC403_Project
             var Boss = new Enemy(new Vector2(750, 100), EnemyCharacter.Boss, 20, "boss_level9");
             enemies = new List<Enemy> { Boss, };
 
+            var key3 = new Item(new Vector2(750, 250), ItemType.Key, "key3_lvl9");
+            items = new List<Item> { key3 };
+
             PictureBox pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel8.topDoorSpawn, new FrmLevel8(player)));
 
