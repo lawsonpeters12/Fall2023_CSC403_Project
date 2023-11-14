@@ -54,6 +54,8 @@ namespace Fall2020_CSC403_Project.code
                     return new Size(104, 128);
                 case EnemyCharacter.HellHound:
                     return new Size(150, 100);
+                case EnemyCharacter.HellBeast:
+                    return new Size(150, 150);
             }
             return new Size(80, 80);
         }
@@ -65,5 +67,6 @@ namespace Fall2020_CSC403_Project.code
         Boss,
         Rat,
         HellHound,
+        HellBeast,
     }
 }

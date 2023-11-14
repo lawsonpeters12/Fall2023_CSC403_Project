@@ -15,6 +15,12 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel3_Load(object sender, EventArgs e)
         {
+            // Sample enemies
+            var enemyGhost = new Enemy(new Vector2(500,375), EnemyCharacter.Ghost, 7, "ghost_level3");
+            var enemyHellBeast = new Enemy(new Vector2(125,225), EnemyCharacter.HellBeast, 5, "hellBeast_level3");
+
+            enemies = new List<Enemy> { enemyGhost, enemyHellBeast, };
+
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.topDoorSpawn, new FrmLevel2(player)));
             

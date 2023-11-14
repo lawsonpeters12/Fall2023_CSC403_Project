@@ -272,6 +272,7 @@
     <None Include="Resources\ratmen.gif" />
     <None Include="Resources\redeathscreen.png" />
     <None Include="Resources\hellhoundwalking.gif" />
+    <None Include="Resources\hellbeast.gif" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
