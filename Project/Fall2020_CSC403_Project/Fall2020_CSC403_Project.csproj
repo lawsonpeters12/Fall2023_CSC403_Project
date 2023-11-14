@@ -74,6 +74,12 @@
     <Compile Include="FormLoseScreen.Designer.cs">
       <DependentUpon>FormLoseScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMap.Designer.cs">
+      <DependentUpon>FormMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPauseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoseScreen.resx">
       <DependentUpon>FormLoseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMap.resx">
+      <DependentUpon>FormMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPauseMenu.resx">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
@@ -291,6 +300,7 @@
     <None Include="Resources\redeathscreen.png" />
     <None Include="Resources\hellhoundwalking.gif" />
     <None Include="Resources\hellbeast.gif" />
+    <None Include="Resources\map.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />

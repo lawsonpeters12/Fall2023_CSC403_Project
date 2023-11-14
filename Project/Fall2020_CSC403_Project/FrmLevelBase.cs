@@ -44,6 +44,7 @@ namespace Fall2020_CSC403_Project
         private List<Keys> keysPressed = new List<Keys>();
         private FormPauseMenu PauseMenu;
         private FormInventory Inventory;
+        private FormMap Map;
         private List<Character> walls = new List<Character>();
         private PictureBox playerPicture;
         private string LevelName;
@@ -316,6 +317,10 @@ namespace Fall2020_CSC403_Project
                     case Keys.I:
                         Inventory = new FormInventory(player.PlayerModel.ToString());
                         Inventory.Show();
+                        break;
+                    case Keys.M:
+                        Map = new FormMap(player, LevelName);
+                        Map.Show();
                         break;
                 }
             }
