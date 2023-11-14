@@ -321,22 +321,67 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        protected void SaveGame(Player player)
+        protected void SaveGame(Player player, int saveSlot)
         {
             var playerSave = JsonConvert.SerializeObject(player);
-            Console.WriteLine($"Player Object: {playerSave}");
-            File.WriteAllText("save1.json",playerSave);
+            switch (saveSlot)
+            {
+                case 1:
+                    File.WriteAllText("save1.json",playerSave);
+                    Console.WriteLine("Save Slot 1!");
+                    break;
+                case 2:
+                    File.WriteAllText("save2.json",playerSave);
+                    Console.WriteLine("Save Slot 2!");
+                    break;
+                case 3:
+                    File.WriteAllText("save3.json",playerSave);
+                    Console.WriteLine("Save Slot 3!");
+                    break;
+                default:
+                    File.WriteAllText("save1.json",playerSave);
+                    break;
+            }
         }
 
         /// <summary>
         /// Loads the game 
         /// </summary>
         /// <returns>FrmLevel of whatever level the player was on</returns>
-        protected FrmLevelBase LoadGame()
+        protected FrmLevelBase LoadGame(int loadSlot)
         {
-            var playerInfo = File.ReadAllText("save1.json");
+            string playerInfo;
+            switch (loadSlot)
+            {
+                // load file existence checking and slot chosing
+                case 1:
+                    if (File.Exists("save1.json"))
+                    {
+                        playerInfo = File.ReadAllText("save1.json");
+                        Console.Write("Load Slot 1!");
+                    }
+                    else { goto default;}
+                    break;
+                case 2:
+                    if (File.Exists("save2.json"))
+                    {
+                        playerInfo = File.ReadAllText("save2.json");
+                        Console.Write("Load Slot 2!");
+                    }
+                    else { goto default; }
+                    break;
+                case 3:
+                    if (File.Exists("save3.json"))
+                    {
+                        playerInfo = File.ReadAllText("save3.json");
+                        Console.Write("Load Slot 3!");
+                    }
+                    else { goto default;}
+                    break;
+                default:
+                    return new FrmLevel(player);
+            }
             Player playerLoad = JsonConvert.DeserializeObject<Player>(playerInfo);
-            Console.WriteLine($"Player info: {playerInfo}");
             switch (playerLoad.LevelName)
             {
                 case "level1":

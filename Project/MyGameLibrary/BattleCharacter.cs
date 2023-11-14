@@ -43,6 +43,7 @@ namespace Fall2020_CSC403_Project.code
             if (Experience >= ExperienceNeeded)
             {
                 Level++;
+                Health = MaxHealth;
                 Experience = 0;
             }
         }

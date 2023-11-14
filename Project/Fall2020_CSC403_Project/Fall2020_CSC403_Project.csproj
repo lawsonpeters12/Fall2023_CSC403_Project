@@ -62,6 +62,12 @@
     <Compile Include="FormInventory.Designer.cs">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLoadMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoadMenu.Designer.cs">
+      <DependentUpon>FormLoadMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="FormPauseMenu.Designer.cs">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSaveMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSaveMenu.Designer.cs">
+      <DependentUpon>FormSaveMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTitleScreen.cs">
       <SubType>Form</SubType>
@@ -159,11 +171,17 @@
     <EmbeddedResource Include="FormInventory.resx">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLoadMenu.resx">
+      <DependentUpon>FormLoadMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoseScreen.resx">
       <DependentUpon>FormLoseScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPauseMenu.resx">
       <DependentUpon>FormPauseMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSaveMenu.resx">
+      <DependentUpon>FormSaveMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTitleScreen.resx">
       <DependentUpon>FormTitleScreen.cs</DependentUpon>

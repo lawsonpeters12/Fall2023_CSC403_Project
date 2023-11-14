@@ -8,14 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/Fall2020_CSC403_Project.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormPauseMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyGameLibrary/BattleCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/BattleCharacter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyGameLibrary/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyGameLibrary/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,28 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.5365552&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.5365552",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Michael\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Michael\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Michael\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Fall2020_CSC403_Project" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -120,6 +125,7 @@
       <workItem from="1699746417231" duration="297000" />
       <workItem from="1699828633688" duration="10741000" />
       <workItem from="1699849607052" duration="1883000" />
+      <workItem from="1699926937827" duration="3071000" />
     </task>
     <servers />
   </component>

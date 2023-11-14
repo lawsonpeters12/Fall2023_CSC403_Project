@@ -15,6 +15,7 @@ namespace Fall2020_CSC403_Project
     public partial class FormPauseMenu : FrmLevelBase
     {
         Player Player;
+        
         public FormPauseMenu(Player player)
         {
             InitializeComponent();
@@ -47,13 +48,15 @@ namespace Fall2020_CSC403_Project
         private void button4_Click(object sender, EventArgs e)
         {
             // save the game
-            SaveGame(Player);
+            FormSaveMenu saveMenu = new FormSaveMenu(Player);
+            saveMenu.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FrmLevelBase loadedLevel = LoadGame();
-            loadedLevel.Show();
+            FormLoadMenu loadMenu = new FormLoadMenu();
+            loadMenu.Show();
+            
             Hide();
         }
        

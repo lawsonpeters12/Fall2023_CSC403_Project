@@ -134,7 +134,6 @@ namespace Fall2020_CSC403_Project
                 player.DefeatedEnemies.Add(enemy.Name);
                 player.AddExperience(experienceGain);
                 player.UpdateLevel();
-                player.Health = player.MaxHealth;
                 instance = null;
                 FightOver?.Invoke(this, null);
                 Close();
