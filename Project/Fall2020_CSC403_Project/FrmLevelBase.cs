@@ -352,6 +352,8 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.enemy_ghost;
                 case EnemyCharacter.Boss:
                     return Properties.Resources.demonBoss;
+                case EnemyCharacter.Rat:
+                    return Properties.Resources.ratmen;
             }
             return null; // base case 
         }

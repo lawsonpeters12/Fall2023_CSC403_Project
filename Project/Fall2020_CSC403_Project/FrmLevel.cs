@@ -24,12 +24,12 @@ namespace Fall2020_CSC403_Project
             // Sample enemies
             var bossKoolaid = new Enemy(new Vector2(800, 117), EnemyCharacter.KoolAid, 2, "koolaid_level1");
             var enemyCheeto = new Enemy(new Vector2(1050, 360), EnemyCharacter.EnemyCheeto, 2, "cheeto_level1");
-            var enemyGhost = new Enemy(new Vector2(167, 250), EnemyCharacter.Ghost, 1, "ghost_level1");
+            var enemyGhost = new Enemy(new Vector2(100, 350), EnemyCharacter.Ghost, 1, "ghost_level1");
             enemies = new List<Enemy>{bossKoolaid, enemyCheeto, enemyGhost};
 
             // Sample items
             var testItem = new Item(new Vector2(500, 500), ItemType.Arrow, "testItem1_level1");
-            var testItem2 = new Item(new Vector2(100, 400), ItemType.Bow, "testItem2_level1");
+            var testItem2 = new Item(new Vector2(167, 250), ItemType.Bow, "testItem2_level1");
             items = new List<Item>{testItem, testItem2};
             
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;

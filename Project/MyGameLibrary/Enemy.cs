@@ -51,9 +51,11 @@ namespace Fall2020_CSC403_Project.code
                 case EnemyCharacter.KoolAid:
                     return new Size(200, 160);
                 case EnemyCharacter.Ghost:
-                    return new Size(104, 128);
+                    return new Size(150, 150);
                 case EnemyCharacter.Boss:
                     return new Size(300, 350);
+                case EnemyCharacter.Rat:
+                    return new Size(104, 128);
             }
             return new Size(80, 80);
         }
@@ -65,5 +67,6 @@ namespace Fall2020_CSC403_Project.code
         Ghost,
         EnemyCheeto,
         Boss,
+        Rat
     }
 }
