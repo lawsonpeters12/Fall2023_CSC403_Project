@@ -57,7 +57,7 @@ namespace Fall2020_CSC403_Project.code
                 case EnemyCharacter.Ghost:
                     return new Size(150, 150);
                 case EnemyCharacter.Boss:
-                    return new Size(300, 350);
+                    return new Size(350, 350);
                 case EnemyCharacter.Rat:
                     return new Size(104, 128);
                 case EnemyCharacter.HellHound:
@@ -67,11 +67,9 @@ namespace Fall2020_CSC403_Project.code
                 case EnemyCharacter.Slime:
                     return new Size(115, 115);
                 case EnemyCharacter.BiggerSlime:
-                    return new Size(150, 150);
+                    return new Size(200, 200);
                 case EnemyCharacter.SewerCrawly:
                     return new Size(150, 150);
-                case EnemyCharacter.Spider:
-                    return new Size(100, 100);
             }
             return new Size(80, 80);
         }
@@ -87,6 +85,5 @@ namespace Fall2020_CSC403_Project.code
         Slime,
         BiggerSlime,
         SewerCrawly,
-        Spider,
     }
 }

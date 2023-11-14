@@ -1,12 +1,15 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
+using System.Media;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Fall2020_CSC403_Project.Properties;
 
 namespace Fall2020_CSC403_Project
 {
     public partial class FrmLevel : FrmLevelBase
     {
+        public SoundPlayer Level1Music; 
         public static Vector2 frontDoorSpawn = new Vector2(616, 411);
         public static Vector2 rightDoorSpawn = new Vector2(1012, 378);
         public static Vector2 leftDoorSpawn = new Vector2(120, 385);
@@ -16,8 +19,23 @@ namespace Fall2020_CSC403_Project
         public FrmLevel(Player player) : base (player, "level1")
         {
             InitializeComponent();
+            Level1Music = new SoundPlayer(Resources.roaming3);
         }
-        
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            // Start playing the music for level one
+            Level1Music.PlayLooping();
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            // Stop playing the music for level one
+            Level1Music.Stop();
+        }
+
         public void FrmLevel_Load(object sender, EventArgs e)
         {
             // Sample enemies

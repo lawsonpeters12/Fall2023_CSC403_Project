@@ -1,22 +1,40 @@
 using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Collections.Generic;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
     public partial class FrmLevel9 : FrmLevelBase
     {
+        public SoundPlayer Level9Music;
         public static Vector2 bottomDoorSpawn = new Vector2(525, 410);
 
         public FrmLevel9(Player player) : base(player, "level9")
         {
             InitializeComponent();
+            Level9Music = new SoundPlayer(Resources.boss);
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            // Start playing the music for level one
+            Level9Music.PlayLooping();
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            // Stop playing the music for level one
+            Level9Music.Stop();
         }
 
         public void FrmLevel9_Load(object sender, EventArgs e)
         {
-            var Boss = new Enemy(new Vector2(750, 75), EnemyCharacter.Boss, 20, "boss_level9");
+            var Boss = new Enemy(new Vector2(750, 100), EnemyCharacter.Boss, 20, "boss_level9");
             enemies = new List<Enemy> { Boss, };
 
             PictureBox pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;

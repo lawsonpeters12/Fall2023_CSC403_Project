@@ -39,31 +39,6 @@ namespace Fall2020_CSC403_Project
                 return Properties.Resources.wall4;
             }
         }
-        public SoundPlayer LevelMusicPlayer
-        {
-            get
-            {
-                switch (LevelName)
-                {
-                    case "level1":
-                    case "level2":
-                    case "level3":
-                    case "level7":
-                    case "level8":
-                        LevelMusicPlayer.Stream = Properties.Resources.roaming3;
-                        break;
-                    case "level4":
-                    case "level5":
-                    case "level6":
-                        LevelMusicPlayer.Stream = Properties.Resources.sewer;
-                        break;
-                    case "level9":
-                        LevelMusicPlayer.Stream = Properties.Resources.boss;
-                        break;
-                }
-                return null;
-            }
-        }
         
         private Dictionary<Enemy, PictureBox> enemyBoxes;
         private Dictionary<Item, PictureBox> itemBoxes;
@@ -470,11 +445,9 @@ namespace Fall2020_CSC403_Project
                 case EnemyCharacter.Slime:
                     return Properties.Resources.slime_guy;
                 case EnemyCharacter.BiggerSlime:
-                    return Properties.Resources.slime_guy;
+                    return Properties.Resources.reverseSlime;
                 case EnemyCharacter.SewerCrawly:
                     return Properties.Resources.sewer_spiderman;
-                case EnemyCharacter.Spider:
-                    return Properties.Resources.spider;
             }
             return null; // base case 
         }
