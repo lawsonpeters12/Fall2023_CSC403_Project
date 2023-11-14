@@ -33,7 +33,7 @@ namespace Fall2020_CSC403_Project
 
         private void use_health_potion(object sender, EventArgs e)
         {
-            player.Health -= 1;
+            player.Health = Math.Min(player.Health + 10, player.MaxHealth);
             UpdateHealthBar();
             player.items["Potions"] -= 1;
             if (player.items["Potions"] == 0)
