@@ -1,6 +1,4 @@
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 using Fall2020_CSC403_Project.code;
 
 namespace Fall2020_CSC403_Project

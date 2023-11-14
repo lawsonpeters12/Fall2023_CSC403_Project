@@ -348,7 +348,7 @@ namespace Fall2020_CSC403_Project
         /// <summary>
         /// Loads the game from one of 3 load slots
         /// </summary>
-        /// <returns>FrmLevel of whatever level the player was on</returns>
+        /// <returns>Level form that the player was on with the player initialized</returns>
         protected FrmLevelBase LoadGame(int loadSlot)
         {
             string playerInfo;

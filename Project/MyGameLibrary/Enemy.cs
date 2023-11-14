@@ -1,6 +1,4 @@
 ﻿using System.Drawing;
-using Fall2020_CSC403_Project.code;
-using System.Collections.Generic;
 
 namespace Fall2020_CSC403_Project.code
 {
@@ -18,19 +16,24 @@ namespace Fall2020_CSC403_Project.code
         /// This is the background color for the fight form for this enemy
         /// </summary>
         public Color Color { get; set; }
-        /// <summary>
-        /// This is a flag for if the enemy is defeated
-        /// </summary>
         
         public string Name { get; }
+        /// <summary>
+        /// This is the model that the enemy uses
+        /// </summary>
         public EnemyCharacter EnemyModel { get; }
+        /// <summary>
+        /// This is the size of the enemy
+        /// </summary>
         public Size Size => SetEnemySize(EnemyModel);
 
         /// <summary>
-        /// 
+        /// Enemy character constructor
         /// </summary>
-        /// <param name="initPos">this is the initial position of the enemy</param>
-        /// <param name="collider">this is the collider for the enemy</param>
+        /// <param name="initPos"></param>
+        /// <param name="enemyModel"></param>
+        /// <param name="level"></param>
+        /// <param name="name"></param>
         public Enemy(Vector2 initPos, EnemyCharacter enemyModel, int level, string name) : base(initPos, new Collider(new Rectangle(new Point((int)initPos.x, (int)initPos.y), SetEnemySize(enemyModel))), level)
         {
             Name = name;
@@ -42,6 +45,11 @@ namespace Fall2020_CSC403_Project.code
             return player.DefeatedEnemies.Contains(Name);
         }
         
+        /// <summary>
+        /// Assigns fixed size values for each type enemy
+        /// </summary>
+        /// <param name="enemyModel"></param>
+        /// <returns>Size of the enemy type</returns>
         private static Size SetEnemySize(EnemyCharacter enemyModel)
         {
             switch (enemyModel)

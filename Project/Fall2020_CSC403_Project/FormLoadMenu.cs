@@ -1,4 +1,3 @@
-using Fall2020_CSC403_Project.code;
 using System;
 using System.Drawing;
 using System.IO;
@@ -16,7 +15,7 @@ namespace Fall2020_CSC403_Project
             returnButton.Click += returnButton_Click;
         }
 
-        // Saves the game to whichever of the 3 save slots the player selects
+        // Loads the game from whichever of the 3 save slots the player selects, if they exist
         private void load1_Click(object sender, EventArgs e)
         {
             if (!File.Exists("save1.json"))
@@ -53,6 +52,7 @@ namespace Fall2020_CSC403_Project
             loadedLevel.Show();
         }
 
+        // closes the load menu
         private void returnButton_Click(object sender, EventArgs e)
         {
             Hide(); 

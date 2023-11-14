@@ -1,12 +1,5 @@
 using Fall2020_CSC403_Project.code;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Windows.Forms;
 
@@ -45,13 +38,14 @@ namespace Fall2020_CSC403_Project
             Application.Restart();
         }
 
+        // displays the save menu
         private void button4_Click(object sender, EventArgs e)
         {
-            // save the game
             FormSaveMenu saveMenu = new FormSaveMenu(Player);
             saveMenu.Show();
         }
 
+        // displays the load menu
         private void button5_Click(object sender, EventArgs e)
         {
             FormLoadMenu loadMenu = new FormLoadMenu();
