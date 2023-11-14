@@ -287,6 +287,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\winmusic.wav" />
     <None Include="Resources\backgroundBricks.png" />
     <None Include="Resources\sewerBackground.png" />
     <None Include="Resources\TitleScreen.jpg" />
@@ -307,6 +308,11 @@
     <None Include="Resources\spider.gif" />
     <None Include="Resources\Defeat.png" />
     <None Include="Resources\bow.png" />
+    <None Include="Resources\boss.wav" />
+    <None Include="Resources\roaming3.wav" />
+    <None Include="Resources\sewer.wav" />
+    <None Include="Resources\titlescreen_2.wav" />
+    <None Include="Resources\fight.wav" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
