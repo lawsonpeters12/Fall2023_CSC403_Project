@@ -163,9 +163,6 @@
   <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="enemy_koolaid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\enemy_koolaid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -321,5 +318,11 @@
   </data>
   <data name="spider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spider.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Defeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Defeat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

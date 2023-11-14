@@ -30,6 +30,9 @@ namespace Fall2020_CSC403_Project
             
             gloopPic = Controls.Find("gooGloop1", true)[0] as PictureBox;
             gloops.Add(Gloop.MakeGloop(gloopPic));
+
+            this.Size = new System.Drawing.Size(1199, 618);
+            this.CenterToScreen();
             
             LevelSetup();
             Game.player = player;

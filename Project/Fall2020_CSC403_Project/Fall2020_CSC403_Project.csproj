@@ -305,6 +305,8 @@
     <None Include="Resources\sewer_spiderman.gif" />
     <None Include="Resources\slime_tongue.gif" />
     <None Include="Resources\spider.gif" />
+    <None Include="Resources\Defeat.png" />
+    <None Include="Resources\bow.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />
@@ -343,7 +345,6 @@
     <Content Include="Resources\battle form example.PNG" />
     <None Include="Resources\Character Select.PNG" />
     <None Include="Resources\blonde_nobg.PNG" />
-    <None Include="Resources\bow.png" />
     <Content Include="Resources\charselectfinished.png" />
     <None Include="Resources\health_potion-removebg-preview.png" />
     <None Include="Resources\health_potion.png" />

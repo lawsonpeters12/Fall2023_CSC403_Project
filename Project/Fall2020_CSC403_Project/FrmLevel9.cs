@@ -22,6 +22,9 @@ namespace Fall2020_CSC403_Project
             PictureBox pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel8.topDoorSpawn, new FrmLevel8(player)));
 
+            this.Size = new System.Drawing.Size(1199, 618);
+            this.CenterToScreen();
+
             LevelSetup();
             Game.player = player;
             DoubleBuffered = true;
