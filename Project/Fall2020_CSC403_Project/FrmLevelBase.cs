@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
-using Newtonsoft.Json;
+using System.Net.Security;
+using System.Reflection;
 using System.Windows.Forms;
 using Fall2020_CSC403_Project.code;
 
@@ -11,7 +10,7 @@ namespace Fall2020_CSC403_Project
     public class FrmLevelBase : Form
     {
         // level specific things
-        protected Player player { get; set; }
+        protected Player player { get; }
         protected List<Enemy> enemies { get; set; }
         public Color? FightColor { get; protected set; }
         protected List<Door> doors { get; set; }
@@ -69,7 +68,7 @@ namespace Fall2020_CSC403_Project
         protected void LevelSetup()
         {
             player.LevelName = LevelName;
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeWalls();
             InitializePlayer();
             foreach (var enemy in enemies)
@@ -321,56 +320,6 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        protected void SaveGame(Player player)
-        {
-            var playerSave = JsonConvert.SerializeObject(player);
-            Console.WriteLine($"Player Object: {playerSave}");
-            File.WriteAllText("save1.json",playerSave);
-        }
-
-        /// <summary>
-        /// Loads the game 
-        /// </summary>
-        /// <returns>FrmLevel of whatever level the player was on</returns>
-        protected FrmLevelBase LoadGame()
-        {
-            var playerInfo = File.ReadAllText("save1.json");
-            Player playerLoad = JsonConvert.DeserializeObject<Player>(playerInfo);
-            Console.WriteLine($"Player info: {playerInfo}");
-            switch (playerLoad.LevelName)
-            {
-                case "level1":
-                    var loadedLevel1 = new FrmLevel(playerLoad);
-                    return loadedLevel1;
-                case "level2":
-                    var loadedLevel2 = new FrmLevel2(playerLoad);
-                    return loadedLevel2;
-                case "level3":
-                    var loadedLevel3 = new FrmLevel3(playerLoad);
-                    return loadedLevel3;
-                case "level4":
-                    var loadedLevel4 = new FrmLevel4(playerLoad);
-                    return loadedLevel4;
-                case "level5":
-                    var loadedLevel5 = new FrmLevel5(playerLoad);
-                    return loadedLevel5;
-                case "level6":
-                    var loadedLevel6 = new FrmLevel6(playerLoad);
-                    return loadedLevel6;
-                case "level7":
-                    var loadedLevel7 = new FrmLevel7(playerLoad);
-                    return loadedLevel7;
-                case "level8":
-                    var loadedLevel8 = new FrmLevel8(playerLoad);
-                    return loadedLevel8;
-                case "level9":
-                    var loadedLevel9 = new FrmLevel9(playerLoad);
-                    return loadedLevel9;
-                default:
-                    return new FrmLevel(player); // default case
-            }
-        }
-        
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.

@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FormLoseScreen : FrmLevelBase
+    public partial class FormLoseScreen : Form
     {
         private FrmLevelBase LevelForm;
-        public FormLoseScreen()
+        public FormLoseScreen(FrmLevelBase l)
         {
             InitializeComponent();
+            LevelForm = l;
             button1.Click += button1_Click;
         }
         //method close app on clicking exit game button
@@ -29,9 +30,7 @@ namespace Fall2020_CSC403_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmLevelBase loadedLevel = LoadGame();
-            loadedLevel.Show();
-            Hide();
+            this.Hide();
         }
     }
 }

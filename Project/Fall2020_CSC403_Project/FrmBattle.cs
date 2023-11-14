@@ -141,7 +141,7 @@ namespace Fall2020_CSC403_Project
             }
             else if (player.Health <= 0)
             {
-                lose_screen = new FormLoseScreen();
+                lose_screen = new FormLoseScreen(LevelForm);
                 lose_screen.Show();
                 lose_screen.FormBorderStyle = FormBorderStyle.None;
                 FightOver?.Invoke(this, null);

@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FormPauseMenu : FrmLevelBase
+    public partial class FormPauseMenu : Form
     {
-        Player Player;
-        public FormPauseMenu(Player player)
+        Player player;
+        public FormPauseMenu(Player l)
         {
             InitializeComponent();
             button1.Click += button1_Click;
@@ -23,7 +23,7 @@ namespace Fall2020_CSC403_Project
             button3.Click += button3_Click;
             button4.Click += button4_Click;
             button5.Click += button5_Click;
-            Player = player;
+            player = l;
         }
 
         // Exit button
@@ -47,14 +47,13 @@ namespace Fall2020_CSC403_Project
         private void button4_Click(object sender, EventArgs e)
         {
             // save the game
-            SaveGame(Player);
+            player.SaveTest();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FrmLevelBase loadedLevel = LoadGame();
-            loadedLevel.Show();
-            Hide();
+            // load the game
+            //LevelForm.LoadGameState(sender, e);
         }
        
     }

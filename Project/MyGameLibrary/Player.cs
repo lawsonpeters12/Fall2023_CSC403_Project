@@ -26,6 +26,14 @@ namespace Fall2020_CSC403_Project.code
             PickedUpItems = pickedUpItems;
         }
 
+        // save system FOR REFERENCE
+        public void SaveTest()
+        {
+            var playerSave = JsonConvert.SerializeObject(this);
+            Console.WriteLine($"Player Object: {playerSave}");
+            //this = JsonConvert.DeserializeObject<Player>(playerSave);
+        }
+
     }
  // TODO LevelName enum for save system
     public enum PlayerCharacter

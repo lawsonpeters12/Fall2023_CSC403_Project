@@ -18,35 +18,54 @@ namespace Fall2020_CSC403_Project
             buttonJohnny.Click += buttonJohnny_Click;
             buttonJimmy.Click += buttonJimmy_Click;
             buttonJenny.Click += buttonJenny_Click;
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Normal;
             player = new Player(FrmLevel.frontDoorSpawn, 7, PlayerCharacter.Johnny, new List<string>(), new List<string>());
         }
     
-        // Sets the player's Character as Johnny
+        // Sets the player's Character as Peter and starts the game.
         // TODO Create levelName enum
         private void buttonJohnny_Click(object sender, EventArgs e)
         {
+            // player.PlayerModel = PlayerCharacter.Johnny;
+            // level = new FrmLevel(player);
+            // level.Show();
+            // Hide();
             CreatePlayer(PlayerCharacter.Johnny, "level1");
         }
 
-        // Sets the player's Character as Jimmy
+        // Sets the player's Character as The Sponge and starts the game
         private void buttonJimmy_Click(object sender, EventArgs e)
         {
+            // player.PlayerModel = PlayerCharacter.Jimmy;
+            // level = new FrmLevel(player);
+            // level.Show();
+            // Hide();
             CreatePlayer(PlayerCharacter.Jimmy, "level1");
         }
 
-        // Sets the player's Character as Jenny
+        // Sets the player's Character as Wormy and starts the game
         private void buttonJenny_Click(object sender, EventArgs e)
         {
+            // player.PlayerModel = PlayerCharacter.Jenny;
+            // level = new FrmLevel(player);
+            // level.Show();
+            // Hide();
             CreatePlayer(PlayerCharacter.Jenny, "level1");
         }
-        
-        // loads the new player into level 1
+        // this would help with knowing which level to put the player on upon loading
         private void CreatePlayer(PlayerCharacter playerCharacter, string levelName)
         {
             player.PlayerModel = playerCharacter;
-            FrmLevelBase level = new FrmLevel(player);
+            FrmLevelBase level;
+            if (levelName == "level1")
+            {
+                level = new FrmLevel(player);
+            }
+            else
+            {
+                level = new FrmLevel2(player);
+            }
             level.Show();
             Hide();
         }
