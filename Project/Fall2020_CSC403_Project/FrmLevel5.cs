@@ -39,6 +39,10 @@ namespace Fall2020_CSC403_Project
 
             enemies = new List<Enemy> { enemyCrawly };
 
+
+            var healthPotion = new Item(new Vector2(123, 100), ItemType.HealingPotion, "healingPotion_level5");
+            items = new List<Item> { healthPotion };
+
             PictureBox pic = Controls.Find("doorToLvl4", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel4.leftDoorSpawn, new FrmLevel4(player)));
             

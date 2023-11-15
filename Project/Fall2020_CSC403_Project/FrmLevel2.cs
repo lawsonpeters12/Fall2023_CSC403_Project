@@ -40,6 +40,8 @@ namespace Fall2020_CSC403_Project
             // Sample enemies
             var enemyHellHound = new Enemy(new Vector2(750, 100), EnemyCharacter.HellHound, 4, "hellhound_level2");
             enemies = new List<Enemy> { enemyHellHound };
+            var healthPotion = new Item(new Vector2(150, 100), ItemType.HealingPotion, "healingPotion_level2");
+            items = new List<Item> { healthPotion };
 
             PictureBox pic = Controls.Find("picDoor0", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel.rightDoorSpawn, new FrmLevel(player)));
