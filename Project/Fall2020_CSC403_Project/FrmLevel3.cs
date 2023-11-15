@@ -37,7 +37,7 @@ namespace Fall2020_CSC403_Project
         {
             // Sample enemies
             var enemyGhost = new Enemy(new Vector2(500,375), EnemyCharacter.Ghost, 7, "ghost_level3");
-            var enemyHellBeast = new Enemy(new Vector2(125,225), EnemyCharacter.HellBeast, 5, "hellBeast_level3");
+            var enemyHellBeast = new Enemy(new Vector2(110,225), EnemyCharacter.HellBeast, 5, "hellBeast_level3");
 
             enemies = new List<Enemy> { enemyGhost, enemyHellBeast, };
 
