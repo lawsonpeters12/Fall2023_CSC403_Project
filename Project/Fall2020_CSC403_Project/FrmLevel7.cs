@@ -39,8 +39,8 @@ namespace Fall2020_CSC403_Project
             var healthPotion = new Item(new Vector2(750, 0), ItemType.HealingPotion, "healingPotion_lvl7");
             items = new List<Item> { key2, healthPotion };
 
-            var enemyMiniBoss = new Enemy(new Vector2(175, 80), EnemyCharacter.miniBoss, 10, "miniBoss_level7");
-            var enemyGhost = new Enemy(new Vector2(650, 350), EnemyCharacter.Ghost, 1, "ghost_level7");
+            var enemyMiniBoss = new Enemy(new Vector2(175, 80), EnemyCharacter.miniBoss,7, "miniBoss_level7");
+            var enemyGhost = new Enemy(new Vector2(650, 350), EnemyCharacter.Ghost, 3, "ghost_level7");
             enemies = new List<Enemy> { enemyMiniBoss, enemyGhost };
 
             PictureBox pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;

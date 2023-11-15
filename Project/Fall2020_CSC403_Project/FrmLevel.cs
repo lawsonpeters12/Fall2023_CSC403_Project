@@ -43,7 +43,7 @@ namespace Fall2020_CSC403_Project
             enemies = new List<Enemy>{ enemyGhost };
 
             // Sample items
-            var bow = new Item(new Vector2(123, 100), ItemType.Bow, "bow_level1");
+            var bow = new Item(new Vector2(150, 420), ItemType.Bow, "bow_level1");
             var healthPotion = new Item(new Vector2(900, 416), ItemType.HealingPotion, "healingPotion_lvl1");
             items = new List<Item>{bow, healthPotion};
             

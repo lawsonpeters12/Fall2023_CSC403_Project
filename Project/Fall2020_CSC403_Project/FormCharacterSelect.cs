@@ -17,7 +17,7 @@ namespace Fall2020_CSC403_Project
             buttonJenny.Click += buttonJenny_Click;
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Normal;
-            player = new Player(FrmLevel.frontDoorSpawn, 7, PlayerCharacter.Johnny, new List<string>(), new List<string>());
+            player = new Player(FrmLevel.frontDoorSpawn, 1, PlayerCharacter.Johnny, new List<string>(), new List<string>());
         }
     
         // Sets the player's Character as Johnny

@@ -11,7 +11,8 @@ namespace Fall2020_CSC403_Project
         public FormTitleScreen()
         {
             InitializeComponent();
-            button1.Click += button1_Click;
+            button_newgame.Click += button_newgame_Click;
+            button_loadgame.Click += button_loadgame_Click;
             this.WindowState = FormWindowState.Maximized;
 
             TitleMusic = new SoundPlayer(Resources.titlescreen_2);
@@ -31,11 +32,18 @@ namespace Fall2020_CSC403_Project
             TitleMusic.Stop();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_newgame_Click(object sender, EventArgs e)
         {
             FormCharacterSelect cs = new FormCharacterSelect();
             cs.Show();
             this.Hide();
+        }
+
+        private void button_loadgame_Click(object sender, EventArgs e)
+        {
+            FormLoadMenu loadMenu = new FormLoadMenu();
+            loadMenu.Show();
+            Hide();
         }
     }
 }

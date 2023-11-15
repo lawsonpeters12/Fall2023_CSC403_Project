@@ -261,7 +261,7 @@ namespace Fall2020_CSC403_Project
                             break;
                         case Item item when item.ItemModel == ItemType.Bow:
                             player.items["Bow"] ++;
-                            player.items["Arrows"] += 5;
+                            player.items["Arrows"] += 10;
                             CleanupItem(item);
                             break;
                         case Item item when item.ItemModel == ItemType.HealingPotion:

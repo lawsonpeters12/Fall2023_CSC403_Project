@@ -43,7 +43,11 @@ namespace Fall2020_CSC403_Project
             doors.Add(Door.MakeDoor(pic, FrmLevel7.rightDoorSpawn, new FrmLevel7(player)));
 
             pic = Controls.Find("doorToLvl9", true)[0] as PictureBox;
-            doors.Add(Door.MakeDoor(pic, FrmLevel9.bottomDoorSpawn, new FrmLevel9(player)));
+            if (player.items["Keys"] >= 2)
+            {
+                doors.Add(Door.MakeDoor(pic, FrmLevel9.bottomDoorSpawn, new FrmLevel9(player)));
+            }
+            else doors.Add(Door.MakeDoor(pic, new Vector2(player.Position.x, player.Position.y), null));
             
             LevelSetup();
             Game.player = player;

@@ -63,7 +63,7 @@ namespace Fall2020_CSC403_Project.code
                 case EnemyCharacter.HellHound:
                     return new Size(150, 100);
                 case EnemyCharacter.HellBeast:
-                    return new Size(150, 150);
+                    return new Size(170, 170);
                 case EnemyCharacter.Slime:
                     return new Size(115, 115);
                 case EnemyCharacter.BiggerSlime:

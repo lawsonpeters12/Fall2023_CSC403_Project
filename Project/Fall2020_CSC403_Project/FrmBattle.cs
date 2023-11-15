@@ -32,7 +32,7 @@ namespace Fall2020_CSC403_Project
             BackgroundImage = LevelForm.FightBackground;
             picBossBattle.Visible = false;
 
-            if (player.items["Bow"] > 0)
+            if (player.items["Bow"] > 0 && player.items["Arrows"] > 0)
             {
                 buttonShoot.Visible = true;
                 textBoxArrows.Visible = true;
@@ -116,7 +116,7 @@ namespace Fall2020_CSC403_Project
 
         private void buttonShoot_Click(object sender, EventArgs e)
         {
-            player.OnAttack(-10);
+            player.OnAttack(-(10 + (player.Level * 4)));
             player.items["Arrows"]--;
             if (player.items["Arrows"] < 1)
             {
@@ -137,7 +137,7 @@ namespace Fall2020_CSC403_Project
         {
             if (player.Health != player.MaxHealth)
             {
-                player.Health = Math.Min(player.Health + 10, player.MaxHealth);
+                player.Health = Math.Min(player.Health + 15, player.MaxHealth);
                 this.UpdateHealthBars();
                 player.items["Potions"] -= 1;
                 textBoxPotions.Text = $"Potions Remaining : {player.items["Potions"]}";

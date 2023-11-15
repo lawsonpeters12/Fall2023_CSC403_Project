@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_newgame = new System.Windows.Forms.Button();
             this.exit_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // button_newgame
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(952, 563);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 78);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Load Last Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_newgame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_newgame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_newgame.Location = new System.Drawing.Point(952, 563);
+            this.button_newgame.Name = "button_newgame";
+            this.button_newgame.Size = new System.Drawing.Size(170, 78);
+            this.button_newgame.TabIndex = 0;
+            this.button_newgame.Text = "New Game";
+            this.button_newgame.UseVisualStyleBackColor = false;
             // 
             // exit_button
             // 
@@ -62,7 +62,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1740, 718);
             this.Controls.Add(this.exit_button);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_newgame);
             this.DoubleBuffered = true;
             this.Name = "FormLoseScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -72,7 +72,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_newgame;
         private System.Windows.Forms.Button exit_button;
     }
 }

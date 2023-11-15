@@ -35,7 +35,7 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel5_Load(object sender, EventArgs e)
         {
-            var enemyCrawly = new Enemy(new Vector2(123, 250), EnemyCharacter.SewerCrawly, 1, "sewercrawly_level5");
+            var enemyCrawly = new Enemy(new Vector2(118, 250), EnemyCharacter.SewerCrawly, 2, "sewercrawly_level5");
 
             enemies = new List<Enemy> { enemyCrawly };
 

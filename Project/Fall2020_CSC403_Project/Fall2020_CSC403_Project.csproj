@@ -323,6 +323,7 @@
     <None Include="Resources\key3-removebg-preview.png" />
     <None Include="Resources\key1-removebg-preview %282%29.png" />
     <None Include="Resources\key1-removebg-preview %281%29.png" />
+    <None Include="Resources\victory.jpg" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />

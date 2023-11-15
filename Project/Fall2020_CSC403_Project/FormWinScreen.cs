@@ -13,6 +13,8 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
             WinMusic = new SoundPlayer(Resources.winmusic);
+            this.Size = new System.Drawing.Size(1199, 618);
+            button_newgame.Click += button_newgame_Click;
         }
 
         protected override void OnShown(EventArgs e)
@@ -35,10 +37,15 @@ namespace Fall2020_CSC403_Project
             Application.Exit();
         }
 
-        private void load_button_click(object sender, EventArgs e)
+        private void button_newgame_Click(object sender, EventArgs e)
         {
-            //LevelForm.LoadGameState(sender, e);
+            Application.Restart();
             Close();
+        }
+
+        private void FormWinScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

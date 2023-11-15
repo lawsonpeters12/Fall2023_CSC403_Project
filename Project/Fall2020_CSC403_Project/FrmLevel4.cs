@@ -36,7 +36,7 @@ namespace Fall2020_CSC403_Project
         public void FrmLevel4_Load(object sender, EventArgs e)
         {
             var enemySlime = new Enemy(new Vector2(485, 450), EnemyCharacter.Slime, 1, "slime_level4");
-            var enemyRat = new Enemy(new Vector2(250, 80), EnemyCharacter.Rat, 1, "rat_level4"); 
+            var enemyRat = new Enemy(new Vector2(250, 80), EnemyCharacter.Rat, 2, "rat_level4"); 
 
             enemies = new List<Enemy> { enemySlime, enemyRat }; 
 

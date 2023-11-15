@@ -28,62 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.button_newgame = new System.Windows.Forms.Button();
+            this.button_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // button_newgame
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(588, 112);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 222);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.button_newgame.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_newgame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_newgame.Location = new System.Drawing.Point(450, 580);
+            this.button_newgame.Name = "button_newgame";
+            this.button_newgame.Size = new System.Drawing.Size(187, 75);
+            this.button_newgame.TabIndex = 0;
+            this.button_newgame.Text = "New Game";
+            this.button_newgame.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // button_exit
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 111);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Load From Last Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.load_button_click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 102);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.exit_button_click);
+            this.button_exit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_exit.Location = new System.Drawing.Point(740, 580);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(192, 75);
+            this.button_exit.TabIndex = 1;
+            this.button_exit.Text = "Exit";
+            this.button_exit.UseVisualStyleBackColor = false;
+            this.button_exit.Click += new System.EventHandler(this.exit_button_click);
             // 
             // FormWinScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.bgd_sb;
+            this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.victory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1744, 724);
+            this.Controls.Add(this.button_exit);
+            this.Controls.Add(this.button_newgame);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormWinScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "You Win!";
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormWinScreen_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_newgame;
+        private System.Windows.Forms.Button button_exit;
     }
 }

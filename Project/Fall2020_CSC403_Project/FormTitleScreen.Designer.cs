@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_newgame = new System.Windows.Forms.Button();
+            this.button_loadgame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // button_newgame
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(844, 845);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 75);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "New Game";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_newgame.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_newgame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_newgame.Location = new System.Drawing.Point(693, 845);
+            this.button_newgame.Name = "button_newgame";
+            this.button_newgame.Size = new System.Drawing.Size(194, 75);
+            this.button_newgame.TabIndex = 0;
+            this.button_newgame.Text = "New Game";
+            this.button_newgame.UseVisualStyleBackColor = false;
+            // 
+            // button_loadgame
+            // 
+            this.button_loadgame.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_loadgame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button_loadgame.Location = new System.Drawing.Point(1002, 845);
+            this.button_loadgame.Name = "button_loadgame";
+            this.button_loadgame.Size = new System.Drawing.Size(194, 75);
+            this.button_loadgame.TabIndex = 1;
+            this.button_loadgame.Text = "Load Game";
+            this.button_loadgame.UseVisualStyleBackColor = false;
             // 
             // FormTitleScreen
             // 
@@ -50,7 +62,8 @@
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.TitleScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_loadgame);
+            this.Controls.Add(this.button_newgame);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTitleScreen";
@@ -62,6 +75,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_newgame;
+        private System.Windows.Forms.Button button_loadgame;
     }
 }
