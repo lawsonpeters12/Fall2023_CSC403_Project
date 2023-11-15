@@ -26,6 +26,8 @@ namespace Fall2020_CSC403_Project
         HealingPotion,
         Bow,
         Arrow,
-        Key
+        Key1,
+        Key2,
+        Key3
     }
 }

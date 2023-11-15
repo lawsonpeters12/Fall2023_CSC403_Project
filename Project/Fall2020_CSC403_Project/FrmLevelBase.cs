@@ -268,8 +268,16 @@ namespace Fall2020_CSC403_Project
                             player.items["Potions"] ++;
                             CleanupItem(item);
                             break;
-                        case Item item when item.ItemModel == ItemType.Key:
+                        case Item item when item.ItemModel == ItemType.Key1:
                             player.items["Keys"] ++;
+                            CleanupItem(item);
+                            break;
+                        case Item item when item.ItemModel == ItemType.Key2:
+                            player.items["Keys"]++;
+                            CleanupItem(item);
+                            break;
+                        case Item item when item.ItemModel == ItemType.Key3:
+                            player.items["Keys"]++;
                             CleanupItem(item);
                             break;
                         // when we pick up an item do: player.PickedUpItems.Add(item.Name)
@@ -510,8 +518,15 @@ namespace Fall2020_CSC403_Project
                     return Properties.Resources.bow;
                 case ItemType.HealingPotion:
                     return Properties.Resources.health_potion;
-                case ItemType.Key:
-                    return Properties.Resources.key_removebg_preview;
+                case ItemType.Key1:
+                    return Properties.Resources.key1_removebg_preview__1_;
+                case ItemType.Key2:
+                    return Properties.Resources.key2_removebg_preview;
+                case ItemType.Key3:
+                    return Properties.Resources.key3_removebg_preview;
+
+
+
             }
             return Properties.Resources.health_potion;
         }

@@ -315,6 +315,14 @@
     <None Include="Resources\fight.wav" />
     <None Include="Resources\reverseSlime.gif" />
     <None Include="Resources\miniboss.gif" />
+    <None Include="Resources\key1.PNG" />
+    <None Include="Resources\key1-removebg-preview.png" />
+    <None Include="Resources\key2.PNG" />
+    <None Include="Resources\key2-removebg-preview.png" />
+    <None Include="Resources\key3.PNG" />
+    <None Include="Resources\key3-removebg-preview.png" />
+    <None Include="Resources\key1-removebg-preview %282%29.png" />
+    <None Include="Resources\key1-removebg-preview %281%29.png" />
     <Content Include="Resources\wall4.png" />
     <None Include="data\wall4a.png" />
     <None Include="data\archway3.png" />

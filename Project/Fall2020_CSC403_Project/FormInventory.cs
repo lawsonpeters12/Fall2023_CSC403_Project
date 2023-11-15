@@ -93,28 +93,28 @@ namespace Fall2020_CSC403_Project
             if (player.items["Keys"] == 1)
             {
                 picKey1.Visible = true;
-                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.Image = Properties.Resources.key1_removebg_preview__1_;
                 picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else if (player.items["Keys"] == 2)
             {
                 picKey1.Visible = true;
-                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.Image = Properties.Resources.key1_removebg_preview__1_;
                 picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
                 picKey2.Visible = true;
-                picKey2.Image = Properties.Resources.key_removebg_preview;
+                picKey2.Image = Properties.Resources.key2_removebg_preview;
                 picKey2.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else if (player.items["Keys"] == 3)
             {
                 picKey1.Visible = true;
-                picKey1.Image = Properties.Resources.key_removebg_preview;
+                picKey1.Image = Properties.Resources.key1_removebg_preview__1_;
                 picKey1.SizeMode = PictureBoxSizeMode.StretchImage;
                 picKey2.Visible = true;
-                picKey2.Image = Properties.Resources.key_removebg_preview;
+                picKey2.Image = Properties.Resources.key2_removebg_preview;
                 picKey2.SizeMode = PictureBoxSizeMode.StretchImage;
                 picKey3.Visible = true;
-                picKey3.Image = Properties.Resources.key_removebg_preview;
+                picKey3.Image = Properties.Resources.key3_removebg_preview;
                 picKey3.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 

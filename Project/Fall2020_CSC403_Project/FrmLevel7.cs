@@ -35,7 +35,7 @@ namespace Fall2020_CSC403_Project
 
         public void FrmLevel7_Load(object sender, EventArgs e)
         {
-            var key2 = new Item(new Vector2(750, 250), ItemType.Key, "key2_lvl7");
+            var key2 = new Item(new Vector2(175, 250), ItemType.Key2, "key2_lvl7");
             var healthPotion = new Item(new Vector2(750, 0), ItemType.HealingPotion, "healingPotion_lvl7");
             items = new List<Item> { key2, healthPotion };
 

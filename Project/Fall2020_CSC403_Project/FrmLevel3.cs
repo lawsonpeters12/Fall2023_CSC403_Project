@@ -41,7 +41,7 @@ namespace Fall2020_CSC403_Project
 
             enemies = new List<Enemy> { enemyGhost, enemyHellBeast, };
 
-            var key1 = new Item(new Vector2(125, 100), ItemType.Key, "key1_lvl3");
+            var key1 = new Item(new Vector2(135, 100), ItemType.Key1, "key1_lvl3");
             items = new List<Item> {key1};
 
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
