@@ -1,24 +1,18 @@
-﻿using System;using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using System.Media;
 using Fall2020_CSC403_Project.Properties;
 
 namespace Fall2020_CSC403_Project
 {
-    public partial class FormWinScreen : Form
+    public partial class FormWinScreen : FrmLevelBase
     {
-        FrmLevel LevelForm;
+        public SoundPlayer WinMusic;
 
-        public SoundPlayer WinMusic; 
-
-        public FormWinScreen(FrmLevel l)
+        public FormWinScreen()
         {
             InitializeComponent();
-
             WinMusic = new SoundPlayer(Resources.winmusic);
-
-            button1.Click += load_button_click;
-            button2.Click += exit_button_click;
-            LevelForm = l;
         }
 
         protected override void OnShown(EventArgs e)
@@ -40,7 +34,7 @@ namespace Fall2020_CSC403_Project
             Close();
             Application.Exit();
         }
-        
+
         private void load_button_click(object sender, EventArgs e)
         {
             //LevelForm.LoadGameState(sender, e);

@@ -43,10 +43,9 @@ namespace Fall2020_CSC403_Project
             enemies = new List<Enemy>{ enemyGhost };
 
             // Sample items
-            var testItem = new Item(new Vector2(500, 500), ItemType.Arrow, "testItem1_level1");
-            var testItem2 = new Item(new Vector2(167, 250), ItemType.Bow, "testItem2_level1");
-            var healthPotion = new Item(new Vector2(1363, 281), ItemType.HealingPotion, "healingPotion_lvl1");
-            items = new List<Item>{testItem, testItem2, healthPotion};
+            var bow = new Item(new Vector2(164, 416), ItemType.Bow, "bow_level1");
+            var healthPotion = new Item(new Vector2(900, 416), ItemType.HealingPotion, "healingPotion_lvl1");
+            items = new List<Item>{bow, healthPotion};
             
             PictureBox pic = Controls.Find("doorToLvl2", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel2.leftDoorSpawn, new FrmLevel2(player)));
@@ -56,6 +55,13 @@ namespace Fall2020_CSC403_Project
             
             pic = Controls.Find("doorToLvl8", true)[0] as PictureBox;
             doors.Add(Door.MakeDoor(pic, FrmLevel8.bottomDoorSpawn, new FrmLevel8(player)));
+            
+            pic = Controls.Find("frontDoor", true)[0] as PictureBox;
+            if (player.items["Keys"] == 3)
+            {
+	            doors.Add(Door.MakeDoor(pic, new Vector2(player.Position.x,player.Position.y), new FormWinScreen()));
+            }
+            else doors.Add(Door.MakeDoor(pic, new Vector2(player.Position.x, player.Position.y), null));
             
             LevelSetup();
             Game.player = player;

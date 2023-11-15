@@ -35,8 +35,33 @@ namespace Fall2020_CSC403_Project
                     case "level5":
                     case "level6":
                         return Properties.Resources.sewerBackground;
+                    case "level9":
+                        return Properties.Resources.backgroundBricks; // placeholder
                 }
                 return Properties.Resources.wall4;
+            }
+        }
+
+        public UnmanagedMemoryStream LevelMusic
+        {
+            get
+            {
+                switch (LevelName)
+                {
+                    case "level1":
+                    case "level2":
+                    case "level3":
+                    case "level7":
+                    case "level8":
+                        return Properties.Resources.roaming3;
+                    case "level4":
+                    case "level5":
+                    case "level6":
+                        return Properties.Resources.sewer;
+                    case "level9":
+                        return Properties.Resources.roaming3; // placeholder
+                }
+                return Properties.Resources.roaming3;            
             }
         }
         
@@ -215,9 +240,16 @@ namespace Fall2020_CSC403_Project
                             Fight(enemy);
                             break;
                         case Door door:
-                            player.Position = door.SpawnPoint;
-                            door.TargetLevel.Show();
-                            Close();
+                            if (door.TargetLevel != null)
+                            {
+                                player.Position = door.SpawnPoint;
+                                door.TargetLevel.Show();
+                                Close();
+                            }
+                            else
+                            {
+                                player.MoveBack();
+                            }
                             break;
                         case Gloop gloop:
                             gloop.MoveBack();

@@ -9,13 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="76af2323-491e-4c32-8cf4-f6932dd1e5d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fall2020_CSC403_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormCharacterSelect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoadMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormLoseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormSaveMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmBattle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel2.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel3.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FormWinScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevel8.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2020_CSC403_Project/FrmLevelBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/19/33406bb6/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/2b/3fa84d17/Form.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/66/b297520e/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/7c/754cfb40/PropertyStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/7f/19b99776/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/a9/5337c65f/Timer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/ae/14b0b455/NativeWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/cb/fcab54f3/ButtonBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/d7/56b66307/HandleCollector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce12dc1aa9e14b919d8c1321c95d47fb35e718/81/8a5dbd87/BitVector32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce12dc1aa9e14b919d8c1321c95d47fb35e718/fe/61b312eb/SoundPlayer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

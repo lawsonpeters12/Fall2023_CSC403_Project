@@ -276,6 +276,7 @@
             this.Controls.Add(this.doorToLvl8);
             this.Controls.Add(this.doorToLvl4);
             this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "FrmLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Explore";
